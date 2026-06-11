@@ -12,10 +12,9 @@ export function NoteList({ notes, emptyContext = "notes" }: NoteListProps) {
       <div className={`empty-state empty-state--${emptyContext}`}>
         <div>
           <p className="section-label">Archive status</p>
-          <h2>The first post is still in progress.</h2>
+          <h2>No published writing is available.</h2>
           <p>
-            When it is ready, it will appear here. I would rather publish
-            something useful than fill the page with demonstration content.
+            Drafts are kept private until they are ready.
           </p>
           {emptyContext === "notes" ? (
             <Link className="text-link" href="/">
@@ -37,12 +36,16 @@ export function NoteList({ notes, emptyContext = "notes" }: NoteListProps) {
               <span className="note-list__topics">{note.topics.join(" · ")}</span>
               <strong>{note.title}</strong>
               <span>{note.description}</span>
+              <span className="note-list__details">
+                {note.readingTime} min read
+              </span>
             </span>
             <time dateTime={note.publishedAt}>
               {new Intl.DateTimeFormat("en", {
                 month: "short",
                 day: "numeric",
                 year: "numeric",
+                timeZone: "UTC",
               }).format(new Date(note.publishedAt))}
             </time>
           </Link>

@@ -2,7 +2,7 @@
 
 Draft State is a personal blog for Deep Chadamiya about software, interface design, games, photography, and the lessons found while making things.
 
-The visual system uses parchment, charcoal, sand, and oxide red; oversized editorial typography; a responsive bento composition; and one lightweight pointer interaction. The archive intentionally contains no fake posts.
+The visual system uses a custom dark Night palette, wide editorial layouts, technical grid lines, restrained motion, and local Markdown publishing. The archive contains only real published writing and no demonstration posts.
 
 ## Connected project services
 
@@ -15,10 +15,10 @@ The Supabase MCP connection is project-scoped and intended for Codex development
 
 ## Included
 
-- Home, Notes, About, article, 404, sitemap, and robots routes
+- Home, Writing, About, article, 404, sitemap, and robots routes
 - File-based Markdown publishing and an unpublished post template
 - Responsive desktop, tablet, and phone layouts
-- Pointer-responsive hero visual with reduced-motion support
+- Motion for React used for small entrance reveals
 - Complete future-article typography
 - Supplied visual references and revised design previews
 - Writer-blog research, design-system, content, motion, build, and integration documentation
@@ -77,7 +77,13 @@ Import `deep8904/Deep-Blog` in Vercel, keep the root directory as `.`, confirm N
 - Other branches and pull requests should receive preview deployments.
 - After the first production deployment, update `NEXT_PUBLIC_SITE_URL` to the canonical production URL and redeploy.
 
-## Publish the first note
+## Published writing
+
+The first article is published at:
+
+`/notes/three-days-one-castle-next-wave`
+
+## Publish a note
 
 The current implementation uses local Markdown until a Supabase content migration is deliberately approved and implemented.
 
@@ -86,7 +92,8 @@ The current implementation uses local Markdown until a Supabase content migratio
 3. Complete the frontmatter.
 4. Write the article in Markdown.
 5. Change `draft: true` to `draft: false` only when ready.
-6. Run `npm run typecheck` and `npm run build`.
+6. Add optional image metadata only after a real file exists in `public/`.
+7. Run `npm run typecheck` and `npm run build`.
 
 Files beginning with `_` and notes marked `draft: true` are excluded from the site.
 
@@ -108,7 +115,7 @@ git status
 
 ```text
 app/                    Routes, metadata, SEO, and global styling
-components/             Shared UI and the interactive field
+components/             Shared UI, article rows, motion, and editorial layout components
 content/notes/          Markdown notes and unpublished template
 docs/                   Research, design, content, build, and integration docs
 docs/previews/          Screenshots of the revised design

@@ -33,6 +33,6 @@ The supplied desktop, tablet, and mobile screenshots repeatedly use:
 
 ## Revised synthesis
 
-The new Draft State keeps the useful editorial hierarchy from the references, but moves away from oversized template-like panels and decorative dashboards. The revised system uses the Pressed Field palette, ruled sections, restrained typography, and a static working-margin motif. It feels closer to a personal notebook than a landing page.
+Draft State keeps the useful editorial hierarchy from the references, but moves away from oversized template-like panels and decorative dashboards. The current system uses a dark Night palette, wide ruled sections, restrained technical grid surfaces, and a typography-led featured article band. It feels closer to an independent personal publication than a landing page.
 
 Nothing from the reference sites has been copied verbatim. The project uses their principles to build an original personal-blog system.

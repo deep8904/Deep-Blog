@@ -20,6 +20,8 @@
 - [ ] Keep `draft: true` until publication is intentional.
 - [ ] Begin with a concrete event, artifact, decision, or question.
 - [ ] Use valid heading hierarchy.
-- [ ] Add descriptive alt text to images.
+- [ ] Add real images only after files exist in `public/`.
+- [ ] Add descriptive alt text and short factual captions to images.
+- [ ] Keep future image paths under `public/images/notes/<slug>/`.
 - [ ] Review on phone and desktop.
 - [ ] Run the production build.

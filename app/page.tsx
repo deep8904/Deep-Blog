@@ -1,70 +1,92 @@
 import Link from "next/link";
+import { FeaturedArticleBand } from "@/components/featured-article-band";
+import { MotionReveal } from "@/components/motion-reveal";
 import { NoteList } from "@/components/note-list";
-import { WorkingMargin } from "@/components/working-margin";
+import { NotebookSignal, TopicMatrix } from "@/components/topic-matrix";
 import { getAllNotes } from "@/lib/notes";
-
-const subjects = [
-  ["Software", "Notes from building products and learning what survives real use."],
-  ["Interface design", "Small choices that make a screen easier to understand."],
-  ["Games", "Systems, worlds, collaboration, and what play can teach."],
-  ["Photography", "Frames, light, and the habit of looking a little longer."],
-] as const;
 
 export default function HomePage() {
   const notes = getAllNotes();
+  const latestNote = notes[0];
 
   return (
     <>
       <section className="hero" aria-labelledby="hero-title">
-        <div className="hero__copy">
+        <MotionReveal className="hero__copy">
           <p className="eyebrow">Deep Chadamiya — software, design, games, and photography</p>
           <h1 id="hero-title">
-            I write about the things I build and the details I notice along the way.
+            I write about what I build, what changes, and what I notice along the way.
           </h1>
-          <p className="hero__lede">
-            This is my personal notebook for projects, design decisions, technical
-            lessons, games, photography, and ideas that are easier to understand
-            after I write them down.
+        </MotionReveal>
+        <MotionReveal className="hero__aside" delay={0.08}>
+          <p>
+            A personal notebook for projects, interface decisions, technical
+            lessons, games, photography, and ideas that become clearer once I
+            write them down.
           </p>
           <div className="hero__actions" aria-label="Primary actions">
-            <Link className="button-link" href="/notes">
-              Browse the writing
-            </Link>
-            <Link className="text-link" href="/about">
-              About Deep
+            {latestNote ? (
+              <Link className="button-link" href={`/notes/${latestNote.slug}`}>
+                Read the latest essay
+              </Link>
+            ) : null}
+            <Link className="text-link" href="/notes">
+              Browse all writing
             </Link>
           </div>
+        </MotionReveal>
+      </section>
+
+      {latestNote ? (
+        <MotionReveal className="featured-section" delay={0.12}>
+          <div className="section-heading">
+            <p className="section-label">Featured writing</p>
+            <h2>Latest from the notebook</h2>
+          </div>
+          <FeaturedArticleBand note={latestNote} />
+        </MotionReveal>
+      ) : null}
+
+      <section className="home-bento" aria-labelledby="home-bento-title">
+        <div className="bento-panel bento-panel--topics">
+          <div className="section-heading">
+            <p className="section-label">Notebook index</p>
+            <h2 id="home-bento-title">What tends to show up here</h2>
+          </div>
+          <TopicMatrix />
         </div>
-        <aside className="hero__margin" aria-label="Writing process">
-          <WorkingMargin />
+
+        <aside className="bento-panel bento-panel--about" aria-labelledby="about-preview-title">
+          <p className="section-label">About Deep</p>
+          <h2 id="about-preview-title">Code, design, games, and the details around them.</h2>
+          <p>
+            I work in software, care about interface details, enjoy building game
+            ideas, and usually have a camera nearby.
+          </p>
+          <Link className="text-link" href="/about">
+            About Deep
+          </Link>
         </aside>
-      </section>
 
-      <section className="topic-index" aria-labelledby="topics-title">
-        <div className="section-label">Notebook index</div>
-        <div>
-          <h2 id="topics-title">What tends to show up here</h2>
-          <div className="topic-index__grid">
-            {subjects.map(([title, description]) => (
-              <article key={title}>
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+        <aside className="bento-panel bento-panel--status">
+          <p className="section-label">Currently exploring</p>
+          <strong>
+            Game UX, developer communities, and how ideas change once a team
+            starts building them.
+          </strong>
+        </aside>
 
-      <section className="status-note" aria-label="Current writing status">
-        <p>First essay</p>
-        <strong>Currently being written</strong>
-        <span>The archive will open with a real post—not placeholder content.</span>
+        <aside className="bento-panel bento-panel--signal">
+          <NotebookSignal />
+        </aside>
       </section>
 
       <section id="latest" className="writing-preview" aria-labelledby="latest-title">
         <div className="writing-preview__header">
           <div>
-            <p className="section-label">Writing</p>
+            <p className="section-label">
+              Writing · {String(notes.length).padStart(2, "0")} published
+            </p>
             <h2 id="latest-title">Latest from the notebook</h2>
           </div>
           <Link className="text-link" href="/notes">
@@ -72,23 +94,6 @@ export default function HomePage() {
           </Link>
         </div>
         <NoteList notes={notes.slice(0, 4)} emptyContext="home" />
-      </section>
-
-      <section className="about-preview" aria-labelledby="about-preview-title">
-        <div>
-          <p className="section-label">About</p>
-          <h2 id="about-preview-title">Hi, I’m Deep.</h2>
-        </div>
-        <div className="about-preview__copy">
-          <p>
-            I work in software, care deeply about interface details, enjoy building
-            game ideas, and usually have a camera nearby. Writing helps me connect
-            those interests and understand the work more clearly.
-          </p>
-          <Link className="text-link" href="/about">
-            More about me
-          </Link>
-        </div>
       </section>
     </>
   );

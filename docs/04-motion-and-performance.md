@@ -1,30 +1,17 @@
 # Motion and performance
 
-## Current motion policy
-
-The redesign removes the former pointer-following hero card. The Home page now uses a static working-margin graphic built from lightweight markup and CSS. It does not track the pointer, animate continuously, or require a client component.
+The redesign uses Motion for React in one small client wrapper: `MotionReveal`.
 
 ## Motion rules
 
-- No WebGL.
-- No autoplay video.
-- No animation library.
-- No continuous JavaScript loop.
-- No scroll hijacking.
-- Prefer simple hover/focus transitions only when they clarify state.
-- Keep decorative elements non-blocking and secondary to text.
+- Entrance reveals are limited to hero and featured homepage surfaces.
+- Hover behavior is handled with CSS transforms on article bands and rows.
+- No cursor followers, looping decorative animation, scroll-jacking, 3D tilting, or text scrambling.
+- `useReducedMotion()` disables transform-based entrance animation.
 
-## Reduced motion
+## Performance rules
 
-When `prefers-reduced-motion` is active:
-- Transition and animation durations are effectively removed.
-- Reading and navigation remain fully functional.
-- No decorative motion is required to understand the site.
-
-## Performance safeguards
-
-- Font files come from installed Fontsource packages.
-- No external font loading is required.
-- No full-screen photography is included before real assets exist.
-- Future article images should use responsive dimensions and `next/image` where appropriate.
-- The site remains useful with JavaScript disabled.
+- Markdown remains statically generated.
+- Article pages remain server-rendered by default.
+- The technical grid is CSS-only and used only on selected dark surfaces.
+- The long-form reading body has no decorative grid behind it.

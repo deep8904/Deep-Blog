@@ -11,10 +11,10 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="site-header__identity">
         <Link className="wordmark" href="/" aria-label="Deep Chadamiya home">
-          <span className="wordmark__mark">DC</span>
+          <span className="wordmark__mark">.deep</span>
           <span className="wordmark__text">
             <strong>Deep Chadamiya</strong>
-            <span>Personal notebook</span>
+            <span>personal notebook</span>
           </span>
         </Link>
       </div>

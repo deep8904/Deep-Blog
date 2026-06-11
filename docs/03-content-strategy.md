@@ -22,16 +22,18 @@ Deep is a software engineer whose interests naturally extend into interface desi
 1. **Who is this?** Deep, a software engineer with overlapping interests.
 2. **Why does he write?** To understand the work and preserve its lessons.
 3. **What will appear here?** Software, interfaces, games, and photography.
-4. **What is published now?** Nothing yet; the first essay is in progress.
+4. **What is published now?** The first essay, “Three Days, One Castle, and a Team Called Next Wave,” is published.
 5. **Where should a reader go next?** Writing or About.
 
-## Empty-state copy
+## Archive fallback copy
 
-> The first post is still in progress.
+The fallback only appears if every Markdown note is private or drafted.
+
+> No published writing is available.
 >
-> When it is ready, it will appear here. I would rather publish something useful than fill the page with demonstration content.
+> Drafts are kept private until they are ready.
 
-This remains until a real Markdown note is published.
+The live archive contains only real published writing and no demonstration posts.
 
 ## Writing guidance for future posts
 

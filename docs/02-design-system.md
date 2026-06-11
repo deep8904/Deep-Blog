@@ -6,58 +6,60 @@
 **Author:** Deep Chadamiya  
 **Purpose:** A personal notebook for software, design, games, photography, and writing from real work.
 
-The visual language should feel authored, quiet, editorial, and personal. It should support reading before decoration.
+The visual language is dark, editorial, technical, and personal. It should feel like an independent digital publication rather than a generic template.
 
-## Pressed Field palette
+## Night palette
 
 | Token | Hex | Purpose |
 |---|---:|---|
-| `--field-canvas` | `#E7E3DA` | Page background only |
-| `--field-paper` | `#F4F1E9` | Primary reading surfaces and quiet panels |
-| `--field-paper-raised` | `#FAF8F2` | Slightly lifted surfaces and text on dark vine |
-| `--field-ink` | `#1D211E` | Primary text |
-| `--field-ink-soft` | `#3F4540` | Secondary dark copy |
-| `--field-muted` | `#77776F` | Metadata and lower-emphasis text |
-| `--field-vine` | `#526355` | Main accent for links, rules, and state |
-| `--field-vine-deep` | `#34463B` | Strong accent, buttons, and icon base |
-| `--field-vine-soft` | `#C9D0C6` | Soft dividers and alternating index accents |
-| `--field-fig` | `#675463` | Restrained secondary accent |
-| `--field-fig-soft` | `#D7CDD4` | Soft secondary marks |
-| `--field-line` | `#CBC5B9` | Default borders |
-| `--field-line-strong` | `#AFA99E` | Stronger rules |
-| `--field-focus` | `#3D5948` | Keyboard focus outline |
+| `--night-canvas` | `#101411` | Main site background |
+| `--night-surface` | `#171C18` | Standard panels and dark sections |
+| `--night-surface-raised` | `#1E251F` | Slightly lifted panels |
+| `--night-panel` | `#252C26` | Dense supporting panels |
+| `--night-paper` | `#E7E3D8` | Primary light text and reading surface |
+| `--night-paper-soft` | `#C8C4B9` | Secondary light text |
+| `--night-muted` | `#898F87` | Metadata and low-emphasis copy |
+| `--night-vine` | `#6F8874` | Primary accent and hover surface |
+| `--night-vine-bright` | `#91A895` | Links and active navigation |
+| `--night-vine-dark` | `#354A3B` | Large featured article surface |
+| `--night-fig` | `#806B7A` | Secondary accent |
+| `--night-fig-bright` | `#A68C9E` | Secondary highlighted details |
+| `--night-fig-dark` | `#4C3E49` | Muted status panel surface |
+| `--night-moss` | `#A7A36D` | Rare micro-accent |
+| `--night-line` | `rgba(231, 227, 216, 0.11)` | Technical grid and default borders |
+| `--night-line-strong` | `rgba(231, 227, 216, 0.22)` | Stronger rules |
+| `--night-focus` | `#B7C8B9` | Keyboard focus outline |
+| `--night-error` | `#B97770` | Error states |
 
-Use `field-canvas` for the background, `field-paper` for reading surfaces, `field-ink` for body text, and `field-vine` as the primary accent. Do not use large saturated color blocks, gradients, pure black, pure white, orange, blue, or both accents heavily in the same section.
-
-Contrast notes: body text on canvas and paper uses `field-ink`; links and focus states use the deeper vine tokens for AA contrast. `field-muted` is reserved for secondary copy at normal body sizes or larger. The design is light-mode-only for now.
+The interface stays mostly dark and neutral. Accent colors are used for links, article bands, technical lines, and small panels. Long-form reading uses a paper surface to keep the article comfortable.
 
 ## Typography
 
-- **Geist Variable:** navigation, body copy, labels, metadata, and most headings.
-- **Newsreader Variable:** limited editorial emphasis, article titles, pull quotes, and the small working-margin labels.
+- **Geist Variable:** navigation, UI, metadata, page titles, hero, and article headings.
+- **Newsreader Variable:** long-form body copy, pull quotes, captions, and limited editorial accents.
 
-Hero text is restrained and balanced. Article text keeps a comfortable measure of roughly 58-68 characters.
+Most of the interface uses Geist. Newsreader should not dominate large interface headings.
 
 ## Geometry and rhythm
 
-- Maximum content width: about 1280px.
-- Mobile side padding: about 20px.
-- Radius tokens: 6px, 12px, and 20px.
-- Spacing uses explicit tokens from `--space-1` through `--space-10`.
-- Sections use rules, alignment, and measured spacing instead of oversized rounded cards.
+- Page maximum: `1680px`.
+- Desktop gutter: `clamp(24px, 4vw, 72px)`.
+- Tablet gutter: `28px`.
+- Mobile gutter: `18px`.
+- Editorial bands use minimal radius.
+- Small panels use `6px` to `12px` radius.
+- Grid layouts use `minmax(0, 1fr)` to avoid overflow.
 
 ## Component roles
 
-- **Header:** compact author mark, author name, notebook descriptor, and active route state.
-- **Home hero:** direct first-person introduction with two primary reader paths.
-- **Working margin:** static CSS editorial marginalia for Build, Observe, Write. It has no JavaScript and no animation.
-- **Topic index:** ruled list of recurring subjects.
-- **Writing empty state:** compact, honest archive message with no placeholder posts.
+- **Header:** thin `.deep` mark, personal descriptor, active route state, and minimal nav.
+- **Home hero:** full-width technical-grid statement with the latest-essay action.
+- **Featured article band:** large linked typography-led article object.
+- **Bento layer:** topic matrix, about preview, current exploration, and a lightweight visual signal.
+- **Writing archive:** horizontal editorial rows for published Markdown notes.
+- **Article page:** dark technical header and calm paper reading surface.
 - **Footer:** simple personal notebook close with Writing and About links.
 
-## Accessibility and motion
+## Motion
 
-- Visible keyboard focus is provided globally.
-- Decorative marks are hidden from assistive technology.
-- Reduced-motion mode removes nonessential transitions.
-- The site remains useful without JavaScript; only the active nav enhancement depends on the small client header.
+Motion for React is used only for restrained entrance reveals. Hover movement is handled with CSS, and reduced-motion users receive no transform-based entrance animation.

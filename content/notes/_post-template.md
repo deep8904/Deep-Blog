@@ -3,6 +3,11 @@ title: "Replace with the final title"
 description: "One clear sentence that explains why this note is worth reading."
 publishedAt: "YYYY-MM-DD"
 updatedAt: "YYYY-MM-DD"
+author: "Deep Chadamiya"
+# Optional future image fields. Leave unset until a real image exists in public/.
+# heroImage: "/images/notes/example/example.webp"
+# heroImageAlt: "Accurate descriptive alt text."
+# heroImageCaption: "Short factual caption."
 topics:
   - "Topic"
 draft: true

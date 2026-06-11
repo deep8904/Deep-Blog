@@ -13,11 +13,13 @@ export default function NotesPage() {
   return (
     <>
       <section className="writing-hero" aria-labelledby="writing-title">
-        <p className="eyebrow">Writing</p>
-        <h1 id="writing-title">Notes from projects, experiments, and everyday observations.</h1>
+        <p className="eyebrow">Writing / {String(notes.length).padStart(2, "0")} published</p>
+        <h1 id="writing-title">
+          Notes from projects, experiments, and the things I notice while making them.
+        </h1>
         <p>
-          Longer essays and shorter notes will live here. I am working on the
-          first piece now, so the archive is intentionally empty for the moment.
+          Long-form essays and shorter observations about software, interfaces,
+          games, collaboration, and photography.
         </p>
       </section>
 
