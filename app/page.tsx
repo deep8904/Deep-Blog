@@ -1,13 +1,13 @@
 import Link from "next/link";
-import { InteractiveField } from "@/components/interactive-field";
 import { NoteList } from "@/components/note-list";
+import { WorkingMargin } from "@/components/working-margin";
 import { getAllNotes } from "@/lib/notes";
 
 const subjects = [
-  ["Software", "What it takes to turn an idea into something people can use."],
-  ["Interfaces", "The small decisions that make a screen feel clear—or confusing."],
+  ["Software", "Notes from building products and learning what survives real use."],
+  ["Interface design", "Small choices that make a screen easier to understand."],
   ["Games", "Systems, worlds, collaboration, and what play can teach."],
-  ["Photography", "Attention, framing, and the habit of looking a little longer."],
+  ["Photography", "Frames, light, and the habit of looking a little longer."],
 ] as const;
 
 export default function HomePage() {
@@ -16,117 +16,79 @@ export default function HomePage() {
   return (
     <>
       <section className="hero" aria-labelledby="hero-title">
-        <article className="hero-copy panel panel--paper">
-          <div className="hero-copy__topline">
-            <p className="kicker">A personal blog by Deep Chadamiya</p>
-            <span className="edition">Independent / ongoing</span>
-          </div>
-
+        <div className="hero__copy">
+          <p className="eyebrow">Deep Chadamiya — software, design, games, and photography</p>
           <h1 id="hero-title">
-            I make things.
-            <span>Then I write to understand them.</span>
+            I write about the things I build and the details I notice along the way.
           </h1>
-
-          <div className="hero-copy__bottom">
-            <p>
-              I’m a software engineer who keeps wandering into interface design,
-              games, and photography. Draft State is where I keep the decisions,
-              mistakes, and observations worth returning to.
-            </p>
-            <Link className="text-link" href="#latest">
-              Visit the archive <span aria-hidden="true">↘</span>
+          <p className="hero__lede">
+            This is my personal notebook for projects, design decisions, technical
+            lessons, games, photography, and ideas that are easier to understand
+            after I write them down.
+          </p>
+          <div className="hero__actions" aria-label="Primary actions">
+            <Link className="button-link" href="/notes">
+              Browse the writing
+            </Link>
+            <Link className="text-link" href="/about">
+              About Deep
             </Link>
           </div>
-        </article>
+        </div>
+        <aside className="hero__margin" aria-label="Writing process">
+          <WorkingMargin />
+        </aside>
+      </section>
 
-        <article className="panel panel--visual">
-          <InteractiveField />
-        </article>
-
-        <article className="panel panel--status">
-          <div className="status-line">
-            <span className="status-dot" aria-hidden="true" />
-            On the desk
-          </div>
-          <div>
-            <p className="status-large">The first essay is taking shape.</p>
-            <p className="status-copy">
-              No launch post and no filler. The archive opens when the writing is
-              ready.
-            </p>
-          </div>
-          <span className="tile-code">CURRENT / WRITING</span>
-        </article>
-
-        <article className="panel panel--subjects">
-          <p className="kicker">What I write about</p>
-          <div className="subject-stack">
+      <section className="topic-index" aria-labelledby="topics-title">
+        <div className="section-label">Notebook index</div>
+        <div>
+          <h2 id="topics-title">What tends to show up here</h2>
+          <div className="topic-index__grid">
             {subjects.map(([title, description]) => (
-              <div key={title}>
-                <span>{title}</span>
+              <article key={title}>
+                <h3>{title}</h3>
                 <p>{description}</p>
-              </div>
+              </article>
             ))}
           </div>
-        </article>
-      </section>
-
-      <section className="intro-section section-grid" aria-labelledby="intro-title">
-        <p className="section-number">01 / WHY</p>
-        <div>
-          <h2 id="intro-title">
-            The work moves fast.
-            <span>I want the lessons to stay.</span>
-          </h2>
-          <div className="two-column-copy">
-            <p>
-              Some posts will be practical: a build decision, an interface problem,
-              or a process that finally worked. Others will begin with a game, a
-              photograph, or a question I could not stop thinking about.
-            </p>
-            <p>
-              This is not a polished record of perfect decisions. It is a personal
-              archive of what I tried, what changed my mind, and what I understand
-              more clearly now.
-            </p>
-          </div>
         </div>
       </section>
 
-      <section id="latest" className="latest section-grid" aria-labelledby="latest-title">
-        <div className="section-rail">
-          <p className="section-number">02 / WRITING</p>
-          <Link className="micro-link" href="/notes">
-            Open the archive ↗
+      <section className="status-note" aria-label="Current writing status">
+        <p>First essay</p>
+        <strong>Currently being written</strong>
+        <span>The archive will open with a real post—not placeholder content.</span>
+      </section>
+
+      <section id="latest" className="writing-preview" aria-labelledby="latest-title">
+        <div className="writing-preview__header">
+          <div>
+            <p className="section-label">Writing</p>
+            <h2 id="latest-title">Latest from the notebook</h2>
+          </div>
+          <Link className="text-link" href="/notes">
+            Open writing
           </Link>
         </div>
-        <div>
-          <div className="section-heading-row">
-            <h2 id="latest-title">Latest notes</h2>
-            <span>{String(notes.length).padStart(2, "0")} published</span>
-          </div>
-          <NoteList notes={notes.slice(0, 4)} />
-        </div>
+        <NoteList notes={notes.slice(0, 4)} emptyContext="home" />
       </section>
 
       <section className="about-preview" aria-labelledby="about-preview-title">
-        <article className="about-preview__copy">
-          <p className="kicker">A little about me</p>
+        <div>
+          <p className="section-label">About</p>
           <h2 id="about-preview-title">Hi, I’m Deep.</h2>
+        </div>
+        <div className="about-preview__copy">
           <p>
             I work in software, care deeply about interface details, enjoy building
             game ideas, and usually have a camera nearby. Writing helps me connect
             those interests and understand the work more clearly.
           </p>
           <Link className="text-link" href="/about">
-            More about me <span aria-hidden="true">↗</span>
+            More about me
           </Link>
-        </article>
-        <article className="about-preview__statement" aria-label="Writing principle">
-          <span className="kicker">The rule</span>
-          <p>Write from the work, not around it.</p>
-          <span className="statement-mark" aria-hidden="true">✦</span>
-        </article>
+        </div>
       </section>
     </>
   );

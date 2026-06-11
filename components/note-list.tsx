@@ -1,22 +1,27 @@
 import Link from "next/link";
 import type { NoteMeta } from "@/lib/notes";
 
-export function NoteList({ notes }: { notes: NoteMeta[] }) {
+type NoteListProps = {
+  notes: NoteMeta[];
+  emptyContext?: "home" | "notes";
+};
+
+export function NoteList({ notes, emptyContext = "notes" }: NoteListProps) {
   if (notes.length === 0) {
     return (
-      <div className="empty-state">
-        <div className="empty-state__mark" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </div>
+      <div className={`empty-state empty-state--${emptyContext}`}>
         <div>
-          <p className="kicker">Archive status</p>
-          <h2>Nothing here yet.</h2>
+          <p className="section-label">Archive status</p>
+          <h2>The first post is still in progress.</h2>
           <p>
-            I’m working on the first post now. When it is ready, it will appear
-            here. Until then, this space stays honest.
+            When it is ready, it will appear here. I would rather publish
+            something useful than fill the page with demonstration content.
           </p>
+          {emptyContext === "notes" ? (
+            <Link className="text-link" href="/">
+              Back to home
+            </Link>
+          ) : null}
         </div>
       </div>
     );

@@ -33,6 +33,6 @@ The supplied desktop, tablet, and mobile screenshots repeatedly use:
 
 ## Revised synthesis
 
-The new Draft State keeps the modular editorial grid and oversized type, but moves away from the previous black-and-electric-blue art direction. The revised system uses warm paper, charcoal, sand, and oxide red. It feels closer to a writer’s desk, printed matter, and annotations while still remaining contemporary and interactive.
+The new Draft State keeps the useful editorial hierarchy from the references, but moves away from oversized template-like panels and decorative dashboards. The revised system uses the Pressed Field palette, ruled sections, restrained typography, and a static working-margin motif. It feels closer to a personal notebook than a landing page.
 
 Nothing from the reference sites has been copied verbatim. The project uses their principles to build an original personal-blog system.

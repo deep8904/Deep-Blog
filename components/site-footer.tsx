@@ -11,7 +11,7 @@ export function SiteFooter() {
       </div>
       <div className="footer-meta">
         <div>
-          <Link href="/notes">Notes</Link>
+          <Link href="/notes">Writing</Link>
           <Link href="/about">About</Link>
         </div>
         <span>© {new Date().getFullYear()} Deep Chadamiya</span>

@@ -23,13 +23,13 @@ Deep is a software engineer whose interests naturally extend into interface desi
 2. **Why does he write?** To understand the work and preserve its lessons.
 3. **What will appear here?** Software, interfaces, games, and photography.
 4. **What is published now?** Nothing yet; the first essay is in progress.
-5. **Where should a reader go next?** Notes or About.
+5. **Where should a reader go next?** Writing or About.
 
 ## Empty-state copy
 
-> Nothing here yet.
+> The first post is still in progress.
 >
-> I’m working on the first post now. When it is ready, it will appear here. Until then, this space stays honest.
+> When it is ready, it will appear here. I would rather publish something useful than fill the page with demonstration content.
 
 This remains until a real Markdown note is published.
 
