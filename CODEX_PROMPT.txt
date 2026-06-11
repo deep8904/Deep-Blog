@@ -9,8 +9,8 @@ Use these existing services. Do not create substitutes:
 - GitHub repository: `deep8904/Deep-Blog`
 - Git remote: `https://github.com/deep8904/Deep-Blog.git`
 - Default and production branch: `main`
-- Supabase project ref: `swyqdqcqjfylmuzxteqe`
-- Supabase MCP URL: `https://mcp.supabase.com/mcp?project_ref=swyqdqcqjfylmuzxteqe`
+- Supabase project ref: `tdfnkuxicxmnbntddoza`
+- Supabase MCP URL: `https://mcp.supabase.com/mcp?project_ref=tdfnkuxicxmnbntddoza`
 - Deployment platform: Vercel
 
 The GitHub repository is the source of truth. Work from the repository root, not from a duplicate repository or a nested application folder.
@@ -81,7 +81,7 @@ npm run build
 Add the project-scoped Supabase MCP server to Codex using this exact command:
 
 ```bash
-codex mcp add supabase --url "https://mcp.supabase.com/mcp?project_ref=swyqdqcqjfylmuzxteqe"
+codex mcp add supabase --url "https://mcp.supabase.com/mcp?project_ref=tdfnkuxicxmnbntddoza"
 ```
 
 Authenticate:
@@ -106,7 +106,7 @@ npx skills add supabase/agent-skills
 
 ### Supabase safety requirements
 
-- Keep the MCP server scoped to project `swyqdqcqjfylmuzxteqe`.
+- Keep the MCP server scoped to project `tdfnkuxicxmnbntddoza`.
 - Inspect the current project schema, migrations, policies, functions, and storage before changing anything.
 - Do not insert a sample article, fake user, placeholder category, subscriber, page view, testimonial, or analytics event.
 - Do not expose or print access tokens, service-role keys, database passwords, Vercel tokens, or other secrets.
@@ -117,7 +117,7 @@ npx skills add supabase/agent-skills
 - If real data is already present, audit through a read-only project-scoped MCP connection before permitting writes:
 
 ```bash
-codex mcp add supabase-readonly --url "https://mcp.supabase.com/mcp?project_ref=swyqdqcqjfylmuzxteqe&read_only=true"
+codex mcp add supabase-readonly --url "https://mcp.supabase.com/mcp?project_ref=tdfnkuxicxmnbntddoza&read_only=true"
 ```
 
 - The MCP connection is a development tool. Do not replace the current Markdown publishing system solely because Supabase is connected.

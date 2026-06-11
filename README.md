@@ -8,7 +8,7 @@ The visual system uses parchment, charcoal, sand, and oxide red; oversized edito
 
 - GitHub repository: `https://github.com/deep8904/Deep-Blog.git`
 - GitHub production branch: `main`
-- Supabase project ref: `swyqdqcqjfylmuzxteqe`
+- Supabase project ref: `tdfnkuxicxmnbntddoza`
 - Deployment platform: Vercel
 
 The Supabase MCP connection is project-scoped and intended for Codex development access. Read `docs/06-github-supabase-vercel.md` before changing the database or deployment configuration.
@@ -55,7 +55,7 @@ Review, commit, and push manually after the project passes typecheck and build.
 ## Connect Supabase MCP to Codex
 
 ```bash
-codex mcp add supabase --url "https://mcp.supabase.com/mcp?project_ref=swyqdqcqjfylmuzxteqe"
+codex mcp add supabase --url "https://mcp.supabase.com/mcp?project_ref=tdfnkuxicxmnbntddoza"
 codex mcp login supabase
 ```
 

@@ -6,7 +6,7 @@ This package is prepared for Deep's existing GitHub, Supabase, and Vercel workfl
 
 - GitHub: `https://github.com/deep8904/Deep-Blog.git`
 - Branch: `main`
-- Supabase project ref: `swyqdqcqjfylmuzxteqe`
+- Supabase project ref: `tdfnkuxicxmnbntddoza`
 - Deployment: Vercel
 
 ## 1. Extract and open the project

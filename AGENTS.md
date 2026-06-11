@@ -16,8 +16,8 @@
 - GitHub repository: `deep8904/Deep-Blog`
 - Git remote: `https://github.com/deep8904/Deep-Blog.git`
 - Default and production branch: `main`
-- Supabase project ref: `swyqdqcqjfylmuzxteqe`
-- Supabase MCP URL: `https://mcp.supabase.com/mcp?project_ref=swyqdqcqjfylmuzxteqe`
+- Supabase project ref: `tdfnkuxicxmnbntddoza`
+- Supabase MCP URL: `https://mcp.supabase.com/mcp?project_ref=tdfnkuxicxmnbntddoza`
 - Deployment platform: Vercel
 
 Do not create duplicate repositories, Supabase projects, or disconnected production deployments.

@@ -12,7 +12,7 @@ Before changing code:
 6. Add and authenticate the Supabase MCP server:
 
 ```bash
-codex mcp add supabase --url "https://mcp.supabase.com/mcp?project_ref=swyqdqcqjfylmuzxteqe"
+codex mcp add supabase --url "https://mcp.supabase.com/mcp?project_ref=tdfnkuxicxmnbntddoza"
 codex mcp login supabase
 ```
 

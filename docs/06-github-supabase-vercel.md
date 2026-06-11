@@ -7,8 +7,8 @@ This document is the source of truth for connecting Draft State to Deep's develo
 - GitHub repository: `https://github.com/deep8904/Deep-Blog.git`
 - GitHub repository name: `deep8904/Deep-Blog`
 - Default and production branch: `main`
-- Supabase project ref: `swyqdqcqjfylmuzxteqe`
-- Supabase MCP URL: `https://mcp.supabase.com/mcp?project_ref=swyqdqcqjfylmuzxteqe`
+- Supabase project ref: `tdfnkuxicxmnbntddoza`
+- Supabase MCP URL: `https://mcp.supabase.com/mcp?project_ref=tdfnkuxicxmnbntddoza`
 - Intended deployment platform: Vercel
 
 Do not create a second GitHub repository, a second Supabase project, or a disconnected Vercel project unless Deep explicitly requests it.
@@ -70,7 +70,7 @@ Never force-push unless Deep explicitly approves it.
 Run the exact setup command:
 
 ```bash
-codex mcp add supabase --url "https://mcp.supabase.com/mcp?project_ref=swyqdqcqjfylmuzxteqe"
+codex mcp add supabase --url "https://mcp.supabase.com/mcp?project_ref=tdfnkuxicxmnbntddoza"
 ```
 
 Authenticate:
@@ -95,7 +95,7 @@ npx skills add supabase/agent-skills
 
 ### Supabase safety rules
 
-- The MCP connection is scoped to project `swyqdqcqjfylmuzxteqe`; do not remove the `project_ref` parameter.
+- The MCP connection is scoped to project `tdfnkuxicxmnbntddoza`; do not remove the `project_ref` parameter.
 - Inspect the existing schema before creating tables, policies, storage buckets, functions, or migrations.
 - Do not insert sample posts, fake authors, placeholder categories, fake subscriber records, or analytics data.
 - Make database changes through versioned SQL migrations stored in `supabase/migrations/`.
@@ -103,7 +103,7 @@ npx skills add supabase/agent-skills
 - If the project already contains real data, use read-only MCP mode during the audit:
 
 ```bash
-codex mcp add supabase-readonly --url "https://mcp.supabase.com/mcp?project_ref=swyqdqcqjfylmuzxteqe&read_only=true"
+codex mcp add supabase-readonly --url "https://mcp.supabase.com/mcp?project_ref=tdfnkuxicxmnbntddoza&read_only=true"
 ```
 
 - Never expose a Supabase service-role key in browser code, a `NEXT_PUBLIC_*` variable, screenshots, documentation, commits, or chat output.

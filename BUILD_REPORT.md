@@ -14,7 +14,7 @@ Warm editorial redesign with rewritten first-person content, plus a complete Git
 - Added revised desktop and mobile previews.
 - Updated the design system, content strategy, agent rules, README, and Codex prompt.
 - Bound the handoff to GitHub repository `deep8904/Deep-Blog` and branch `main`.
-- Added project-scoped Supabase MCP instructions for project `swyqdqcqjfylmuzxteqe`.
+- Added project-scoped Supabase MCP instructions for project `tdfnkuxicxmnbntddoza`.
 - Added Supabase security rules, read-only audit guidance, and secret-handling rules.
 - Added Vercel Git integration, preview, production, and environment-variable guidance.
 - Added `.env.example`, `CODEX_BOOTSTRAP.md`, and safe setup scripts.
