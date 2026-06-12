@@ -1,1 +1,9 @@
-/* writing archive */
+.archive-hero { position: relative; display: grid; min-height: 660px; grid-template-columns: repeat(12,minmax(0,1fr)); gap: 24px; align-items: end; padding: var(--section-space) var(--page-gutter) 76px; overflow: hidden; border-bottom: 1px solid var(--border-soft); }
+.archive-hero__index { grid-column: 1 / span 7; }
+.archive-hero h1 { margin: 18px 0 0; font-size: clamp(5rem,12vw,13rem); font-weight: 500; line-height: .78; letter-spacing: -.08em; }
+.archive-hero__copy { grid-column: 9 / -1; }
+.archive-hero__copy > p { margin: 0; color: var(--text-secondary); font-size: clamp(1.1rem,1.9vw,1.55rem); line-height: 1.55; }
+.archive-hero__status { display: flex; margin-top: 26px; align-items: center; gap: 10px; }
+.archive-hero__status span { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 14px rgba(52,211,153,.75); }
+.archive-hero__status small { color: var(--text-secondary); font-family: var(--mono); font-size: .62rem; text-transform: uppercase; }
+.archive-hero__grid { position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(var(--border-soft) 1px,transparent 1px),linear-gradient(90deg,var(--border-soft) 1px,transparent 1px); background-size: clamp(80px,9vw,148px); opacity: .5; }
