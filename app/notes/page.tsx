@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { NoteList } from "@/components/note-list";
+import { Reveal } from "@/components/reveal";
 import { getAllNotes } from "@/lib/notes";
 
 export const metadata: Metadata = {
@@ -12,18 +13,29 @@ export default function NotesPage() {
 
   return (
     <>
-      <section className="writing-hero" aria-labelledby="writing-title">
-        <p className="eyebrow">Writing / {String(notes.length).padStart(2, "0")} published</p>
-        <h1 id="writing-title">writing</h1>
-        <p>
-          Notes from projects, experiments, and the things I notice while making them.
-        </p>
+      <section className="archive-hero" aria-labelledby="writing-title">
+        <Reveal className="archive-hero__index">
+          <span className="section-code">Writing / {String(notes.length).padStart(2, "0")} published</span>
+          <h1 id="writing-title">Writing</h1>
+        </Reveal>
+        <Reveal className="archive-hero__copy" delay={100}>
+          <p>Long-form essays and shorter notes from software, interface design, games, collaboration, photography, and the projects that changed how I think.</p>
+          <div className="archive-hero__status"><span /><small>Archive active</small></div>
+        </Reveal>
+        <div className="archive-hero__grid" aria-hidden="true" />
       </section>
 
-      <section className="archive" aria-labelledby="archive-title">
-        <h2 className="sr-only" id="archive-title">
-          All published writing
-        </h2>
+      <div className="marquee marquee--compact" aria-hidden="true">
+        <div className="marquee__track">
+          {[0, 1].map((copy) => <div className="marquee__group" key={copy}><span>Essays</span><i /><span>Field notes</span><i /><span>Project reflections</span><i /><span>Game UX</span><i /></div>)}
+        </div>
+      </div>
+
+      <section className="archive-list" aria-labelledby="archive-title">
+        <div className="section-heading">
+          <div><span className="section-code">All entries</span><h2 id="archive-title">Published archive</h2></div>
+          <span>{String(notes.length).padStart(2, "0")} total</span>
+        </div>
         <NoteList notes={notes} emptyContext="notes" />
       </section>
     </>
