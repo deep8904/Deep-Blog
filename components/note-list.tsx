@@ -11,17 +11,11 @@ export function NoteList({ notes, emptyContext = "notes" }: NoteListProps) {
   if (notes.length === 0) {
     return (
       <div className={`empty-state empty-state--${emptyContext}`}>
+        <span className="empty-state__code">000 / DRAFTS</span>
         <div>
-          <p className="section-label">Archive status</p>
           <h2>No published writing is available.</h2>
-          <p>
-            Drafts are kept private until they are ready.
-          </p>
-          {emptyContext === "notes" ? (
-            <Link className="text-link" href="/">
-              Back to home
-            </Link>
-          ) : null}
+          <p>Drafts remain unpublished until they are ready.</p>
+          {emptyContext === "notes" ? <Link href="/">Return home</Link> : null}
         </div>
       </div>
     );
@@ -30,9 +24,7 @@ export function NoteList({ notes, emptyContext = "notes" }: NoteListProps) {
   return (
     <ol className="note-list">
       {notes.map((note, index) => (
-        <li key={note.slug}>
-          <ArticleRow note={note} index={index} />
-        </li>
+        <li key={note.slug}><ArticleRow note={note} index={index} /></li>
       ))}
     </ol>
   );
