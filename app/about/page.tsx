@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Reveal } from "@/components/reveal";
 
 export const metadata: Metadata = {
   title: "About",
@@ -12,76 +13,49 @@ const interests = [
   ["04", "Photography", "Using a camera as a reason to pay closer attention."],
 ] as const;
 
+const principles = [
+  ["01", "Start with something that happened.", "A decision, failed attempt, screen, conversation, or moment worth examining."],
+  ["02", "Be clear about what I do not know.", "The unfinished parts are often more useful than a confident conclusion."],
+  ["03", "Make it worth revisiting.", "Edit for clarity, keep the useful detail, and publish only when the piece has earned its place."],
+] as const;
+
 export default function AboutPage() {
   return (
     <>
-      <section className="about-hero page-intro">
-        <p className="kicker">About</p>
-        <h1>
-          Deep Chadamiya
-          {" "}
-          <span>Code, design, games, and the details around them.</span>
-        </h1>
+      <section className="about-hero" aria-labelledby="about-title">
+        <Reveal className="about-hero__title"><span className="section-code">About / Deep Chadamiya</span><h1 id="about-title">About</h1></Reveal>
+        <Reveal className="about-hero__statement" delay={100}>
+          <p>I am a software engineer based in Phoenix, with a habit of following an idea beyond the edge of my job title.</p>
+          <div><span>Software</span><span>Interface design</span><span>Games</span><span>Photography</span></div>
+        </Reveal>
       </section>
 
-      <section className="about-story section-grid">
-        <p className="section-number">01 / ME</p>
-        <div className="about-story__copy">
-          <p className="lead-statement">
-            I’m a software engineer based in Phoenix, with a habit of following an
-            idea beyond the edge of my job title.
-          </p>
-          <div className="two-column-copy">
-            <p>
-              That usually leads me into interface design, game development,
-              photography, or the systems behind how creative work gets made. I
-              like understanding both the technical structure and the human
-              experience around it.
-            </p>
-            <p>
-              I made Draft State because project lessons disappear quickly. Writing
-              gives me a way to slow them down, question the first explanation, and
-              leave behind something useful for my future self—and possibly someone
-              else.
-            </p>
-          </div>
+      <section className="profile-grid">
+        <Reveal className="profile-grid__visual">
+          <div className="profile-monogram" aria-hidden="true">DC</div>
+          <span>PHX / AZ</span>
+        </Reveal>
+        <Reveal className="profile-grid__copy" delay={120}>
+          <p>That usually leads me into interface design, game development, photography, or the systems behind how creative work gets made. I like understanding both the technical structure and the human experience around it.</p>
+          <p>I made Draft State because project lessons disappear quickly. Writing gives me a way to slow them down, question the first explanation, and leave behind something useful for my future self and possibly someone else.</p>
+        </Reveal>
+      </section>
+
+      <section className="about-list-section" aria-labelledby="interests-title">
+        <Reveal className="section-heading"><div><span className="section-code">01 / Subjects</span><h2 id="interests-title">The subjects that keep pulling me back</h2></div></Reveal>
+        <div className="about-list">
+          {interests.map(([number, title, description], index) => (
+            <Reveal className="about-list__row" delay={index * 70} key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p><i aria-hidden="true">-&gt;</i></Reveal>
+          ))}
         </div>
       </section>
 
-      <section className="interest-section section-grid" aria-labelledby="interests-title">
-        <p className="section-number">02 / SUBJECTS</p>
-        <div>
-          <h2 id="interests-title">The subjects that keep pulling me back.</h2>
-          <div className="interest-grid">
-            {interests.map(([number, title, description]) => (
-              <article key={title}>
-                <span>{number}</span>
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="principles section-grid">
-        <p className="section-number">03 / WRITING</p>
-        <div className="principle-list">
-          <article>
-            <span>01</span>
-            <h2>Start with something that happened.</h2>
-            <p>A decision, a failed attempt, a screen, a conversation, or a moment worth examining.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h2>Be clear about what I do not know.</h2>
-            <p>The unfinished parts are often more useful than a confident conclusion.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h2>Make it worth revisiting.</h2>
-            <p>Edit for clarity, keep the useful detail, and publish only when the piece has earned its place.</p>
-          </article>
+      <section className="principles-section" aria-labelledby="principles-title">
+        <Reveal className="section-heading"><div><span className="section-code">02 / Writing rules</span><h2 id="principles-title">How a note earns its place</h2></div></Reveal>
+        <div className="principles-grid">
+          {principles.map(([number, title, description], index) => (
+            <Reveal className="principle" delay={index * 80} key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p></Reveal>
+          ))}
         </div>
       </section>
     </>
