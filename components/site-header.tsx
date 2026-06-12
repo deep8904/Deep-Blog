@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { CSSProperties } from "react";
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { siteConfig } from "@/site.config";
 
 export function SiteHeader() {
@@ -12,14 +11,13 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
-  const prefersReducedMotion = useReducedMotion();
 
-  const closeMenu = (returnFocus = false) => {
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+  useEffect(() => {
     setMenuOpen(false);
-    if (returnFocus) {
-      requestAnimationFrame(() => buttonRef.current?.focus());
-    }
-  };
+  }, [pathname]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -31,13 +29,14 @@ export function SiteHeader() {
     );
     focusable?.[0]?.focus();
 
-    function onKeyDown(event: KeyboardEvent) {
+    const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        closeMenu(true);
+        setMenuOpen(false);
+        requestAnimationFrame(() => buttonRef.current?.focus());
+        return;
       }
 
-      if (event.key !== "Tab" || !focusable || focusable.length === 0) return;
-
+      if (event.key !== "Tab" || !focusable?.length) return;
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
 
@@ -48,129 +47,85 @@ export function SiteHeader() {
         event.preventDefault();
         first.focus();
       }
-    }
+    };
 
     document.addEventListener("keydown", onKeyDown);
-
     return () => {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [menuOpen]);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
-
-  // Motion transitions adjusted dynamically for reduced motion
-  const lineTransition = prefersReducedMotion
-    ? { duration: 0.05 }
-    : { duration: 0.9, ease: [0.16, 1, 0.3, 1] as const };
-
-  const fadeTransition = (delay: number) =>
-    prefersReducedMotion
-      ? { duration: 0.05 }
-      : { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] as const };
-
   return (
     <header className="site-header">
-      {/* Structural bottom rule drawn via motion */}
-      <motion.div
-        className="site-header__rule"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        style={{ originX: 0 }}
-        transition={lineTransition}
-      />
-
-      <motion.div
-        className="site-header__identity"
-        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={fadeTransition(0.12)}
-      >
-        <Link className="wordmark" href="/" aria-label="Deep Chadamiya home">
-          <span className="wordmark__mark">.deep</span>
-          <span className="wordmark__text">
-            <strong>Deep Chadamiya</strong>
-            <span>personal notebook</span>
-          </span>
+      <nav className="site-header__side site-header__side--left" aria-label="Writing navigation">
+        <Link href="/notes" aria-current={isActive("/notes") ? "page" : undefined}>
+          Writing
         </Link>
-      </motion.div>
+      </nav>
 
-      <motion.nav
-        className="site-header__nav"
-        aria-label="Primary navigation"
-        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={fadeTransition(0.22)}
-      >
-        {siteConfig.navigation.map((item) => {
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={isActive(item.href) ? "page" : undefined}
-            >
-              {item.label}
-            </Link>
-          );
-        })}
-      </motion.nav>
+      <Link className="site-wordmark" href="/" aria-label="Draft State home">
+        <span className="site-wordmark__glyph" aria-hidden="true">DS</span>
+        <span>
+          <strong>{siteConfig.name}</strong>
+          <small>Personal publishing journal</small>
+        </span>
+      </Link>
 
-      <motion.button
+      <nav className="site-header__side site-header__side--right" aria-label="About navigation">
+        <Link href="/about" aria-current={isActive("/about") ? "page" : undefined}>
+          About
+        </Link>
+      </nav>
+
+      <button
         className="menu-button"
         type="button"
         ref={buttonRef}
         aria-expanded={menuOpen}
-        aria-controls="mobile-menu"
-        onClick={() => setMenuOpen((open) => !open)}
-        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={fadeTransition(0.28)}
+        aria-controls="mobile-navigation"
+        onClick={() => setMenuOpen((current) => !current)}
       >
-        {menuOpen ? "close" : "menu"}
-      </motion.button>
+        {menuOpen ? "Close" : "Menu"}
+      </button>
 
-      <AnimatePresence>
-        {menuOpen ? (
-          <motion.div
-            className="mobile-menu"
-            id="mobile-menu"
-            ref={panelRef}
-            role="dialog"
-            aria-modal="true"
-            aria-label="Navigation menu"
-            initial={prefersReducedMotion ? { opacity: 1 } : { y: "-100%", opacity: 0.95 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={prefersReducedMotion ? { opacity: 0 } : { y: "-100%", opacity: 0 }}
-            transition={
-              prefersReducedMotion
-                ? { duration: 0.1 }
-                : { duration: 0.45, ease: [0.16, 1, 0.3, 1] as const }
-            }
+      {menuOpen ? (
+        <div
+          className="mobile-navigation"
+          id="mobile-navigation"
+          ref={panelRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation menu"
+        >
+          <div className="mobile-navigation__status">
+            <span className="status-light" aria-hidden="true" />
+            Archive active
+          </div>
+          <nav aria-label="Mobile navigation">
+            {siteConfig.navigation.map((item, index) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={isActive(item.href) ? "page" : undefined}
+                style={{ "--menu-index": index } as CSSProperties}
+              >
+                <span>0{index + 1}</span>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <button
+            type="button"
+            onClick={() => {
+              setMenuOpen(false);
+              requestAnimationFrame(() => buttonRef.current?.focus());
+            }}
           >
-            <nav aria-label="Mobile navigation">
-              {siteConfig.navigation.map((item, index) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={isActive(item.href) ? "page" : undefined}
-                  style={{ "--item-index": index } as CSSProperties & Record<"--item-index", number>}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-            <button type="button" onClick={() => closeMenu(true)}>
-              close menu
-            </button>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+            Close menu
+          </button>
+        </div>
+      ) : null}
     </header>
   );
 }
