@@ -33,8 +33,8 @@ Serif type, controlled measure, strong hierarchy, generous spacing, and restrain
 
 - Replaced the abstract “Ideas, before they harden” positioning with a direct first-person introduction.
 - Rewrote every page so it sounds like Deep speaking about his own work.
-- Removed the loud decorative panel and card-heavy bento structure.
-- Introduced the Pressed Field palette: canvas, paper, ink, vine, fig, and quiet rules.
-- Replaced cards with a calmer editorial grid, topic index, and compact status note.
+- Removed the loud decorative panel and earlier card-heavy bento structure.
+- Introduced the Night Field palette: black, paper, vine, fig, slate, warm micro-accent, and quiet rules.
+- Replaced old panels with a darker editorial grid, topic index, compact publication signal, and article-led archive.
 - Published the first real article without adding demonstration content.
 - Removed decorative pointer motion and avoided animation libraries.

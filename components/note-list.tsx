@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArticleRow } from "@/components/featured-article-band";
 import type { NoteMeta } from "@/lib/notes";
 
 type NoteListProps = {
@@ -30,25 +31,7 @@ export function NoteList({ notes, emptyContext = "notes" }: NoteListProps) {
     <ol className="note-list">
       {notes.map((note, index) => (
         <li key={note.slug}>
-          <Link href={`/notes/${note.slug}`}>
-            <span className="note-list__index">{String(index + 1).padStart(2, "0")}</span>
-            <span className="note-list__body">
-              <span className="note-list__topics">{note.topics.join(" · ")}</span>
-              <strong>{note.title}</strong>
-              <span>{note.description}</span>
-              <span className="note-list__details">
-                {note.readingTime} min read
-              </span>
-            </span>
-            <time dateTime={note.publishedAt}>
-              {new Intl.DateTimeFormat("en", {
-                month: "short",
-                day: "numeric",
-                year: "numeric",
-                timeZone: "UTC",
-              }).format(new Date(note.publishedAt))}
-            </time>
-          </Link>
+          <ArticleRow note={note} index={index} />
         </li>
       ))}
     </ol>
