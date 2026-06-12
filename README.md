@@ -2,7 +2,7 @@
 
 Draft State is a personal blog for Deep Chadamiya about software, interface design, games, photography, and the lessons found while making things.
 
-The visual system uses a custom dark Night palette, wide editorial layouts, technical grid lines, restrained motion, and local Markdown publishing. The archive contains only real published writing and no demonstration posts.
+The visual system uses a custom dark Night Field palette, wide editorial layouts, technical grid lines, restrained motion, and local Markdown publishing. The archive contains only real published writing and no demonstration posts.
 
 ## Connected project services
 

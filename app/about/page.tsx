@@ -6,28 +6,28 @@ export const metadata: Metadata = {
 };
 
 const interests = [
-  ["Software", "Building products and learning what survives contact with real use."],
-  ["Design", "Studying the choices that make technology feel understandable."],
-  ["Games", "Thinking through systems, worlds, interaction, and collaboration."],
-  ["Photography", "Using a camera as a reason to pay closer attention."],
+  ["01", "Software", "Building products and learning what survives contact with real use."],
+  ["02", "Interface design", "Studying the choices that make technology feel understandable."],
+  ["03", "Games", "Thinking through systems, worlds, interaction, and collaboration."],
+  ["04", "Photography", "Using a camera as a reason to pay closer attention."],
 ] as const;
 
 export default function AboutPage() {
   return (
     <>
-      <section className="about-hero">
+      <section className="about-hero page-intro">
         <p className="kicker">About</p>
         <h1>
-          Hi, I’m Deep.
-          <span>I work between code, design, and stories.</span>
+          Deep Chadamiya
+          {" "}
+          <span>Code, design, games, and the details around them.</span>
         </h1>
-        <div className="about-hero__marker" aria-hidden="true">DEEP</div>
       </section>
 
       <section className="about-story section-grid">
         <p className="section-number">01 / ME</p>
         <div className="about-story__copy">
-          <p className="lead-serif">
+          <p className="lead-statement">
             I’m a software engineer based in Phoenix, with a habit of following an
             idea beyond the edge of my job title.
           </p>
@@ -53,9 +53,9 @@ export default function AboutPage() {
         <div>
           <h2 id="interests-title">The subjects that keep pulling me back.</h2>
           <div className="interest-grid">
-            {interests.map(([title, description], index) => (
+            {interests.map(([number, title, description]) => (
               <article key={title}>
-                <span>0{index + 1}</span>
+                <span>{number}</span>
                 <h3>{title}</h3>
                 <p>{description}</p>
               </article>

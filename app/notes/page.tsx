@@ -14,12 +14,9 @@ export default function NotesPage() {
     <>
       <section className="writing-hero" aria-labelledby="writing-title">
         <p className="eyebrow">Writing / {String(notes.length).padStart(2, "0")} published</p>
-        <h1 id="writing-title">
-          Notes from projects, experiments, and the things I notice while making them.
-        </h1>
+        <h1 id="writing-title">writing</h1>
         <p>
-          Long-form essays and shorter observations about software, interfaces,
-          games, collaboration, and photography.
+          Notes from projects, experiments, and the things I notice while making them.
         </p>
       </section>
 

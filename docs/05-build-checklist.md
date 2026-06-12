@@ -8,7 +8,8 @@
 - [ ] Test `/`, `/notes`, `/about`, an invalid route, `/sitemap.xml`, and `/robots.txt`.
 - [ ] Test keyboard navigation and focus rings.
 - [ ] Test reduced-motion mode.
-- [ ] Test 1440px, 1024px, 768px, 390px, and 320px widths.
+- [ ] Test 1728px, 1440px, 1280px, 1024px, 768px, 430px, 390px, and 360px widths.
+- [ ] Capture desktop and phone screenshots for Home, Writing, About, Article, and 404 after visual changes.
 - [ ] Run `npm run typecheck`.
 - [ ] Run `npm run build`.
 
