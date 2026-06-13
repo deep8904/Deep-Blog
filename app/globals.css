@@ -1,27 +1,7 @@
 @import "./base.css";
 @import "./pages.css";
-
-@keyframes nav-load { from { opacity: 0; } to { opacity: 1; } }
-@keyframes menu-open { from { opacity: 0; transform: translateY(-24px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes mobile-line { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes badge-enter { to { opacity: 1; transform: translateY(0) scale(1); } }
-@keyframes badge-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
-@keyframes particle-drift { from { transform: translate(-3px,-4px); } to { transform: translate(5px,7px); } }
-@keyframes marquee { to { transform: translateX(-50%); } }
-@keyframes text-rise { to { transform: translateY(0); } }
-@keyframes fade-up { to { opacity: 1; transform: translateY(0); } }
-
-.scroll-reveal { opacity: 0; transform: translateY(24px); transition: opacity 800ms cubic-bezier(.16,1,.3,1), transform 800ms cubic-bezier(.16,1,.3,1); transition-delay: var(--reveal-delay,0ms); }
-.scroll-reveal.is-visible { opacity: 1; transform: translateY(0); }
-.reveal-mask { display: block; overflow: hidden; padding-bottom: .04em; }
-.reveal-text { display: block; transform: translateY(112%); animation: text-rise 920ms cubic-bezier(.16,1,.3,1) 520ms both; }
-.reveal-text--one { animation-delay: 360ms; }
-.reveal-text--two { animation-delay: 470ms; }
-.fade-up-load { opacity: 0; transform: translateY(20px); animation: fade-up 800ms cubic-bezier(.16,1,.3,1) 720ms both; }
-.identity-hero__meta.fade-up-load { animation-delay: 820ms; }
-.identity-hero__actions.fade-up-load { animation-delay: 930ms; }
-
-@media (prefers-reduced-motion: reduce) {
-  .scroll-reveal, .fade-up-load, .identity-badge, .reveal-text { opacity: 1; transform: none; animation: none; transition: none; }
-  .journal-marquee__track, .particle-field i { animation: none; }
-}
+@import "./core.css";
+@import "./utilities.css";
+@import "./shell.css";
+@import "./home.css";
+@import "./design.css";
