@@ -1,1 +1,2 @@
 :root { --primary: #e4573d; }
+.featured-entry { display: grid; }
