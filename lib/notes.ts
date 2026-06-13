@@ -49,7 +49,7 @@ function parseMeta(fileName: string): NoteMeta | null {
   const required = ["title", "description", "publishedAt"] as const;
   for (const key of required) {
     if (!data[key]) {
-      throw new Error(`Missing required frontmatter field \"${key}\" in ${fileName}`);
+      throw new Error(`Missing required frontmatter field "${key}" in ${fileName}`);
     }
   }
 

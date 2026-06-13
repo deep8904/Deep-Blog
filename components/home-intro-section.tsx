@@ -3,19 +3,17 @@ import { Reveal } from "@/components/reveal";
 
 export function HomeIntroSection() {
   return (
-    <section className="intro-grid" aria-labelledby="intro-title">
-      <Reveal className="intro-grid__index">
-        <span className="section-code">01 / Notebook</span>
-        <div className="index-mark" aria-hidden="true"><span /><span /><span /></div>
-        <ul><li>Software</li><li>Interfaces</li><li>Games</li><li>Photography</li></ul>
+    <section className="simple-about" aria-labelledby="intro-title">
+      <Reveal>
+        <span className="section-code">About this journal</span>
+        <h2 id="intro-title">A quiet place to keep the useful parts of unfinished work.</h2>
       </Reveal>
-      <Reveal className="intro-grid__copy" delay={120}>
-        <h2 id="intro-title">A personal archive for the decisions, mistakes, and details that are easy to forget.</h2>
-        <p>I work in software, care about interface details, enjoy building game ideas, and usually have a camera nearby. Writing helps me understand what changed between the first idea and the thing that actually got made.</p>
-        <div className="intro-grid__actions">
-          <Link className="primary-button" href="/notes">Browse writing</Link>
-          <Link className="text-button" href="/about">About Deep</Link>
-        </div>
+
+      <Reveal className="simple-about__copy" delay={100}>
+        <p>
+          Draft State is where I document what I learned while making software, studying interfaces, building game ideas, working with other people, and observing the world through a camera.
+        </p>
+        <Link className="text-button" href="/about">More about me</Link>
       </Reveal>
     </section>
   );
