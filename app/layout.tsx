@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { ProtocolHeader } from "@/components/protocol-header";
+import { ProtocolFooter } from "@/components/protocol-footer";
 import { siteConfig } from "@/site.config";
 import "./globals.css";
 
@@ -19,9 +19,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body>
         <a className="skip-link" href="#main-content">Skip to content</a>
-        <SiteHeader />
+        <ProtocolHeader />
         <main id="main-content">{children}</main>
-        <SiteFooter />
+        <ProtocolFooter />
       </body>
     </html>
   );

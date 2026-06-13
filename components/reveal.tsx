@@ -1,9 +1,20 @@
 "use client";
 
-import type { CSSProperties, ReactNode } from "react";
+import type { CSSProperties, HTMLAttributes, ReactNode } from "react";
 import { useEffect, useRef } from "react";
 
-export function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+type RevealProps = HTMLAttributes<HTMLDivElement> & {
+  children: ReactNode;
+  delay?: number;
+};
+
+export function Reveal({
+  children,
+  className = "",
+  delay = 0,
+  style,
+  ...props
+}: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -22,5 +33,14 @@ export function Reveal({ children, className = "", delay = 0 }: { children: Reac
     return () => observer.disconnect();
   }, []);
 
-  return <div ref={ref} className={`reveal ${className}`.trim()} style={{ "--reveal-delay": `${delay}ms` } as CSSProperties}>{children}</div>;
+  return (
+    <div
+      ref={ref}
+      className={`reveal ${className}`.trim()}
+      style={{ ...style, "--reveal-delay": `${delay}ms` } as CSSProperties}
+      {...props}
+    >
+      {children}
+    </div>
+  );
 }
