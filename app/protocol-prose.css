@@ -1,0 +1,38 @@
+.prose {
+  width: min(calc(100% - (var(--page-gutter) * 2)), 780px) !important;
+  margin: clamp(68px, 9vw, 120px) auto 0 !important;
+  padding: 0 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-size: clamp(1.05rem, 1.25vw, 1.19rem) !important;
+  line-height: 1.86 !important;
+}
+
+.prose p {
+  margin: 0 0 1.5em !important;
+}
+
+.prose h2 {
+  margin: 2.5em 0 0.72em !important;
+  color: #fff !important;
+  font-size: clamp(2.2rem, 4vw, 4.5rem) !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.058em !important;
+}
+
+.prose blockquote {
+  margin: 2.4em 0 !important;
+  padding: 28px 30px !important;
+  color: #fff !important;
+  background: var(--surface) !important;
+  border: 1px solid var(--border-soft) !important;
+  border-left: 4px solid var(--primary) !important;
+  border-radius: 0 var(--control-radius) var(--control-radius) 0;
+}
+
+.prose a {
+  color: var(--accent) !important;
+  text-underline-offset: 0.2em;
+}
