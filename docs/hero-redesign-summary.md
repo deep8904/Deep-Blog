@@ -1,0 +1,1 @@
+Hero redesign uses three image slots and fixes the featured story layout.
