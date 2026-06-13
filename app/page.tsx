@@ -1,4 +1,4 @@
-import { HomeFeaturedSection } from "@/components/home-featured-section";
+import { HomeFeaturedCard } from "@/components/home-featured-card";
 import { HomeIntroSection } from "@/components/home-intro-section";
 import { RecreateHomeHero } from "@/components/recreate-home-hero";
 import { getAllNotes } from "@/lib/notes";
@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       <RecreateHomeHero publishedCount={notes.length} />
-      {latestNote ? <HomeFeaturedSection note={latestNote} /> : null}
+      {latestNote ? <HomeFeaturedCard note={latestNote} /> : null}
       <HomeIntroSection />
     </>
   );
