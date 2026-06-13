@@ -7,7 +7,7 @@ import "./globals.css";
 import "./photo-fixes.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-code", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
