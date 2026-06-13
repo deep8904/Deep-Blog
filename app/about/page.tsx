@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Reveal } from "@/components/reveal";
 
 export const metadata: Metadata = {
@@ -7,36 +8,60 @@ export const metadata: Metadata = {
 };
 
 const interests = [
-  ["01", "Software", "Building products and learning what survives contact with real use."],
-  ["02", "Interface design", "Studying the choices that make technology feel understandable."],
-  ["03", "Games", "Thinking through systems, worlds, interaction, and collaboration."],
-  ["04", "Photography", "Using a camera as a reason to pay closer attention."],
-] as const;
-
-const principles = [
-  ["01", "Start with something that happened.", "A decision, failed attempt, screen, conversation, or moment worth examining."],
-  ["02", "Be clear about what I do not know.", "The unfinished parts are often more useful than a confident conclusion."],
-  ["03", "Make it worth revisiting.", "Edit for clarity, keep the useful detail, and publish only when the piece has earned its place."],
+  ["01", "Software", "Products, systems, and the lessons that appear after something ships."],
+  ["02", "Interface design", "The choices that make technology understandable and useful."],
+  ["03", "Games", "Interaction, collaboration, playtesting, and learning through constraints."],
+  ["04", "Photography", "Using a camera as a reason to slow down and notice more."],
 ] as const;
 
 export default function AboutPage() {
   return (
     <>
       <section className="about-hero" aria-labelledby="about-title">
-        <Reveal className="about-hero__title"><span className="section-code">About / Deep Chadamiya</span><h1 id="about-title">About</h1></Reveal>
-        <Reveal className="about-hero__statement" delay={100}><p>I am a software engineer based in Phoenix, with a habit of following an idea beyond the edge of my job title.</p><div><span>Software</span><span>Interface design</span><span>Games</span><span>Photography</span></div></Reveal>
+        <Reveal className="about-hero__title">
+          <span className="section-code">About / Deep Chadamiya</span>
+          <h1 id="about-title">About</h1>
+        </Reveal>
+        <Reveal className="about-hero__statement" delay={80}>
+          <p>I am a software engineer based in Phoenix who keeps wandering into interface design, games, photography, and the systems behind creative work.</p>
+        </Reveal>
       </section>
+
       <section className="profile-grid">
-        <Reveal className="profile-grid__visual"><div className="profile-monogram" aria-hidden="true">DC</div><span>PHX / AZ</span></Reveal>
-        <Reveal className="profile-grid__copy" delay={120}><p>That usually leads me into interface design, game development, photography, or the systems behind how creative work gets made. I like understanding both the technical structure and the human experience around it.</p><p>I made Draft State because project lessons disappear quickly. Writing gives me a way to slow them down, question the first explanation, and leave behind something useful for my future self and possibly someone else.</p></Reveal>
+        <Reveal className="profile-grid__visual">
+          <Image
+            src="/images/about/deep.webp"
+            alt="Deep Chadamiya standing outdoors near a bridge and mountain landscape"
+            width={1050}
+            height={1400}
+            sizes="(max-width: 900px) 100vw, 40vw"
+          />
+        </Reveal>
+
+        <Reveal className="profile-grid__copy" delay={100}>
+          <span className="section-code">Why I write</span>
+          <p>Project lessons disappear quickly. Writing gives me a way to slow them down, question the first explanation, and keep the useful details after the work is over.</p>
+          <p>Draft State is not a portfolio of polished outcomes. It is a record of decisions, mistakes, observations, and ideas that are still developing.</p>
+        </Reveal>
       </section>
+
       <section className="about-list-section" aria-labelledby="interests-title">
-        <Reveal className="section-heading"><div><span className="section-code">01 / Subjects</span><h2 id="interests-title">The subjects that keep pulling me back</h2></div></Reveal>
-        <div className="about-list">{interests.map(([number,title,description],index)=><Reveal className="about-list__row" delay={index*70} key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p><i aria-hidden="true">-&gt;</i></Reveal>)}</div>
-      </section>
-      <section className="principles-section" aria-labelledby="principles-title">
-        <Reveal className="section-heading"><div><span className="section-code">02 / Writing rules</span><h2 id="principles-title">How a note earns its place</h2></div></Reveal>
-        <div className="principles-grid">{principles.map(([number,title,description],index)=><Reveal className="principle" delay={index*80} key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p></Reveal>)}</div>
+        <Reveal className="section-heading">
+          <div>
+            <span className="section-code">What I write about</span>
+            <h2 id="interests-title">Four subjects, one notebook</h2>
+          </div>
+        </Reveal>
+        <div className="about-list">
+          {interests.map(([number, title, description], index) => (
+            <Reveal className="about-list__row" delay={index * 60} key={title}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{description}</p>
+              <i aria-hidden="true">-&gt;</i>
+            </Reveal>
+          ))}
+        </div>
       </section>
     </>
   );
