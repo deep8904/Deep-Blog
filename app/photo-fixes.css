@@ -1,0 +1,33 @@
+.profile-grid__visual {
+  background-color: var(--surface-raised);
+  background-image:
+    linear-gradient(180deg, rgba(25, 28, 33, 0.04), rgba(24, 23, 22, 0.72)),
+    url("/images/about/deep-portrait.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profile-grid__visual .image-slot-label {
+  display: none;
+}
+
+.profile-grid__visual::before {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 3;
+  display: inline-flex;
+  padding: 9px 12px;
+  content: "Deep Chadamiya / Phoenix, Arizona";
+  color: #fff;
+  background: rgba(25, 28, 33, 0.86);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--pill-radius);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
