@@ -1,3 +1,7 @@
+:root {
+  --font-mono: var(--font-code), "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
 .profile-grid__visual {
   background-color: var(--surface-raised);
   background-image:
