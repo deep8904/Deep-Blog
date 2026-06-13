@@ -1,22 +1,28 @@
 import Link from "next/link";
-import { CastlePathDiagram } from "@/components/castle-path-diagram";
 import type { NoteMeta } from "@/lib/notes";
 
 function formatDate(value: string) {
-  return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(value));
+  return new Intl.DateTimeFormat("en", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(value));
 }
 
 export function FeaturedArticleBand({ note }: { note: NoteMeta }) {
   return (
-    <Link className="featured-entry" href={`/notes/${note.slug}`}>
+    <Link className="featured-entry featured-entry--text" href={`/notes/${note.slug}`}>
       <span className="featured-entry__copy">
-        <span className="entry-meta"><span>{formatDate(note.publishedAt)}</span><span>{note.readingTime} min read</span></span>
-        <span className="entry-index">01 / {note.topics[0] ?? "Writing"}</span>
+        <span className="entry-meta">
+          <span>{formatDate(note.publishedAt)}</span>
+          <span>{note.readingTime} min read</span>
+        </span>
+        <span className="entry-index">Latest writing</span>
         <strong>{note.title}</strong>
         <span className="entry-description">{note.description}</span>
         <span className="entry-action">Read essay <i aria-hidden="true">-&gt;</i></span>
       </span>
-      <span className="featured-entry__visual"><CastlePathDiagram /><span className="visual-caption">Three days / one castle / one team</span></span>
     </Link>
   );
 }
@@ -26,11 +32,14 @@ export function ArticleRow({ note, index = 0 }: { note: NoteMeta; index?: number
     <Link className="article-entry" href={`/notes/${note.slug}`}>
       <span className="article-entry__number">{String(index + 1).padStart(2, "0")}</span>
       <span className="article-entry__copy">
-        <span className="entry-meta"><span>{formatDate(note.publishedAt)}</span><span>{note.readingTime} min read</span></span>
-        <strong>{note.title}</strong><span>{note.description}</span><small>{note.topics.join(" / ")}</small>
+        <span className="entry-meta">
+          <span>{formatDate(note.publishedAt)}</span>
+          <span>{note.readingTime} min read</span>
+        </span>
+        <strong>{note.title}</strong>
+        <span>{note.description}</span>
+        <small>{note.topics.join(" / ")}</small>
       </span>
-      <span className="article-entry__visual"><CastlePathDiagram /></span>
-      <span className="article-entry__arrow" aria-hidden="true">-&gt;</span>
     </Link>
   );
 }
