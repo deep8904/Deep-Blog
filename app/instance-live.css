@@ -1,1 +1,3 @@
-/* Instance identity protocol */
+@import "./instance-base.css";
+@import "./instance-home.css";
+@import "./instance-pages.css";
