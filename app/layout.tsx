@@ -1,7 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { InstanceHeader } from "@/components/instance-header";
 import { InstanceFooter } from "@/components/instance-footer";
+import { ScrollProgress } from "@/components/scroll-progress";
+import { getAllNotes } from "@/lib/notes";
 import { siteConfig } from "@/site.config";
 import "./instance-live.css";
 
@@ -14,14 +16,21 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 };
 
+export const viewport: Viewport = { themeColor: "#D1CFC7" };
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const archiveCount = getAllNotes().length;
+
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} js`}>
       <body>
-        <a className="ip-skip-link" href="#main-content">Skip to content</a>
-        <InstanceHeader />
-        <main id="main-content">{children}</main>
-        <InstanceFooter />
+        <a className="skip-link" href="#main-content">Skip to content</a>
+        <ScrollProgress />
+        <div className="site-frame" id="top">
+          <InstanceHeader archiveCount={archiveCount} />
+          <main id="main-content">{children}</main>
+          <InstanceFooter />
+        </div>
       </body>
     </html>
   );

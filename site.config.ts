@@ -9,15 +9,15 @@ function resolveSiteUrl() {
 }
 
 export const siteConfig = {
-  name: "Draft State",
-  wordmark: "Draft State",
+  name: "Loose Thread",
+  wordmark: "Loose Thread",
   description:
-    "A personal blog by Deep Chadamiya about software, interface design, games, photography, and the lessons found while making things.",
+    "Personal field notes by Deep Chadamiya on software, product design, games, photography, and unfinished ideas.",
   author: "Deep Chadamiya",
   url: resolveSiteUrl(),
   navigation: [
-    { label: "Home", href: "/" },
-    { label: "Writing", href: "/notes" },
+    { label: "Index", href: "/" },
     { label: "About", href: "/about" },
+    { label: "Archive", href: "/notes" },
   ],
 } as const;
