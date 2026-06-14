@@ -1,58 +1,35 @@
 import type { Metadata } from "next";
 import { Reveal } from "@/components/reveal";
 
-export const metadata: Metadata = {
-  title: "About",
-  description: "About Deep Chadamiya and why he publishes Draft State.",
-};
+export const metadata: Metadata = { title: "About", description: "About this journal." };
 
-const interests = [
-  ["01", "Software", "Products, systems, and the lessons that appear after something ships."],
-  ["02", "Interface design", "The choices that make technology understandable and useful."],
-  ["03", "Games", "Interaction, collaboration, playtesting, and learning through constraints."],
-  ["04", "Photography", "Using a camera as a reason to slow down and notice more."],
+const subjects = [
+  ["01", "Software", "Products, systems, and lessons after launch."],
+  ["02", "Interfaces", "Making complicated technology feel clear."],
+  ["03", "Games", "Collaboration, playtesting, and constraints."],
+  ["04", "Photography", "Slowing down long enough to notice."],
 ] as const;
 
 export default function AboutPage() {
   return (
     <>
-      <section className="about-hero" aria-labelledby="about-title">
-        <div className="protocol-rail" aria-hidden="true" />
-        <Reveal className="about-hero__title">
-          <span className="protocol-label">Studio / Deep Chadamiya</span>
-          <h1 id="about-title">About</h1>
-        </Reveal>
-        <Reveal className="about-hero__statement" delay={80}>
-          <p>I am a software engineer in Phoenix who keeps moving between code, interface design, games, photography, and the systems behind creative work.</p>
-        </Reveal>
-        <div className="protocol-rail" aria-hidden="true" />
-      </section>
-
-      <section className="profile-grid">
-        <Reveal className="profile-grid__visual" role="img" aria-label="Portrait of Deep Chadamiya">
-          <span className="image-slot-label">Portrait / Replace in GitHub</span>
-        </Reveal>
-
-        <Reveal className="profile-grid__copy" delay={100}>
-          <span className="protocol-label">Identity / Why I write</span>
-          <h2>Keeping the useful parts of unfinished work.</h2>
-          <p>Project lessons disappear quickly. Writing gives me a way to slow them down, question the first explanation, and keep the details after the work is over.</p>
-          <p>Draft State is not a portfolio of polished outcomes. It is a record of decisions, mistakes, observations, and ideas that are still developing.</p>
-        </Reveal>
-      </section>
-
-      <section className="about-list-section" aria-labelledby="interests-title">
-        <div className="section-heading">
-          <div><span className="protocol-label">Index / What I write about</span><h2 id="interests-title">Four subjects, one notebook</h2></div>
-        </div>
-        <div className="about-list">
-          {interests.map(([number, title, description], index) => (
-            <Reveal className="about-list__row" delay={index * 60} key={title}>
-              <span>{number}</span><h3>{title}</h3><p>{description}</p><i aria-hidden="true">-&gt;</i>
-            </Reveal>
-          ))}
+      <section className="ip-page-hero" aria-labelledby="about-title">
+        <div className="ip-page-hero__ambient" aria-hidden="true" />
+        <div className="ip-shell">
+          <div className="ip-page-hero__topline"><span className="ip-node-status"><i />Identity record active</span><span className="ip-label">Personal journal / 2026</span></div>
+          <div className="ip-page-hero__grid">
+            <Reveal><span className="ip-label">Operator identity</span><h1 id="about-title">Making, noticing, documenting.</h1></Reveal>
+            <Reveal className="ip-page-hero__card" delay={100}><span className="ip-label">Current focus</span><strong>Software and design</strong><p>Code, interface design, games, photography, and creative systems.</p></Reveal>
+          </div>
         </div>
       </section>
+      <section className="ip-section"><div className="ip-shell ip-profile">
+        <Reveal className="ip-profile__portrait"><span className="ip-media-label">Portrait / Identity node</span></Reveal>
+        <Reveal className="ip-profile__content" delay={100}><span className="ip-label">Why I write</span><h2>Keeping the useful parts of unfinished work.</h2><p>Writing slows down project lessons and keeps the details after the work is over.</p><p>This journal records decisions, mistakes, observations, and ideas that are still developing.</p></Reveal>
+      </div></section>
+      <section className="ip-section ip-section--surface"><div className="ip-shell ip-subject-list">
+        {subjects.map(([number, title, description], index) => <Reveal className="ip-subject-row" delay={index * 70} key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p><i>-&gt;</i></Reveal>)}
+      </div></section>
     </>
   );
 }
