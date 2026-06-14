@@ -6,6 +6,7 @@ import { siteConfig } from "@/site.config";
 import "./globals.css";
 import "./photo-fixes.css";
 import "./instance-strict.css";
+import "./instance-only.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-code", display: "swap" });
