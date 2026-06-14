@@ -3,7 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { InstanceHeader } from "@/components/instance-header";
 import { InstanceFooter } from "@/components/instance-footer";
 import { siteConfig } from "@/site.config";
-import "./instance-protocol.css";
+import "./instance-live.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
