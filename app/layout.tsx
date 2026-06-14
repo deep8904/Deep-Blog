@@ -3,10 +3,8 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { ProtocolHeader } from "@/components/protocol-header";
 import { ProtocolFooter } from "@/components/protocol-footer";
 import { siteConfig } from "@/site.config";
-import "./globals.css";
-import "./photo-fixes.css";
-import "./instance-strict.css";
 import "./instance-only.css";
+import "./photo-fixes.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-code", display: "swap" });
