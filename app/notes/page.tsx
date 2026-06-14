@@ -4,7 +4,7 @@ import { Reveal } from "@/components/reveal";
 import { getAllNotes } from "@/lib/notes";
 
 export const metadata: Metadata = {
-  title: "Writing",
+  title: "Archive",
   description: "Essays and notes by Deep Chadamiya about software, design, games, and photography.",
 };
 
@@ -19,58 +19,84 @@ function formatDate(value: string) {
 
 export default function NotesPage() {
   const notes = getAllNotes();
+  const count = String(notes.length).padStart(2, "0");
+
   return (
-    <>
-      <section className="ip-page-hero" aria-labelledby="writing-title">
-        <div className="ip-page-hero__ambient" aria-hidden="true" />
-        <div className="ip-shell">
-          <div className="ip-page-hero__topline">
-            <span className="ip-node-status"><i aria-hidden="true" />Archive online</span>
-            <span className="ip-label">{String(notes.length).padStart(2, "0")} published transmissions</span>
-          </div>
-          <div className="ip-page-hero__grid">
-            <Reveal>
-              <span className="ip-label">Writing protocol / Index</span>
-              <h1 id="writing-title">Published signals.</h1>
-            </Reveal>
-            <Reveal className="ip-page-hero__card" delay={100}>
-              <span className="ip-label">Archive state</span>
-              <strong>{String(notes.length).padStart(2, "0")}</strong>
-              <p>Essays and working notes about software, interface design, games, collaboration, photography, and the decisions that changed how I think.</p>
-            </Reveal>
-          </div>
+    <div className="inner-page archive-page">
+      <section className="page-hero archive-hero" aria-labelledby="archive-title">
+        <div className="section-label"><span>ARCHIVE</span><p>PUBLICATION INDEX</p></div>
+        <div className="archive-title-row">
+          <h1 id="archive-title">
+            <span className="line"><span>{notes.length ? "Entries on" : "No entries"}</span></span>
+            <span className="line"><span>{notes.length ? "record." : "on record."}</span></span>
+          </h1>
+          <div className="archive-total"><span>TOTAL</span><strong>{count}</strong></div>
         </div>
+        <p className="page-intro">
+          {notes.length
+            ? "A growing record of software, interfaces, games, photography, and the decisions that remained useful after the work was done."
+            : "The archive is intentionally empty while the first piece is being written. No samples, generated titles, or placeholder dates."}
+        </p>
       </section>
 
-      <section className="ip-section" aria-labelledby="archive-title">
-        <div className="ip-shell">
-          <Reveal className="ip-section-heading">
-            <div><span className="ip-label">Archive directory</span><h2 id="archive-title">All entries</h2></div>
-            <span className="ip-label">{String(notes.length).padStart(2, "0")} total</span>
-          </Reveal>
-          <ol className="ip-entry-list">
-            {notes.map((note, index) => (
-              <li key={note.slug}>
-                <Reveal delay={index * 70}>
-                  <Link className="ip-entry-row" href={`/notes/${note.slug}`}>
-                    <span className="ip-entry-row__index">{String(index + 1).padStart(3, "0")}</span>
-                    <span className="ip-entry-row__content">
-                      <span className="ip-entry-row__meta">
+      {notes.length ? (
+        <section className="archive-list-section" aria-labelledby="entry-list-title">
+          <Reveal>
+            <div className="archive-list-heading">
+              <p id="entry-list-title">[ ALL ENTRIES ]</p>
+              <span>{count} TOTAL</span>
+            </div>
+            <ol className="archive-list">
+              {notes.map((note, index) => (
+                <li key={note.slug}>
+                  <Link href={`/notes/${note.slug}`}>
+                    <span className="archive-entry-index">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="archive-entry-copy">
+                      <span className="latest-meta">
                         <time dateTime={note.publishedAt}>{formatDate(note.publishedAt)}</time>
                         <span>{note.readingTime} min read</span>
-                        <span>{note.topics[0] ?? "Journal"}</span>
+                        <span>{note.topics[0] ?? "Writing"}</span>
                       </span>
                       <strong>{note.title}</strong>
                       <p>{note.description}</p>
                     </span>
-                    <span className="ip-entry-row__arrow" aria-hidden="true">-&gt;</span>
+                    <span className="archive-entry-arrow" aria-hidden="true">→</span>
                   </Link>
-                </Reveal>
-              </li>
-            ))}
-          </ol>
-        </div>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
+        </section>
+      ) : (
+        <section className="archive-console" aria-labelledby="console-title">
+          <Reveal>
+            <div className="console-header"><span>ARCHIVE</span><span>LOCAL</span></div>
+            <div className="console-body">
+              <div className="console-zero" aria-hidden="true">00</div>
+              <div className="console-message">
+                <p className="panel-label">RESULT</p>
+                <h2 id="console-title">Nothing to display.</h2>
+                <p>The first entry will be added only after it is ready to stand on its own.</p>
+              </div>
+            </div>
+            <div className="console-status"><span><i className="status-dot" aria-hidden="true" /> Draft in progress</span><span>Awaiting publication</span></div>
+          </Reveal>
+        </section>
+      )}
+
+      <section className="process-section" aria-labelledby="process-title">
+        <Reveal>
+          <div className="section-label"><span>01</span><p>BEFORE PUBLICATION</p></div>
+          <div className="process-copy">
+            <h2 id="process-title">The archive grows only when the work earns its place.</h2>
+            <ol>
+              <li><span>01</span><div><strong>Collect</strong><p>Capture the question, references, contradictions, and useful observations.</p></div></li>
+              <li><span>02</span><div><strong>Shape</strong><p>Find the argument, remove repetition, and test whether the idea is actually useful.</p></div></li>
+              <li><span>03</span><div><strong>Publish</strong><p>Release the piece with enough context to be understood and enough honesty to be revised.</p></div></li>
+            </ol>
+          </div>
+        </Reveal>
       </section>
-    </>
+    </div>
   );
 }
