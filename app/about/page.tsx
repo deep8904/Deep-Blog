@@ -17,7 +17,7 @@ const subjects = [
 export default function AboutPage() {
   return (
     <div className="inner-page">
-      <section className="page-hero" aria-labelledby="about-title">
+      <section className="page-hero about-page-hero" aria-labelledby="about-title">
         <div className="section-label"><span>ABOUT</span><p>THE PERSON + THE PRACTICE</p></div>
         <h1 id="about-title">
           <span className="line"><span>Engineering, interfaces,</span></span>
@@ -26,20 +26,31 @@ export default function AboutPage() {
         <p className="page-intro">Loose Thread documents what I learn while building software, designing interfaces, taking photographs, and studying how games create clear and memorable experiences.</p>
       </section>
 
-      <section className="about-body">
-        <Reveal className="about-body-grid">
-          <div className="about-index">
-            <p>[ PROFILE / 01 ]</p>
-            <div className="identity-block">
-              <span>NAME</span><strong>Deep Chadamiya</strong>
-              <span>PRACTICE</span><strong>Software engineering + UI/UX</strong>
-              <span>DIRECTION</span><strong>Game UI/UX + game design</strong>
+      <section className="about-body about-body--portrait">
+        <Reveal className="about-portrait-grid">
+          <figure className="about-portrait" aria-label="Portrait of Deep Chadamiya">
+            <div className="about-portrait__image" role="img" aria-label="Deep Chadamiya portrait" />
+            <figcaption>
+              <span>PORTRAIT / DEEP</span>
+              <span>PHOENIX, ARIZONA</span>
+            </figcaption>
+          </figure>
+
+          <div className="about-profile-copy">
+            <div className="about-index">
+              <p>[ PROFILE / 01 ]</p>
+              <div className="identity-block">
+                <span>NAME</span><strong>Deep Chadamiya</strong>
+                <span>PRACTICE</span><strong>Software engineering + UI/UX</strong>
+                <span>DIRECTION</span><strong>Game UI/UX + game design</strong>
+              </div>
             </div>
-          </div>
-          <div className="long-copy">
-            <h2>I am a software engineer and UI/UX designer. Photography helps me study attention, and games are where my interests in systems, interaction, and visual design increasingly meet.</h2>
-            <p>I enjoy solving technical problems, shaping clear interfaces, and understanding how people move through a product. Photography sharpens the same instincts through framing, timing, hierarchy, and mood.</p>
-            <p>I also enjoy playing games, which is leading me deeper into game UI/UX and game design. I want to understand how menus, feedback, environments, controls, and rules work together to guide a player.</p>
+
+            <div className="long-copy">
+              <h2>I am a software engineer and UI/UX designer. Photography sharpens how I see, and games are where my interests in systems, interaction, and visual design increasingly meet.</h2>
+              <p>I enjoy solving technical problems, shaping clear interfaces, and understanding how people move through a product. Photography strengthens the same instincts through framing, timing, hierarchy, and mood.</p>
+              <p>I also enjoy playing games, which is leading me deeper into game UI/UX and game design. I want to understand how menus, feedback, environments, controls, and rules work together to guide a player.</p>
+            </div>
           </div>
         </Reveal>
       </section>
