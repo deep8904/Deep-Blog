@@ -1,4 +1,5 @@
 @import "./responsive-v3.css";
+@import "./hero-copy-fix.css";
 .about-body--portrait{padding-block:clamp(80px,8vw,132px)}
 .about-portrait-grid{display:grid;grid-template-columns:minmax(300px,.72fr) minmax(0,1.28fr);gap:clamp(52px,7vw,112px);align-items:start}
 .about-portrait{position:sticky;top:112px;margin:0}
