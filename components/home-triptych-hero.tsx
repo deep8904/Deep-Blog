@@ -66,10 +66,10 @@ export function HomeTriptychHero({ publishedCount }: { publishedCount: number })
           })}
         </div>
 
-        <div className="aether-title" id="home-title">
+        <h1 className="aether-title" id="home-title">
           <span className="aether-title__line"><span>LOOSE</span></span>
           <span className="aether-title__line"><span>THREAD</span></span>
-        </div>
+        </h1>
 
         <div className="aether-stage__meta aether-stage__meta--left">
           <span>PERSONAL FIELD NOTES</span>
