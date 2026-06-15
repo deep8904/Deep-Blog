@@ -7,6 +7,7 @@ import { getAllNotes } from "@/lib/notes";
 import { siteConfig } from "@/site.config";
 import "./instance-live.css";
 import "./refinements-v2.css";
+import "./aether-editorial.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 };
 
-export const viewport: Viewport = { themeColor: "#FFFFFF" };
+export const viewport: Viewport = { themeColor: "#181716" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const archiveCount = getAllNotes().length;
