@@ -24,7 +24,7 @@ export default function NotesPage() {
   return (
     <div className="inner-page archive-page">
       <section className="page-hero archive-hero" aria-labelledby="archive-title">
-        <div className="section-label"><span>ARCHIVE</span><p>PUBLICATION INDEX</p></div>
+        <div className="section-label archive-label"><span>AR</span><p>ARCHIVE / PUBLICATION INDEX</p></div>
         <div className="archive-title-row">
           <h1 id="archive-title">
             <span className="line"><span>{notes.length ? "Entries on" : "No entries"}</span></span>
