@@ -1,1 +1,0 @@
-This temporary file is used to stage the homepage and About page replacement.
