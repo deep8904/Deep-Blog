@@ -21,8 +21,6 @@ const panels = [
 export function HomeTriptychHero({ publishedCount }: { publishedCount: number }) {
   return (
     <section className="aether-hero" aria-labelledby="home-title">
-      <div className="aether-rail aether-rail--top" aria-hidden="true" />
-
       <div className="aether-hero__meta">
         <span>LOOSE THREAD / PERSONAL FIELD NOTES</span>
         <span>PHOENIX / EST. 2026</span>
@@ -63,8 +61,6 @@ export function HomeTriptychHero({ publishedCount }: { publishedCount: number })
           <Link href="/about">About Deep</Link>
         </nav>
       </div>
-
-      <div className="aether-rail aether-rail--bottom" aria-hidden="true" />
     </section>
   );
 }
