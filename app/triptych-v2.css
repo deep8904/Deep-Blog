@@ -1,0 +1,21 @@
+.triptych-v2{padding:28px clamp(20px,3.2vw,56px) 32px;background:var(--surface);border-bottom:1px solid var(--line)}
+.triptych-v2__meta{min-height:42px;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;color:rgba(25,28,33,.62);font-family:var(--font-mono),monospace;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.triptych-v2__stage{position:relative;min-height:min(740px,calc(100svh - 190px));overflow:hidden;color:var(--surface);background-image:linear-gradient(180deg,rgba(25,28,33,.18),rgba(25,28,33,.2) 36%,rgba(25,28,33,.82)),url("/images/home/loose-thread-hero.webp");background-position:center;background-repeat:no-repeat;background-size:cover;border-radius:28px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);isolation:isolate}
+.triptych-v2__stage::before{position:absolute;inset:0;z-index:-1;content:"";background:linear-gradient(90deg,rgba(228,87,61,.18),transparent 30%),linear-gradient(270deg,rgba(52,211,153,.12),transparent 28%)}
+.triptych-v2__stage h1{position:absolute;top:48%;left:50%;z-index:4;width:min(92%,1280px);margin:0;color:var(--surface);font-size:clamp(70px,9.4vw,150px);font-weight:500;line-height:.84;letter-spacing:-.075em;text-align:center;text-shadow:0 18px 48px rgba(25,28,33,.46);transform:translate(-50%,-50%);pointer-events:none}
+.triptych-v2__stage h1 span,.triptych-v2__stage h1 strong{display:block}.triptych-v2__stage h1 strong{color:var(--primary);font-weight:500}
+.js .triptych-v2__stage h1 span,.js .triptych-v2__stage h1 strong{opacity:0;transform:translateY(52px);animation:triptych-v2-title .9s var(--ease) forwards}.js .triptych-v2__stage h1 strong{animation-delay:.1s}
+.triptych-v2__panels{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:8px}
+.triptych-v2__panels article{min-width:0;padding:clamp(20px,2.4vw,34px);display:flex;flex-direction:column;justify-content:space-between;background:rgba(25,28,33,.08);border:1px solid rgba(255,255,255,.2);border-radius:21px;transition:background .35s ease,border-color .35s ease,transform .35s var(--ease)}
+.triptych-v2__panels article:hover{background:rgba(25,28,33,.18);border-color:rgba(52,211,153,.54);transform:translateY(-3px)}
+.triptych-v2__panels article>span{align-self:flex-end;min-width:34px;min-height:24px;display:grid;place-items:center;color:var(--secondary);background:var(--accent);border-radius:var(--radius-pill);font-family:var(--font-mono),monospace;font-size:9px;font-weight:700}
+.triptych-v2__panels article>div{max-width:310px;padding-top:20px;border-top:1px solid rgba(255,255,255,.34)}
+.triptych-v2__panels article strong{display:block;margin-bottom:10px;font-size:clamp(18px,1.7vw,25px);font-weight:600;letter-spacing:-.025em}
+.triptych-v2__panels article p{margin:0;color:rgba(255,255,255,.76);font-size:13px;line-height:1.55}
+.triptych-v2__footer{padding-top:24px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:48px}
+.triptych-v2__footer>p{max-width:780px;margin:0;color:rgba(25,28,33,.72);font-size:clamp(16px,1.4vw,20px);line-height:1.55;letter-spacing:-.015em}
+.triptych-v2__footer>div{display:flex;align-items:center;gap:22px;font-family:var(--font-mono),monospace;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.triptych-v2__footer>div>span{display:inline-flex;align-items:center;gap:9px;color:rgba(25,28,33,.58)}
+.triptych-v2__footer i{width:8px;height:8px;display:inline-block;background:var(--accent);border-radius:50%;box-shadow:0 0 0 5px rgba(52,211,153,.12)}
+.triptych-v2__footer a{padding-bottom:4px;border-bottom:1px solid rgba(25,28,33,.34);transition:color .2s ease,border-color .2s ease}.triptych-v2__footer a:hover{color:var(--primary);border-color:var(--primary)}
+@keyframes triptych-v2-title{to{opacity:1;transform:translateY(0)}}

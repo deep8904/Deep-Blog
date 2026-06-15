@@ -6,6 +6,7 @@ import { ScrollProgress } from "@/components/scroll-progress";
 import { getAllNotes } from "@/lib/notes";
 import { siteConfig } from "@/site.config";
 import "./instance-live.css";
+import "./refinements-v2.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 };
 
-export const viewport: Viewport = { themeColor: "#D1CFC7" };
+export const viewport: Viewport = { themeColor: "#FFFFFF" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const archiveCount = getAllNotes().length;
