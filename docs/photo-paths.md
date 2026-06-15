@@ -1,26 +1,48 @@
-# Photo paths
-
-The redesigned hero and About page are ready for your images.
+# Photo paths and recommended sizes
 
 ## Home hero
 
-Upload one wide image using this exact path:
+The current hero uses one wide image and automatically splits it across the three vertical panels.
 
-- `public/images/home/hero-shared.jpg`
+- Upload path: `public/images/home/hero-shared.jpg`
+- Recommended size: `3000 × 1800 px`
+- Minimum useful size: `2400 × 1440 px`
+- Aspect ratio: `5:3`
+- Export: JPG or WebP, sRGB, approximately 80 to 88 percent quality
 
-The same image is automatically split across the three vertical hero panels. Use a wide image with the main subject near the center. A recommended starting size is 2400 × 1400 pixels or larger.
+Each visible panel uses roughly one third of the source image, equivalent to a crop of about `1000 × 1800 px`. Keep important faces and objects away from the vertical split lines.
 
-Until this file is uploaded, the three panels intentionally display the empty DESIGN.md palette treatment.
+Until this file exists, the three panels display the light DESIGN.md palette treatment.
 
 ## About portrait
 
-Upload your portrait using this exact path:
+- Upload path: `public/images/about/deep-portrait.jpg`
+- Recommended size: `1600 × 2000 px`
+- Minimum useful size: `1200 × 1500 px`
+- Aspect ratio: `4:5`
+- Orientation: vertical portrait
 
-- `public/images/about/deep-portrait.jpg`
+Leave a little space above the head and around the shoulders because responsive cropping changes slightly between desktop and mobile.
 
-A vertical portrait works best. A recommended starting ratio is 4:5 or 3:4.
+## First blog cover images
 
-## Article images
+### Archive or featured image
 
-- `public/images/notes/xbox-game-camp/featured.jpg`
-- `public/images/notes/xbox-game-camp/article-hero.jpg`
+- Upload path: `public/images/notes/xbox-game-camp/featured.jpg`
+- Recommended size: `1600 × 900 px`
+- Aspect ratio: `16:9`
+
+### Article hero image
+
+- Upload path: `public/images/notes/xbox-game-camp/article-hero.jpg`
+- Recommended size: `2400 × 1350 px`
+- Minimum useful size: `1920 × 1080 px`
+- Aspect ratio: `16:9`
+
+## First blog inline images
+
+Upload inline images into:
+
+`public/images/notes/three-days-one-castle-next-wave/`
+
+Use the exact filenames and sizes listed in `docs/first-post-image-plan.md`.
