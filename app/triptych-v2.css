@@ -78,9 +78,9 @@
   background-image: var(--hero-image);
   background-repeat: no-repeat;
   background-size: 300% 100%;
-  filter: saturate(.88) contrast(.98) brightness(1.08);
-  transform: scale(1.025);
-  transition: transform .9s var(--ease), filter .7s ease;
+  filter: none;
+  transform: none;
+  transition: transform .9s var(--ease);
 }
 
 .aether-panel--1::before { background-position: 0% center; }
@@ -92,9 +92,8 @@
   inset: 0;
   z-index: -1;
   content: "";
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, .24), rgba(255, 255, 255, .1) 48%, rgba(255, 255, 255, .82) 100%),
-    linear-gradient(90deg, rgba(228, 87, 61, .08), transparent 44%, rgba(52, 211, 153, .07));
+  background: transparent;
+  pointer-events: none;
 }
 
 .aether-panel:hover {
@@ -105,8 +104,8 @@
 }
 
 .aether-panel:hover::before {
-  filter: saturate(1) contrast(1) brightness(1.04);
-  transform: scale(1.055);
+  filter: none;
+  transform: scale(1.02);
 }
 
 .aether-panel__index {
