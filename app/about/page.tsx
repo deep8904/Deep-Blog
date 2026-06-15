@@ -16,8 +16,17 @@ const subjects = [
 
 export default function AboutPage() {
   return (
-    <div className="inner-page">
-      <section className="page-hero" aria-labelledby="about-title">
+    <div className="inner-page about-page">
+      <section className="page-hero about-page-hero" aria-labelledby="about-title">
+        <div className="about-page-hero__rail" aria-hidden="true">
+          <span>ABOUT / DEEP</span>
+          <i />
+          <span>SOFTWARE ENGINEERING</span>
+          <span>UI/UX DESIGN</span>
+          <i />
+          <span>GAME DESIGN</span>
+        </div>
+
         <div className="section-label"><span>ABOUT</span><p>THE PERSON + THE PRACTICE</p></div>
         <h1 id="about-title">
           <span className="line"><span>Engineering, interfaces,</span></span>
@@ -29,6 +38,12 @@ export default function AboutPage() {
       <section className="about-body">
         <Reveal className="about-body-grid">
           <div className="about-index">
+            <div className="about-portrait" role="img" aria-label="Portrait of Deep Chadamiya">
+              <span className="about-portrait__code">PORTRAIT / 01</span>
+              <span className="about-portrait__status"><i aria-hidden="true" /> PHOENIX</span>
+              <span className="about-portrait__corner" aria-hidden="true" />
+            </div>
+
             <p>[ PROFILE / 01 ]</p>
             <div className="identity-block">
               <span>NAME</span><strong>Deep Chadamiya</strong>
