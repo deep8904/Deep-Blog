@@ -15,6 +15,6 @@ body{background:var(--surface)}
 .archive-feature{position:relative}.archive-feature::after,.closing-note::after{position:absolute;top:28px;right:clamp(20px,3.2vw,56px);width:10px;height:10px;content:"";background:var(--accent);border-radius:50%;box-shadow:0 0 0 7px rgba(52,211,153,.13)}
 .archive-list a{padding-inline:18px;margin-inline:-18px;border-radius:var(--radius-control)}.archive-list a:hover{background:rgba(228,87,61,.055)}
 .identity-block,.article-meta,.archive-total{border-top-width:2px;border-top-color:var(--primary)}
-.ledger-list>div{transition:background .25s ease}.ledger-list>div:hover{background:rgba(228,87,61,.04)}.ledger-list>div:hover h2{color:var(--primary)}.ledger-list>div:hover>span{color:var(--accent)}
+.ledger-list>div{transition:background .25s ease}.ledger-list>div:hover{background:rgba(228,87,61,.04)}.ledger-list>div:hover h2{color:var(--primary)}.ledger-list>div:hover>span{color:var(--secondary)}
 .site-footer{padding-inline:clamp(20px,5vw,88px);border-top:3px solid var(--primary)}
 @media(max-width:760px){.site-header{min-height:68px;padding-inline:16px}.mobile-menu{border-bottom:3px solid var(--primary)}.premise-section,.about-preview,.about-body,.topic-ledger,.process-section,.article-header,.archive-list-section,.site-footer{padding-inline:18px}.archive-console,.article-media{margin-inline:10px}}
