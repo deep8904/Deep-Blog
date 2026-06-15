@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 };
 
-export const viewport: Viewport = { themeColor: "#191C21" };
+export const viewport: Viewport = { themeColor: "#FFFFFF" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const archiveCount = getAllNotes().length;
