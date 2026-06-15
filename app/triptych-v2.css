@@ -1,40 +1,20 @@
-/*
-  Aether-inspired editorial hero using only DESIGN.md colors.
-  To use one photo across all three panels, change --hero-image below to:
-  url("/images/home/hero-shared.jpg")
-*/
+/* Light Aether-inspired hero using only DESIGN.md colors. */
 
 .aether-hero {
   --hero-image: none;
-  padding: 22px clamp(18px, 2.8vw, 48px) 26px;
-  color: var(--surface);
-  background: var(--secondary);
-  border-bottom: 1px solid rgba(255, 255, 255, .12);
+  padding: 26px clamp(18px, 3vw, 52px) 34px;
+  color: var(--secondary);
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
 }
-
-.aether-rail {
-  height: 15px;
-  opacity: .75;
-  background:
-    repeating-linear-gradient(
-      112deg,
-      transparent 0 7px,
-      rgba(255, 255, 255, .65) 7px 9px,
-      transparent 9px 15px
-    );
-  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
-}
-
-.aether-rail--top { margin-bottom: 18px; }
-.aether-rail--bottom { margin-top: 22px; }
 
 .aether-hero__meta {
-  min-height: 38px;
+  min-height: 44px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
-  color: rgba(255, 255, 255, .72);
+  color: rgba(25, 28, 33, .58);
   font-family: var(--font-mono), monospace;
   font-size: 10px;
   font-weight: 600;
@@ -54,7 +34,7 @@
 
 .aether-hero__stage {
   position: relative;
-  min-height: min(760px, calc(100svh - 205px));
+  min-height: min(730px, calc(100svh - 190px));
   overflow: hidden;
   isolation: isolate;
 }
@@ -76,12 +56,18 @@
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(209, 207, 199, .42), rgba(25, 28, 33, .62)),
-    var(--background);
-  border: 1px solid rgba(255, 255, 255, .17);
-  border-radius: 2px;
-  transition: border-color .4s ease, transform .5s var(--ease), filter .5s ease;
+  background: linear-gradient(180deg, #FFFFFF 0%, #D1CFC7 100%);
+  border: 1px solid rgba(25, 28, 33, .18);
+  border-radius: 3px;
+  transition: border-color .35s ease, transform .45s var(--ease), box-shadow .35s ease;
+}
+
+.aether-panel:nth-child(2) {
+  background: linear-gradient(180deg, rgba(209, 207, 199, .56), #FFFFFF 100%);
+}
+
+.aether-panel:nth-child(3) {
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(209, 207, 199, .72) 100%);
 }
 
 .aether-panel::before {
@@ -92,7 +78,7 @@
   background-image: var(--hero-image);
   background-repeat: no-repeat;
   background-size: 300% 100%;
-  filter: saturate(.86) contrast(1.03);
+  filter: saturate(.88) contrast(.98) brightness(1.08);
   transform: scale(1.025);
   transition: transform .9s var(--ease), filter .7s ease;
 }
@@ -107,38 +93,27 @@
   z-index: -1;
   content: "";
   background:
-    linear-gradient(180deg, rgba(25, 28, 33, .06) 0%, rgba(25, 28, 33, .14) 45%, rgba(25, 28, 33, .88) 100%),
-    linear-gradient(90deg, rgba(228, 87, 61, .08), transparent 42%, rgba(52, 211, 153, .06));
-}
-
-.aether-panel:nth-child(2) {
-  background:
-    linear-gradient(180deg, rgba(209, 207, 199, .34), rgba(25, 28, 33, .7)),
-    var(--muted);
-}
-
-.aether-panel:nth-child(3) {
-  background:
-    linear-gradient(180deg, rgba(209, 207, 199, .25), rgba(25, 28, 33, .76)),
-    var(--secondary);
+    linear-gradient(180deg, rgba(255, 255, 255, .24), rgba(255, 255, 255, .1) 48%, rgba(255, 255, 255, .82) 100%),
+    linear-gradient(90deg, rgba(228, 87, 61, .08), transparent 44%, rgba(52, 211, 153, .07));
 }
 
 .aether-panel:hover {
   z-index: 3;
-  border-color: rgba(52, 211, 153, .72);
+  border-color: rgba(228, 87, 61, .5);
+  box-shadow: 0 18px 44px rgba(25, 28, 33, .12);
   transform: translateY(-5px);
 }
 
 .aether-panel:hover::before {
-  filter: saturate(1) contrast(1.07);
-  transform: scale(1.065);
+  filter: saturate(1) contrast(1) brightness(1.04);
+  transform: scale(1.055);
 }
 
 .aether-panel__index {
   align-self: flex-end;
+  padding: 7px 10px;
   color: var(--secondary);
   background: var(--accent);
-  padding: 7px 10px;
   border-radius: var(--radius-pill);
   font-family: var(--font-mono), monospace;
   font-size: 10px;
@@ -149,12 +124,13 @@
 .aether-panel__copy {
   max-width: 320px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, .44);
+  border-top: 1px solid rgba(25, 28, 33, .26);
 }
 
 .aether-panel__copy strong {
   display: block;
   margin-bottom: 10px;
+  color: var(--secondary);
   font-size: clamp(18px, 1.55vw, 24px);
   font-weight: 600;
   letter-spacing: -.025em;
@@ -162,18 +138,17 @@
 
 .aether-panel__copy p {
   margin: 0;
-  color: rgba(255, 255, 255, .72);
+  color: rgba(25, 28, 33, .68);
   font-size: 13px;
   line-height: 1.55;
 }
 
 .aether-hero__title-lockup {
   position: absolute;
-  top: 49%;
+  top: 48%;
   left: 50%;
   z-index: 5;
   width: min(94%, 1380px);
-  color: var(--surface);
   text-align: center;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -191,11 +166,12 @@
 
 .aether-hero__title-lockup h1 {
   margin: 0;
+  color: var(--secondary);
   font-size: clamp(82px, 13.3vw, 210px);
   font-weight: 500;
   line-height: .72;
   letter-spacing: -.085em;
-  text-shadow: 0 18px 70px rgba(25, 28, 33, .58);
+  text-shadow: 0 12px 34px rgba(255, 255, 255, .8);
 }
 
 .aether-hero__title-lockup h1 span {
@@ -213,7 +189,7 @@
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  color: rgba(255, 255, 255, .82);
+  color: rgba(25, 28, 33, .62);
   font-family: var(--font-mono), monospace;
   font-size: 10px;
   font-weight: 600;
@@ -227,7 +203,7 @@
 }
 
 .aether-hero__footer {
-  padding: 22px 0 0;
+  padding-top: 24px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
@@ -237,7 +213,7 @@
 .aether-hero__footer > p {
   max-width: 760px;
   margin: 0;
-  color: rgba(255, 255, 255, .66);
+  color: rgba(25, 28, 33, .68);
   font-size: clamp(15px, 1.35vw, 19px);
   line-height: 1.55;
 }
@@ -257,7 +233,7 @@
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  color: rgba(255, 255, 255, .56);
+  color: rgba(25, 28, 33, .54);
 }
 
 .aether-hero__footer i {
@@ -271,7 +247,7 @@
 
 .aether-hero__footer a {
   padding-bottom: 4px;
-  border-bottom: 1px solid rgba(255, 255, 255, .4);
+  border-bottom: 1px solid rgba(25, 28, 33, .34);
   transition: color .2s ease, border-color .2s ease, transform .2s ease;
 }
 
