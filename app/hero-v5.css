@@ -1,4 +1,4 @@
-/* Final hero composition: untouched photography with independent readable content layers. */
+/* Final hero composition: untouched photography with translucent readable content layers. */
 
 .aether-hero {
   min-height: calc(100svh - 76px);
@@ -65,20 +65,22 @@
   width: min(100%, 360px);
   max-width: none;
   padding: 18px 18px 16px;
-  color: var(--secondary);
-  background: rgba(255, 255, 255, .96);
-  border: 1px solid rgba(25, 28, 33, .2);
-  box-shadow: 8px 8px 0 rgba(228, 87, 61, .14);
+  color: var(--surface);
+  background: rgba(25, 28, 33, .58);
+  border: 1px solid rgba(255, 255, 255, .24);
+  box-shadow: 0 14px 34px rgba(25, 28, 33, .24);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .aether-panel__copy strong {
   margin-bottom: 8px;
-  color: var(--secondary);
+  color: var(--surface);
   font-size: clamp(17px, 1.35vw, 22px);
 }
 
 .aether-panel__copy p {
-  color: rgba(25, 28, 33, .68);
+  color: rgba(255, 255, 255, .76);
   font-size: 12px;
   line-height: 1.5;
 }
@@ -87,10 +89,12 @@
   top: 47%;
   width: min(72%, 930px);
   padding: clamp(22px, 2.8vw, 38px) clamp(24px, 3.5vw, 52px);
-  color: var(--secondary);
-  background: var(--surface);
-  border: 1px solid var(--secondary);
-  box-shadow: 14px 14px 0 rgba(228, 87, 61, .2);
+  color: var(--surface);
+  background: rgba(25, 28, 33, .5);
+  border: 1px solid rgba(255, 255, 255, .28);
+  box-shadow: 0 22px 54px rgba(25, 28, 33, .28);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
   text-align: left;
 }
 
@@ -103,7 +107,7 @@
 
 .aether-hero__title-lockup h1 {
   margin: 0;
-  color: var(--secondary);
+  color: var(--surface);
   font-size: clamp(52px, 6.8vw, 102px);
   line-height: .88;
   letter-spacing: -.065em;
@@ -126,8 +130,8 @@
   display: flex;
   justify-content: space-between;
   gap: 18px;
-  color: rgba(25, 28, 33, .58);
-  border-top: 1px solid rgba(25, 28, 33, .2);
+  color: rgba(255, 255, 255, .7);
+  border-top: 1px solid rgba(255, 255, 255, .22);
   font-family: var(--font-mono), monospace;
   font-size: 9px;
   font-weight: 600;
@@ -213,7 +217,7 @@
     max-width: 78%;
     margin-left: auto;
     padding: 11px 12px;
-    box-shadow: 5px 5px 0 rgba(228, 87, 61, .14);
+    box-shadow: 0 10px 26px rgba(25, 28, 33, .24);
   }
 
   .aether-panel__copy strong {
@@ -225,7 +229,9 @@
     top: 30%;
     width: calc(100% - 42px);
     padding: 18px 20px;
-    box-shadow: 8px 8px 0 rgba(228, 87, 61, .2);
+    box-shadow: 0 16px 38px rgba(25, 28, 33, .28);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
   }
 
   .aether-hero__title-lockup h1 {
