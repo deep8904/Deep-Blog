@@ -1,1 +1,5 @@
-.aether-hero{--hero-image:url("/images/home/hero-shared.jpg")}
+/* Shared home hero image path. */
+.aether-hero,
+.identity-hero {
+  --hero-image: url("/images/home/hero-shared.jpg");
+}
