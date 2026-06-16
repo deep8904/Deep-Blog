@@ -12,12 +12,11 @@ export const siteConfig = {
   name: "Loose Thread",
   wordmark: "Loose Thread",
   description:
-    "Personal field notes by Deep Chadamiya on software, product design, games, photography, and unfinished ideas.",
+    "Personal field notes by Deep Chadamiya on making things, studying games, photography, and ideas that are still becoming clear.",
   author: "Deep Chadamiya",
   url: resolveSiteUrl(),
   navigation: [
-    { label: "Index", href: "/" },
     { label: "About", href: "/about" },
-    { label: "Archive", href: "/notes" },
+    { label: "Writing", href: "/notes" },
   ],
 } as const;

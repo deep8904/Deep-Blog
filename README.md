@@ -1,8 +1,8 @@
-# Draft State
+# Loose Thread
 
-Draft State is a personal blog for Deep Chadamiya about software, interface design, games, photography, and the lessons found while making things.
+Loose Thread is a personal blog for Deep Chadamiya about making things, studying games, photography, and the lessons found while ideas are still changing.
 
-The visual system uses a custom dark Night Field palette, wide editorial layouts, technical grid lines, restrained motion, and local Markdown publishing. The archive contains only real published writing and no demonstration posts.
+The visual system uses a warm editorial palette, a light publication frame, restrained motion, and local Markdown publishing. The Writing page contains only real published notes and no demonstration posts.
 
 ## Connected project services
 
@@ -18,7 +18,7 @@ The Supabase MCP connection is project-scoped and intended for Codex development
 - Home, Writing, About, article, 404, sitemap, and robots routes
 - File-based Markdown publishing and an unpublished post template
 - Responsive desktop, tablet, and phone layouts
-- Motion for React used for small entrance reveals
+- CSS and IntersectionObserver used for small entrance reveals
 - Complete future-article typography
 - Supplied visual references and revised design previews
 - Writer-blog research, design-system, content, motion, build, and integration documentation
@@ -115,7 +115,7 @@ git status
 
 ```text
 app/                    Routes, metadata, SEO, and global styling
-components/             Shared UI, article rows, motion, and editorial layout components
+components/             Shared UI and editorial layout components
 content/notes/          Markdown notes and unpublished template
 docs/                   Research, design, content, build, and integration docs
 docs/previews/          Screenshots of the revised design

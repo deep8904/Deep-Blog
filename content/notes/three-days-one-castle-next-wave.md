@@ -1,12 +1,12 @@
 ---
 title: "Three Days, One Castle, and a Team Called Next Wave"
-description: "What Xbox Game Camp Arizona taught me about game design, UX, collaboration, and letting go of the first idea."
+description: "What Xbox Game Camp Arizona taught me about game design, player experience, collaboration, and letting go of the first idea."
 publishedAt: "2026-06-11"
 updatedAt: "2026-06-11"
 author: "Deepkumar Chadamiya"
 topics:
   - "Game Design"
-  - "UX"
+  - "Player Experience"
   - "Collaboration"
   - "Xbox Game Camp"
 draft: false
@@ -20,21 +20,23 @@ The answer was technically yes—but not really.
 
 Endstar was a 3D engine. We could restrict the camera and create something that felt two-dimensional, but the tool was designed for a different kind of experience.
 
-It was a small question, but it quietly became the theme of my weekend at Xbox Game Camp Arizona:
+That small question became the theme of my weekend at Xbox Game Camp Arizona. I had arrived with a clean idea in my head. By Sunday, the useful version of the idea had been reshaped by the tool, the team, and the deadline.
 
-You arrive with one idea.
+That is the part I want to remember.
 
-The tools push back.
+You arrive with one idea. The tools push back. Your teammates see something different. The deadline starts moving faster. Somewhere between all of that, a better game begins to appear.
 
-Your teammates see something different.
+The useful lesson was not simply that game jams require smaller scope. I already knew that in theory. What changed for me was seeing how fast a team can improve an idea when nobody treats the first version as sacred, including me.
 
-The deadline starts moving faster.
+By the end of the weekend, I was paying attention to three things I want to carry into future work:
 
-And somewhere between all of that, a better game begins to appear.
+- the tool is not just a constraint; it is part of the design conversation
+- a team becomes stronger when people can let go of their favorite version
+- player experience is built from the whole environment, not only from screens and menus
 
 <!-- IMAGE_SLOT: 01-mix-center-exterior -->
 
-## Spawn Point: Friday
+## Friday: Entering the Constraint
 
 Xbox Game Camp Arizona took place from May 29–31, 2026, at Arizona State University’s MIX Center in Mesa.
 
@@ -44,19 +46,19 @@ The challenge was to create something inspired by Knight Lore, the influential 1
 
 I knew about game development, but I was entering from a slightly different direction.
 
-My background is in software development, UI/UX, and visual design. I understood interfaces, user flows, feedback systems, hierarchy, and interaction patterns. What I had not done was walk into a room, meet three people, learn a new engine, reinterpret a 42-year-old game, and produce something playable before Sunday afternoon.
+I came in through building software, designing screens, and thinking about how people move through a system. I understood flows, feedback, hierarchy, and interaction patterns. What I had not done was walk into a room, meet three people, learn a new engine, reinterpret a 42-year-old game, and produce something playable before Sunday afternoon.
 
 That was new.
 
-Friday began with the familiar mixture of excitement and low-level panic found at every creative event where people are expected to form teams.
+Friday began with the familiar mixture of excitement and low-level panic that shows up when a room full of people has to turn individual skills into teams.
 
 The room was full of individual skills searching for the right combination. Developers were discussing engines. Artists were comparing visual directions. Designers were already turning the theme into mechanics. Some people arrived with teammates. Others, including me, had to find them.
 
 I eventually connected with Warren Andrus, Chris Goodman, and Gabe Isko.
 
-Warren brought architectural thinking and game-design ideas. Chris focused on production and playtesting. Gabe brought development experience and a love for game engines. I contributed through UX, visual design, ideation, and the willingness to learn Endstar as quickly as possible.
+Warren brought architectural thinking and game-design ideas. Chris focused on production and playtesting. Gabe brought development experience and a love for game engines. I contributed through visual direction, player-flow thinking, ideation, and the willingness to learn Endstar as quickly as possible.
 
-Four people who had not planned to work together became a team.
+Four people who had not planned to work together became a team. That changed the shape of the idea immediately, because each person noticed a different part of the problem.
 
 Then we needed a name.
 
@@ -68,7 +70,7 @@ So, naturally, it was perfect.
 
 <!-- IMAGE_SLOT: 02-next-wave-team-formation -->
 
-## Our First Idea Did Not Survive Friday
+## The First Idea Was Too Big
 
 Our earliest concept was built around vampire hunters defending themselves against waves of supernatural enemies.
 
@@ -82,7 +84,7 @@ It had enough systems to keep a full development team busy for several months.
 
 We had approximately two days.
 
-This is where a game jam begins teaching you whether you are truly attached to solving the problem—or merely attached to your first solution.
+This is where a game jam begins teaching you whether you are attached to solving the problem or merely attached to your first solution.
 
 As we continued discussing Knight Lore, we found a more interesting perspective.
 
@@ -115,11 +117,11 @@ Absolutely not.
 
 But that did not make the design work pointless. It helped us find the central fantasy of the game: turning a place associated with being trapped into a system the player could control.
 
-The strongest idea of the weekend was not our first idea. It was the one that survived contact with the team, the engine, and the deadline.
+The strongest idea of the weekend was not our first idea. It was the smaller, stranger, more playable idea that survived contact with the team, the engine, and the deadline.
 
 <!-- IMAGE_SLOT: 03-concept-moodboard -->
 
-## Build Day: Saturday
+## Saturday: Learning in Public
 
 Saturday was when the MIX Center stopped feeling like an event venue and started feeling like a studio.
 
@@ -163,11 +165,11 @@ That last answer may have been the most valuable.
 
 <!-- IMAGE_SLOT: 04-endstar-build -->
 
-## UX Is Bigger Than the Screen
+## Player Experience Is Bigger Than a Screen
 
-Saturday also changed how I thought about UX.
+Saturday also changed how I thought about player experience.
 
-In software design, I usually try to reduce unnecessary friction. A user should understand what is happening, know what action to take, and receive clear feedback when that action succeeds or fails.
+In everyday product design, I usually try to reduce unnecessary friction. A person should understand what is happening, know what action to take, and receive clear feedback when that action succeeds or fails.
 
 Games complicate that logic.
 
@@ -191,9 +193,9 @@ A control can require practice, but the player needs enough feedback to understa
 
 A room can feel dangerous before anything attacks, simply through lighting, sound, scale, composition, or the placement of an object.
 
-That weekend helped me see game UX as something larger than menus, buttons, HUD elements, and inventory screens.
+That weekend helped me see player experience as something larger than menus, buttons, HUD elements, and inventory screens.
 
-Game UX exists in the distance between two platforms.
+It exists in the distance between two platforms.
 
 It exists in the pause before a trap activates.
 
@@ -251,13 +253,13 @@ The builds continued.
 
 <!-- IMAGE_SLOT: 06-group-photo -->
 
-## Final Boss: Sunday at 2 p.m.
+## Sunday: Every Feature Had to Defend Itself
 
 Sunday arrived far too quickly.
 
 The submission deadline was 2 p.m., which meant the morning became an exercise in disciplined compromise.
 
-At this stage, every feature had to defend its existence.
+At this stage, every feature had to defend its existence. The question was no longer whether an idea was interesting. The question was whether it helped someone play and understand the build we could actually finish.
 
 Does this improve the playable experience?
 
@@ -315,7 +317,7 @@ The most valuable part of Xbox Game Camp was not a single mechanic, presentation
 
 It was momentum.
 
-I entered the event with experience in software and UX, an interest in games, and limited experience working inside Endstar.
+I entered the event with software experience, an interest in games, and limited time inside Endstar.
 
 I left with a better understanding of level design, game feedback, environmental communication, production constraints, rapid prototyping, and the way different disciplines overlap during development.
 
@@ -339,7 +341,7 @@ The project became evidence that four people could meet, disagree, adjust, learn
 
 <!-- IMAGE_SLOT: 08-next-wave-team-closing -->
 
-## Continue?
+## What I Want to Carry Forward
 
 Xbox Game Camp Arizona reminded me that game development is not a clean journey from idea to execution.
 
@@ -359,7 +361,7 @@ Our scope changed.
 
 Our understanding of the engine changed.
 
-By Sunday, even the way I thought about UX had changed.
+By Sunday, even the way I thought about player experience had changed.
 
 That is what made the weekend successful for me.
 
@@ -371,7 +373,7 @@ But that we kept learning quickly enough to continue moving.
 
 Three days earlier, I had entered the Discord asking whether we could avoid building in 3D.
 
-By the end, I was thinking about castles as interfaces, hallways as decisions, traps as feedback systems, and failure as part of the player experience.
+By the end, I was thinking about castles as decision systems, hallways as choices, traps as feedback, and failure as part of the player experience.
 
 I did not leave Xbox Game Camp with a perfect game.
 

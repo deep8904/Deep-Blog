@@ -8,7 +8,7 @@ The root `DESIGN.md` contains the supplied Instance.io specification. The live f
 
 - **Name:** Loose Thread
 - **Author:** Deep Chadamiya
-- **Purpose:** Personal field notes about software, product design, games, photography, and unfinished ideas.
+- **Purpose:** Personal field notes about making things, studying games, photography, and unfinished ideas.
 - **Character:** Minimal editorial typography, controlled asymmetry, technical metadata, and one high-contrast status panel.
 
 ## Palette
@@ -54,9 +54,9 @@ A light rounded publication surface sits on the border-colored canvas. This crea
 
 The first viewport contains a large editorial statement and one dark current-writing panel. The status panel is the focal object. Do not add background illustrations, particles, orbit graphics, floating cards, or stock imagery.
 
-### Archive
+### Writing
 
-The archive always reflects the real Markdown content source. If no published entries exist, show the honest zero-state. Never invent sample articles, dates, categories, or metrics.
+The Writing page always reflects the real Markdown content source. If no published entries exist, show the honest zero-state. Never invent sample articles, dates, categories, or metrics.
 
 ### Article pages
 

@@ -1,0 +1,76 @@
+/* Night Field — implementation starting point */
+:root {
+  --nf-canvas: #090d0a;
+  --nf-canvas-soft: #0d120e;
+  --nf-surface: #121813;
+  --nf-surface-raised: #171f19;
+  --nf-surface-quiet: #1d251f;
+
+  --nf-paper: #ece9df;
+  --nf-paper-soft: #c8c8be;
+  --nf-muted: #7c857d;
+  --nf-faint: #555e57;
+
+  --nf-signal: #78a889;
+  --nf-signal-bright: #a9d1b5;
+  --nf-signal-dark: #263a2c;
+
+  --nf-fig: #8f7488;
+  --nf-fig-bright: #bca2b4;
+  --nf-fig-dark: #342a32;
+
+  --nf-lichen: #b7b879;
+  --nf-danger: #b77272;
+
+  --nf-line: rgba(236, 233, 223, 0.1);
+  --nf-line-strong: rgba(236, 233, 223, 0.21);
+  --nf-line-signal: rgba(120, 168, 137, 0.55);
+  --nf-focus: #c5e1cd;
+
+  --page-max: 1760px;
+  --page-gutter: clamp(18px, 3.2vw, 64px);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 6.5rem;
+  --space-10: 9rem;
+
+  --radius-xs: 2px;
+  --radius-sm: 5px;
+  --radius-md: 10px;
+}
+
+html {
+  color-scheme: dark;
+  background: var(--nf-canvas);
+}
+
+body {
+  margin: 0;
+  background: var(--nf-canvas);
+  color: var(--nf-paper);
+}
+
+.site-shell {
+  width: min(100%, var(--page-max));
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+.technical-grid {
+  background-image:
+    linear-gradient(var(--nf-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--nf-line) 1px, transparent 1px);
+  background-size: clamp(72px, 7vw, 128px) clamp(72px, 7vw, 128px);
+}
+
+:focus-visible {
+  outline: 2px solid var(--nf-focus);
+  outline-offset: 4px;
+}

@@ -5,6 +5,7 @@ import { remark } from "remark";
 import html from "remark-html";
 
 const notesDirectory = path.join(process.cwd(), "content", "notes");
+const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 export type NoteMeta = {
   slug: string;
@@ -40,6 +41,7 @@ function noteFiles(): string[] {
 
 function parseMeta(fileName: string): NoteMeta | null {
   const slug = fileName.replace(/\.md$/, "");
+  if (!slugPattern.test(slug)) return null;
   const fullPath = path.join(notesDirectory, fileName);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
@@ -78,8 +80,9 @@ export function getAllNotes(): NoteMeta[] {
 }
 
 export async function getNoteBySlug(slug: string): Promise<Note | null> {
-  const safeSlug = slug.replace(/[^a-z0-9-]/gi, "");
-  const fullPath = path.join(notesDirectory, `${safeSlug}.md`);
+  if (!slugPattern.test(slug)) return null;
+
+  const fullPath = path.join(notesDirectory, `${slug}.md`);
 
   if (!fs.existsSync(fullPath)) return null;
 
@@ -88,19 +91,13 @@ export async function getNoteBySlug(slug: string): Promise<Note | null> {
 
   if (data.draft === true) return null;
 
+  const meta = parseMeta(`${slug}.md`);
+  if (!meta) return null;
+
   const processed = await remark().use(html, { sanitize: true }).process(content);
 
   return {
-    slug: safeSlug,
-    title: String(data.title),
-    description: String(data.description),
-    publishedAt: String(data.publishedAt),
-    updatedAt: data.updatedAt ? String(data.updatedAt) : undefined,
-    author: data.author ? String(data.author) : undefined,
-    topics: Array.isArray(data.topics) ? data.topics.map(String) : [],
-    draft: false,
-    readingTime: calculateReadingTime(content),
-    ...resolveHeroImage(data),
+    ...meta,
     html: processed.toString(),
   };
 }

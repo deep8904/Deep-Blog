@@ -2,12 +2,17 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="ip-not-found">
-      <div className="ip-not-found__topline"><span>Page / Missing</span><span>Archive / Not found</span></div>
-      <span className="ip-label">Protocol error</span>
-      <h1 aria-label="404"><span>4</span><span>0</span><span>4</span></h1>
-      <p>This page is not part of the archive.</p>
-      <Link className="ip-button" href="/">Return to homepage</Link>
+    <section className="not-found-page" aria-labelledby="not-found-title">
+      <div className="article-topline"><span>Page / Missing</span><span>No note lives here</span></div>
+      <div className="not-found-page__body">
+        <p className="article-kicker">[ 404 ]</p>
+        <h1 id="not-found-title">I could not find that page.</h1>
+        <p>The link may be old, mistyped, or pointing at a note that is still private until it is ready.</p>
+        <div className="not-found-page__actions">
+          <Link className="primary-button" href="/notes"><span>Read the writing</span><span aria-hidden="true">→</span></Link>
+          <Link className="secondary-button" href="/">Return home</Link>
+        </div>
+      </div>
     </section>
   );
 }

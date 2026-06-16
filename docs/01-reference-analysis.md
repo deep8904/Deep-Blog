@@ -7,7 +7,7 @@ Useful qualities:
 - Writing-first information architecture.
 - Restrained navigation.
 - Serif and sans-serif contrast.
-- Clear archive and article hierarchy.
+- Clear writing and article hierarchy.
 
 ### Nitro
 Useful qualities:
@@ -33,6 +33,6 @@ The supplied desktop, tablet, and mobile screenshots repeatedly use:
 
 ## Revised synthesis
 
-Draft State keeps the useful editorial hierarchy from the references, but moves away from oversized template-like panels and decorative dashboards. The current system uses the dark Night Field palette, wide ruled sections, restrained technical grid surfaces, a mobile-aware overlay menu, and typography-led article bands. It feels closer to an independent personal publication than a landing page.
+Loose Thread keeps the useful editorial hierarchy from the references, but moves away from oversized template-like panels and decorative dashboards. The current system uses a warm editorial palette, wide ruled sections, a mobile-aware overlay menu, clear Writing navigation, and typography-led article rows. It feels closer to an independent personal publication than a landing page.
 
 Nothing from the reference sites has been copied verbatim. The project uses their principles to build an original personal-blog system.

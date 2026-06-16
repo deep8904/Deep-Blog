@@ -9,6 +9,7 @@ export function InstanceFooter() {
         <h2>Keep the question open long enough to learn from it.</h2>
       </div>
       <div className="footer-links" aria-label="Footer navigation">
+        <Link href="/">Home</Link>
         {siteConfig.navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
       </div>
       <div className="footer-meta">

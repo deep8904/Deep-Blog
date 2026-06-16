@@ -2,7 +2,7 @@
 
 Create a new Markdown file in this folder using a lowercase kebab-case filename:
 
-`why-good-interfaces-feel-inevitable.md`
+`what-the-first-prototype-taught-me.md`
 
 Copy `_post-template.md`, complete the frontmatter, and set `draft: false` only when the note is ready to publish.
 

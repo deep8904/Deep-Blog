@@ -3,18 +3,18 @@ import Link from "next/link";
 const disciplines = [
   {
     index: "01",
-    label: "Software engineering",
-    detail: "Systems, products, and the decisions that carry an idea into release.",
+    label: "Making",
+    detail: "Small builds, rough prototypes, and the decisions that only appear once an idea has to work.",
   },
   {
     index: "02",
-    label: "UI/UX design",
-    detail: "Clear interfaces, thoughtful flows, and useful interactions.",
+    label: "Games",
+    detail: "Rules, feedback, levels, pacing, and the small cues that help a player understand what changed.",
   },
   {
     index: "03",
-    label: "Games + photography",
-    detail: "Play, feedback, framing, and the details that shape attention.",
+    label: "Looking",
+    detail: "Photography, notes, and the details that make a scene, interface, or moment easier to read.",
   },
 ] as const;
 
@@ -36,14 +36,15 @@ export function HomeTriptychHero({ publishedCount }: { publishedCount: number })
           </div>
 
           <h1 id="home-title">
-            <span>Ideas rarely</span>
-            <span>arrive <em>finished.</em></span>
+            <span>I keep notes</span>
+            <span>while ideas <em>change.</em></span>
           </h1>
 
           <p className="identity-hero__intro">
-            Loose Thread is a personal record of building software, designing
-            interfaces, exploring games, and learning to see more carefully
-            through photography.
+            Loose Thread is where I slow down after making something and write
+            down what actually happened: the useful mistake, the better question,
+            the photograph that changed how I saw a scene, or the game idea that
+            became clearer only after it pushed back.
           </p>
 
           <div className="identity-hero__actions">
@@ -61,8 +62,8 @@ export function HomeTriptychHero({ publishedCount }: { publishedCount: number })
           <div className="identity-hero__image" role="img" aria-label="Loose Thread hero photograph" />
           <div className="identity-hero__visual-footer">
             <div>
-              <span>CURRENT RECORD</span>
-              <strong>{count} published {publishedCount === 1 ? "entry" : "entries"}</strong>
+              <span>PUBLISHED WRITING</span>
+              <strong>{count} published {publishedCount === 1 ? "note" : "notes"}</strong>
             </div>
             <span className="identity-hero__version">LT / 01</span>
           </div>

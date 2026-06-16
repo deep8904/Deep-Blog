@@ -1,7 +1,7 @@
 /* Homepage hero built directly from the DESIGN.md palette, type, spacing, and geometry. */
 
 .identity-hero {
-  min-height: calc(100svh - 76px);
+  min-height: min(860px, calc(100svh - 76px));
   padding: 32px clamp(20px, 4vw, 72px) 28px;
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
@@ -37,7 +37,7 @@
 .identity-hero__main {
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
   align-items: stretch;
   gap: clamp(36px, 5vw, 88px);
 }
@@ -79,10 +79,10 @@
 .identity-hero h1 {
   max-width: 980px;
   margin: 0;
-  font-size: clamp(68px, 8.6vw, 136px);
+  font-size: clamp(4.25rem, 7.6vw, 7rem);
   font-weight: 500;
-  line-height: .88;
-  letter-spacing: -.072em;
+  line-height: .92;
+  letter-spacing: 0;
 }
 
 .identity-hero h1 span {
@@ -102,9 +102,9 @@
   padding-top: 24px;
   color: rgba(25, 28, 33, .68);
   border-top: 1px solid var(--line);
-  font-size: clamp(18px, 1.7vw, 24px);
+  font-size: clamp(1.125rem, 1.7vw, 1.375rem);
   line-height: 1.5;
-  letter-spacing: -.02em;
+  letter-spacing: 0;
 }
 
 .identity-hero__actions {
@@ -130,12 +130,12 @@
 .identity-hero__secondary:hover {
   color: var(--surface);
   background: var(--secondary);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .identity-hero__visual {
   position: relative;
-  min-height: 480px;
+  min-height: clamp(480px, 56vw, 640px);
   overflow: hidden;
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
@@ -154,7 +154,7 @@
   height: 34%;
   content: "";
   background: var(--primary);
-  animation: identity-meter 4.8s var(--ease) infinite alternate;
+  animation: identity-meter 6s var(--ease) infinite alternate;
 }
 
 .identity-hero__image {
@@ -191,9 +191,9 @@
 }
 
 .identity-hero__visual-footer strong {
-  font-size: 20px;
+  font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
   font-weight: 500;
-  letter-spacing: -.025em;
+  letter-spacing: 0;
 }
 
 .identity-hero__version {
@@ -235,7 +235,7 @@
 .identity-hero__disciplines strong {
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: -.02em;
+  letter-spacing: 0;
 }
 
 .identity-hero__disciplines p {
@@ -253,29 +253,29 @@
 
 .js .identity-hero h1 span {
   opacity: 0;
-  transform: translateY(34px);
-  animation: identity-title-in .8s var(--ease) forwards;
+  transform: translateY(12px);
+  animation: identity-title-in .42s var(--ease) forwards;
 }
 
 .js .identity-hero h1 span:nth-child(2) {
-  animation-delay: .08s;
+  animation-delay: .05s;
 }
 
 .js .identity-hero__intro,
 .js .identity-hero__actions,
 .js .identity-hero__status {
   opacity: 0;
-  transform: translateY(16px);
-  animation: identity-fade-in .7s .18s var(--ease) forwards;
+  transform: translateY(8px);
+  animation: identity-fade-in .38s .12s var(--ease) forwards;
 }
 
-.js .identity-hero__intro { animation-delay: .22s; }
-.js .identity-hero__actions { animation-delay: .3s; }
+.js .identity-hero__intro { animation-delay: .16s; }
+.js .identity-hero__actions { animation-delay: .22s; }
 
 .js .identity-hero__visual {
   opacity: 0;
-  transform: translateY(18px) scale(.992);
-  animation: identity-visual-in .85s .12s var(--ease) forwards;
+  transform: translateY(10px);
+  animation: identity-visual-in .45s .1s var(--ease) forwards;
 }
 
 @keyframes identity-title-in {
@@ -310,11 +310,11 @@
 
   .identity-hero h1 {
     max-width: 900px;
-    font-size: clamp(72px, 11vw, 118px);
+    font-size: clamp(4.5rem, 10vw, 6rem);
   }
 
   .identity-hero__visual {
-    min-height: 640px;
+    min-height: min(640px, 76vw);
   }
 }
 
@@ -340,7 +340,7 @@
   }
 
   .identity-hero h1 {
-    font-size: clamp(54px, 16vw, 78px);
+    font-size: clamp(3.25rem, 14vw, 4rem);
     line-height: .9;
   }
 
@@ -360,7 +360,7 @@
   }
 
   .identity-hero__visual {
-    min-height: 520px;
+    min-height: clamp(360px, 105vw, 520px);
     border-radius: 24px;
   }
 
@@ -382,11 +382,11 @@
 
 @media (max-width: 480px) {
   .identity-hero h1 {
-    font-size: clamp(48px, 15vw, 66px);
+    font-size: clamp(2.75rem, 13.5vw, 3.25rem);
   }
 
   .identity-hero__visual {
-    min-height: 440px;
+    min-height: clamp(330px, 112vw, 440px);
   }
 
   .identity-hero__visual-footer {
@@ -405,7 +405,7 @@
   }
 
   .identity-hero h1 {
-    font-size: clamp(66px, 7vw, 104px);
+    font-size: clamp(4.75rem, 6.7vw, 5.5rem);
   }
 
   .identity-hero__visual {

@@ -46,10 +46,7 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
     year: "numeric",
     timeZone: "UTC",
   }).format(new Date(note.publishedAt));
-  const fallbackImage = note.slug === "three-days-one-castle-next-wave"
-    ? "/images/notes/xbox-game-camp/article-hero.jpg"
-    : undefined;
-  const heroImage = note.heroImage ?? fallbackImage;
+  const heroImage = note.heroImage;
   const heroStyle = heroImage
     ? ({ backgroundImage: `url("${heroImage}")` } as CSSProperties)
     : undefined;
@@ -69,7 +66,7 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
     <article className="article-page">
       <header className="article-header">
         <div className="article-topline">
-          <Link href="/notes">← Back to archive</Link>
+          <Link href="/notes">← Back to writing</Link>
           <span><i className="status-dot" aria-hidden="true" /> Published entry</span>
         </div>
         <div className="article-heading-grid">
@@ -104,7 +101,7 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
 
       <div className="article-prose" dangerouslySetInnerHTML={{ __html: note.html }} />
       <footer className="article-footer">
-        <Link className="secondary-button" href="/notes">All writing</Link>
+        <Link className="secondary-button" href="/notes">All published writing</Link>
         <Link className="primary-button" href="/about"><span>About the writer</span><span aria-hidden="true">→</span></Link>
       </footer>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

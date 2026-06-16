@@ -26,7 +26,7 @@ Leave a little space above the head and around the shoulders because responsive 
 
 ## First blog cover images
 
-### Archive or featured image
+### Writing or featured image
 
 - Upload path: `public/images/notes/xbox-game-camp/featured.jpg`
 - Recommended size: `1600 × 900 px`

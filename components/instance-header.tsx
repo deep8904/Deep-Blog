@@ -6,13 +6,13 @@ import { useEffect, useState } from "react";
 import { siteConfig } from "@/site.config";
 
 type InstanceHeaderProps = {
-  archiveCount: number;
+  writingCount: number;
 };
 
-export function InstanceHeader({ archiveCount }: InstanceHeaderProps) {
+export function InstanceHeader({ writingCount }: InstanceHeaderProps) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const count = String(archiveCount).padStart(2, "0");
+  const count = String(writingCount).padStart(2, "0");
 
   useEffect(() => setOpen(false), [pathname]);
 
@@ -55,6 +55,7 @@ export function InstanceHeader({ archiveCount }: InstanceHeaderProps) {
         <button
           className="menu-button"
           type="button"
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((value) => !value)}
@@ -64,7 +65,12 @@ export function InstanceHeader({ archiveCount }: InstanceHeaderProps) {
         </button>
       </header>
 
-      <nav className={`mobile-menu${open ? " is-open" : ""}`} id="mobile-menu" aria-label="Mobile navigation">
+      <nav
+        className={open ? "mobile-menu-open" : "mobile-menu"}
+        id="mobile-menu"
+        aria-label="Mobile navigation"
+        aria-hidden={!open}
+      >
         {siteConfig.navigation.map((item) => (
           <Link key={item.href} href={item.href} aria-current={active(item.href) ? "page" : undefined}>
             {item.label}

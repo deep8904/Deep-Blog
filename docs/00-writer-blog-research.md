@@ -15,16 +15,16 @@ This redesign was informed by real independent writer and maker websites, not on
 ## What strong personal blogs do well
 
 ### They introduce the person plainly
-The strongest homepages do not begin with a grand brand manifesto. They quickly explain who the author is, what they make, and what they write about. The new Draft State homepage therefore opens in first person and gives visitors a clear picture of Deep before introducing the archive.
+The strongest homepages do not begin with a grand brand manifesto. They quickly explain who the author is, what they make, and what they write about. The Loose Thread homepage therefore opens in first person and gives visitors a clear picture of Deep before introducing the writing.
 
 ### They describe the writing in concrete terms
-Good writer sites distinguish essays, notes, patterns, projects, or other formats using direct language. They avoid vague phrases such as “thought leadership” or “content.” Draft State now describes real subject areas—software, interfaces, games, and photography—and explains what each means.
+Good writer sites distinguish essays, notes, patterns, projects, or other formats using direct language. They avoid vague phrases such as “thought leadership” or “content.” Loose Thread now describes real subject areas—making things, games, photography, and writing—and explains what each means.
 
 ### They let personality appear through specificity
-Craig Mod’s site feels personal because the copy sounds like a person, not because it uses a decorative slogan. Maggie Appleton clearly describes the intersections in her work. Steph Ango keeps the structure simple and the language concise. Robin Sloan explains the different places his writing lives. Draft State follows the same principle: specific interests, an honest reason for writing, and no invented authority.
+Craig Mod’s site feels personal because the copy sounds like a person, not because it uses a decorative slogan. Maggie Appleton clearly describes the intersections in her work. Steph Ango keeps the structure simple and the language concise. Robin Sloan explains the different places his writing lives. Loose Thread follows the same principle: specific interests, an honest reason for writing, and no invented authority.
 
-### They make the archive central
-The writing index is easy to find and simple to scan. The homepage supports the archive rather than behaving like a startup landing page. Draft State keeps a prominent Writing route and publishes only real notes, with a small fallback for the technical case where every note is private.
+### They make the writing central
+The writing index is easy to find and simple to scan. The homepage supports published writing rather than behaving like a startup landing page. Loose Thread keeps a prominent Writing route and publishes only real notes, with a small fallback for the technical case where every note is private.
 
 ### They protect reading comfort
 Serif type, controlled measure, strong hierarchy, generous spacing, and restrained navigation recur across strong writer sites. The revised design uses expressive typography in the interface while keeping future article pages quiet and readable.
@@ -34,7 +34,7 @@ Serif type, controlled measure, strong hierarchy, generous spacing, and restrain
 - Replaced the abstract “Ideas, before they harden” positioning with a direct first-person introduction.
 - Rewrote every page so it sounds like Deep speaking about his own work.
 - Removed the loud decorative panel and earlier card-heavy bento structure.
-- Introduced the Night Field palette: black, paper, vine, fig, slate, warm micro-accent, and quiet rules.
-- Replaced old panels with a darker editorial grid, topic index, compact publication signal, and article-led archive.
+- Preserved the warm editorial palette and removed the older dark-protocol assumptions from the live UI.
+- Replaced old panels with a clearer writing feature, topic index, compact publication signal, and article-led Writing page.
 - Published the first real article without adding demonstration content.
 - Removed decorative pointer motion and avoided animation libraries.

@@ -4,8 +4,8 @@ import { Reveal } from "@/components/reveal";
 import { getAllNotes } from "@/lib/notes";
 
 export const metadata: Metadata = {
-  title: "Archive",
-  description: "Essays and notes by Deep Chadamiya about software, design, games, and photography.",
+  title: "Writing",
+  description: "Published notes by Deep Chadamiya about projects, games, photography, and what he is learning.",
 };
 
 function formatDate(value: string) {
@@ -22,36 +22,36 @@ export default function NotesPage() {
   const count = String(notes.length).padStart(2, "0");
 
   return (
-    <div className="inner-page archive-page">
-      <section className="page-hero archive-hero" aria-labelledby="archive-title">
-        <div className="section-label archive-label"><span>AR</span><p>ARCHIVE / PUBLICATION INDEX</p></div>
-        <div className="archive-title-row">
-          <h1 id="archive-title">
-            <span className="line"><span>{notes.length ? "Entries on" : "No entries"}</span></span>
-            <span className="line"><span>{notes.length ? "record." : "on record."}</span></span>
+    <div className="inner-page writing-page">
+      <section className="page-hero writing-hero" aria-labelledby="writing-title">
+        <div className="section-label writing-label"><span>WR</span><p>PUBLISHED NOTES</p></div>
+        <div className="writing-title-row">
+          <h1 id="writing-title">
+            <span className="line"><span>{notes.length ? "Notes with" : "No writing"}</span></span>
+            <span className="line"><span>{notes.length ? "a clear point." : "published yet."}</span></span>
           </h1>
-          <div className="archive-total"><span>TOTAL</span><strong>{count}</strong></div>
+          <div className="writing-total"><span>PUBLISHED</span><strong>{count}</strong></div>
         </div>
         <p className="page-intro">
           {notes.length
-            ? "A growing record of software, interfaces, games, photography, and the decisions that remained useful after the work was done."
-            : "The archive is intentionally empty while the first piece is being written. No samples, generated titles, or placeholder dates."}
+            ? "A small set of notes that have been edited enough to share. Each one starts from something real: a project, a game, a photograph, a decision, or a question that kept returning."
+            : "This page stays empty until a real note is ready. No samples, generated titles, or placeholder dates."}
         </p>
       </section>
 
       {notes.length ? (
-        <section className="archive-list-section" aria-labelledby="entry-list-title">
+        <section className="writing-list-section" aria-labelledby="entry-list-title">
           <Reveal>
-            <div className="archive-list-heading">
-              <p id="entry-list-title">[ ALL ENTRIES ]</p>
+            <div className="writing-list-heading">
+              <p id="entry-list-title">[ PUBLISHED NOTES ]</p>
               <span>{count} TOTAL</span>
             </div>
-            <ol className="archive-list">
+            <ol className="writing-list">
               {notes.map((note, index) => (
                 <li key={note.slug}>
                   <Link href={`/notes/${note.slug}`}>
-                    <span className="archive-entry-index">{String(index + 1).padStart(2, "0")}</span>
-                    <span className="archive-entry-copy">
+                    <span className="writing-entry-index">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="writing-entry-copy">
                       <span className="latest-meta">
                         <time dateTime={note.publishedAt}>{formatDate(note.publishedAt)}</time>
                         <span>{note.readingTime} min read</span>
@@ -60,7 +60,7 @@ export default function NotesPage() {
                       <strong>{note.title}</strong>
                       <p>{note.description}</p>
                     </span>
-                    <span className="archive-entry-arrow" aria-hidden="true">→</span>
+                    <span className="writing-entry-arrow" aria-hidden="true">→</span>
                   </Link>
                 </li>
               ))}
@@ -68,9 +68,9 @@ export default function NotesPage() {
           </Reveal>
         </section>
       ) : (
-        <section className="archive-console" aria-labelledby="console-title">
+        <section className="writing-console" aria-labelledby="console-title">
           <Reveal>
-            <div className="console-header"><span>ARCHIVE</span><span>LOCAL</span></div>
+            <div className="console-header"><span>WRITING</span><span>LOCAL</span></div>
             <div className="console-body">
               <div className="console-zero" aria-hidden="true">00</div>
               <div className="console-message">
@@ -84,15 +84,15 @@ export default function NotesPage() {
         </section>
       )}
 
-      <section className="process-section" aria-labelledby="process-title">
+      <section className="publishing-note-section" aria-labelledby="publishing-note-title">
         <Reveal>
-          <div className="section-label"><span>01</span><p>BEFORE PUBLICATION</p></div>
-          <div className="process-copy">
-            <h2 id="process-title">The archive grows only when the work earns its place.</h2>
+          <div className="section-label"><span>01</span><p>WHAT BELONGS HERE</p></div>
+          <div className="publishing-note-copy">
+            <h2 id="publishing-note-title">I publish when a note can give a reader more than a timeline.</h2>
             <ol>
-              <li><span>01</span><div><strong>Collect</strong><p>Capture the question, references, contradictions, and useful observations.</p></div></li>
-              <li><span>02</span><div><strong>Shape</strong><p>Find the argument, remove repetition, and test whether the idea is actually useful.</p></div></li>
-              <li><span>03</span><div><strong>Publish</strong><p>Release the piece with enough context to be understood and enough honesty to be revised.</p></div></li>
+              <li><span>01</span><div><strong>A concrete start</strong><p>A build, event, photograph, game system, or decision gives the note something real to stand on.</p></div></li>
+              <li><span>02</span><div><strong>A useful turn</strong><p>The middle should show what changed: a mistaken assumption, a sharper tradeoff, or a better question.</p></div></li>
+              <li><span>03</span><div><strong>A remembered point</strong><p>The ending should make clear why the note was worth saving, even if the idea is still unfinished.</p></div></li>
             </ol>
           </div>
         </Reveal>

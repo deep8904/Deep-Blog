@@ -6,7 +6,7 @@ The previous copy sounded like an art-direction statement. The revised copy soun
 
 ## Core introduction
 
-Deep is a software engineer whose interests naturally extend into interface design, game development, and photography. Draft State is a place to record what those activities teach him: decisions, mistakes, observations, and ideas worth revisiting.
+Deep is interested in making things, studying games, photography, and the way ideas change during real work. Loose Thread is a place to record what those activities teach him: decisions, mistakes, observations, and ideas worth revisiting.
 
 ## Voice
 
@@ -19,13 +19,13 @@ Deep is a software engineer whose interests naturally extend into interface desi
 
 ## Homepage structure
 
-1. **Who is this?** Deep, a software engineer with overlapping interests.
+1. **Who is this?** Deep, a maker with overlapping interests in games, photographs, writing, and clearer thinking.
 2. **Why does he write?** To understand the work and preserve its lessons.
-3. **What will appear here?** Software, interfaces, games, and photography.
+3. **What will appear here?** Projects, games, photographs, decisions, and questions worth revisiting.
 4. **What is published now?** The first essay, “Three Days, One Castle, and a Team Called Next Wave,” is published.
 5. **Where should a reader go next?** Writing or About.
 
-## Archive fallback copy
+## Writing fallback copy
 
 The fallback only appears if every Markdown note is private or drafted.
 
@@ -33,7 +33,7 @@ The fallback only appears if every Markdown note is private or drafted.
 >
 > Drafts are kept private until they are ready.
 
-The live archive contains only real published writing and no demonstration posts.
+The live Writing page contains only real published writing and no demonstration posts.
 
 ## Writing guidance for future posts
 
@@ -50,4 +50,4 @@ Then explain:
 - What changed after closer examination.
 - What remains uncertain.
 
-Avoid generic openings, forced listicles, exaggerated expertise, and a publishing schedule created only to keep the archive busy.
+Avoid generic openings, forced listicles, exaggerated expertise, and a publishing schedule created only to keep the Writing page busy.
