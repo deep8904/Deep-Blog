@@ -1,67 +1,84 @@
 import Link from "next/link";
 
-const panels = [
+const disciplines = [
   {
-    index: "01-A",
+    index: "01",
     label: "Software engineering",
-    copy: "Building dependable products and examining the decisions that carry an idea into release.",
+    detail: "Systems, products, and the decisions that carry an idea into release.",
   },
   {
-    index: "02-B",
+    index: "02",
     label: "UI/UX design",
-    copy: "Designing clear interfaces and thoughtful paths through complex products.",
+    detail: "Clear interfaces, thoughtful flows, and useful interactions.",
   },
   {
-    index: "03-C",
+    index: "03",
     label: "Games + photography",
-    copy: "Studying play, feedback, framing, and the details that shape attention.",
+    detail: "Play, feedback, framing, and the details that shape attention.",
   },
 ] as const;
 
 export function HomeTriptychHero({ publishedCount }: { publishedCount: number }) {
+  const count = String(publishedCount).padStart(2, "0");
+
   return (
-    <section className="aether-hero" aria-labelledby="home-title">
-      <div className="aether-hero__meta">
+    <section className="identity-hero" aria-labelledby="home-title">
+      <div className="identity-hero__meta">
         <span>[ PERSONAL FIELD NOTES ]</span>
         <span>PHOENIX / EST. 2026</span>
       </div>
 
-      <div className="aether-hero__stage">
-        <div className="aether-hero__panels" aria-label="Areas I write about">
-          {panels.map((panel, panelIndex) => (
-            <article className={`aether-panel aether-panel--${panelIndex + 1}`} key={panel.index}>
-              <span className="aether-panel__index">{panel.index}</span>
-              <div className="aether-panel__copy">
-                <strong>{panel.label}</strong>
-                <p>{panel.copy}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+      <div className="identity-hero__main">
+        <div className="identity-hero__copy">
+          <div className="identity-hero__status">
+            <i aria-hidden="true" />
+            <span>Notebook active</span>
+          </div>
 
-        <div className="aether-hero__title-lockup">
-          <p>LOOSE THREAD</p>
           <h1 id="home-title">
             <span>Ideas rarely</span>
-            <span>arrive finished.</span>
+            <span>arrive <em>finished.</em></span>
           </h1>
-          <div className="aether-hero__title-meta" aria-hidden="true">
-            <span>BUILD / DESIGN / PLAY</span>
-            <span>{String(publishedCount).padStart(2, "0")} ENTRIES</span>
+
+          <p className="identity-hero__intro">
+            Loose Thread is a personal record of building software, designing
+            interfaces, exploring games, and learning to see more carefully
+            through photography.
+          </p>
+
+          <div className="identity-hero__actions">
+            <Link className="primary-button" href="/notes">
+              <span>Read the writing</span>
+              <span aria-hidden="true">→</span>
+            </Link>
+            <Link className="identity-hero__secondary" href="/about">
+              About Deep
+            </Link>
           </div>
         </div>
+
+        <aside className="identity-hero__visual" aria-label="Loose Thread visual journal">
+          <div className="identity-hero__image" role="img" aria-label="Loose Thread hero photograph" />
+          <div className="identity-hero__visual-footer">
+            <div>
+              <span>CURRENT RECORD</span>
+              <strong>{count} published {publishedCount === 1 ? "entry" : "entries"}</strong>
+            </div>
+            <span className="identity-hero__version">LT / 01</span>
+          </div>
+        </aside>
       </div>
 
-      <div className="aether-hero__footer">
-        <p>
-          A personal notebook about building software, designing interfaces,
-          learning game design, and seeing more carefully through photography.
-        </p>
-        <nav aria-label="Hero links">
-          <span><i aria-hidden="true" /> Journal active</span>
-          <Link href="/notes">Read the writing</Link>
-          <Link href="/about">About Deep</Link>
-        </nav>
+      <div className="identity-hero__disciplines" aria-label="Topics covered on Loose Thread">
+        {disciplines.map((discipline) => (
+          <article key={discipline.index}>
+            <span>{discipline.index}</span>
+            <div>
+              <strong>{discipline.label}</strong>
+              <p>{discipline.detail}</p>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );
