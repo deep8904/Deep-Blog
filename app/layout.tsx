@@ -8,7 +8,7 @@ import { siteConfig } from "@/site.config";
 import "./instance-live.css";
 import "./refinements-v2.css";
 import "./image-paths.css";
-import "./hero-v5.css";
+import "./identity-hero.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
