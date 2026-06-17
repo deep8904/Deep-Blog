@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/reveal";
 
 export const metadata: Metadata = {
@@ -70,11 +71,16 @@ export default function AboutPage() {
         </Reveal>
       </section>
 
-      <section className="closing-note">
+      <section className="closing-note" id="contact">
         <Reveal>
-          <p>[ CURRENT DIRECTION ]</p>
-          <h2>Make the work clearer. Keep the useful parts. Let the next question stay visible.</h2>
-          <Link className="primary-button" href="/notes"><span>Read the writing</span><span aria-hidden="true">→</span></Link>
+          <div className="contact-section">
+            <div className="contact-section__copy">
+              <p>[ CONTACT ]</p>
+              <h2>Send me a note if something here connects with what you are making, playing, or trying to understand.</h2>
+              <Link className="secondary-button" href="/notes"><span>Read the writing</span><span aria-hidden="true">→</span></Link>
+            </div>
+            <ContactForm />
+          </div>
         </Reveal>
       </section>
     </div>
