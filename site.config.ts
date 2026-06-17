@@ -17,6 +17,7 @@ export const siteConfig = {
   url: resolveSiteUrl(),
   navigation: [
     { label: "About", href: "/about" },
+    { label: "Photography", href: "/photography" },
     { label: "Writing", href: "/notes" },
   ],
 } as const;
