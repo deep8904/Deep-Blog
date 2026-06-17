@@ -6,6 +6,7 @@ out
 .env.*
 !.env.example
 .vercel
+test-results/
 .DS_Store
 *.log
 *.tsbuildinfo
