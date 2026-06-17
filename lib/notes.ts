@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 
@@ -44,7 +43,7 @@ function parseMeta(fileName: string): NoteMeta | null {
   if (!slugPattern.test(slug)) return null;
   const fullPath = path.join(notesDirectory, fileName);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  const { data, content } = parseMarkdownFile(fileContents, fileName);
 
   if (data.draft === true) return null;
 
@@ -87,7 +86,7 @@ export async function getNoteBySlug(slug: string): Promise<Note | null> {
   if (!fs.existsSync(fullPath)) return null;
 
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  const { data, content } = parseMarkdownFile(fileContents, `${slug}.md`);
 
   if (data.draft === true) return null;
 
@@ -113,6 +112,78 @@ function calculateReadingTime(content: string): number {
   const wordCount = plainText.match(/\b[\w'’-]+\b/g)?.length ?? 0;
 
   return Math.max(1, Math.ceil(wordCount / 220));
+}
+
+function parseMarkdownFile(fileContents: string, fileName: string) {
+  if (!fileContents.startsWith("---\n")) {
+    throw new Error(`Missing frontmatter block in ${fileName}`);
+  }
+
+  const closingMarker = fileContents.indexOf("\n---", 4);
+  if (closingMarker === -1) {
+    throw new Error(`Unclosed frontmatter block in ${fileName}`);
+  }
+
+  const frontmatter = fileContents.slice(4, closingMarker);
+  const contentStart = fileContents.indexOf("\n", closingMarker + 4);
+  const content = contentStart === -1 ? "" : fileContents.slice(contentStart + 1);
+
+  return {
+    data: parseFrontmatter(frontmatter),
+    content,
+  };
+}
+
+function parseFrontmatter(frontmatter: string): Record<string, string | string[] | boolean> {
+  const data: Record<string, string | string[] | boolean> = {};
+  const lines = frontmatter.split(/\r?\n/);
+  let currentListKey: string | null = null;
+
+  for (const rawLine of lines) {
+    const line = rawLine.trimEnd();
+    const trimmed = line.trim();
+
+    if (!trimmed || trimmed.startsWith("#")) continue;
+
+    if (currentListKey && trimmed.startsWith("- ")) {
+      const currentValue = data[currentListKey];
+      if (Array.isArray(currentValue)) {
+        currentValue.push(parseScalar(trimmed.slice(2)) as string);
+      }
+      continue;
+    }
+
+    currentListKey = null;
+    const separatorIndex = line.indexOf(":");
+    if (separatorIndex === -1) continue;
+
+    const key = line.slice(0, separatorIndex).trim();
+    const rawValue = line.slice(separatorIndex + 1).trim();
+
+    if (!rawValue) {
+      data[key] = [];
+      currentListKey = key;
+      continue;
+    }
+
+    data[key] = parseScalar(rawValue);
+  }
+
+  return data;
+}
+
+function parseScalar(value: string): string | boolean {
+  if (value === "true") return true;
+  if (value === "false") return false;
+
+  if (
+    (value.startsWith('"') && value.endsWith('"')) ||
+    (value.startsWith("'") && value.endsWith("'"))
+  ) {
+    return value.slice(1, -1);
+  }
+
+  return value;
 }
 
 function resolveHeroImage(data: Record<string, unknown>) {

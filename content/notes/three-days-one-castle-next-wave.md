@@ -1,8 +1,8 @@
 ---
 title: "Three Days, One Castle, and a Team Called Next Wave"
-description: "What Xbox Game Camp Arizona taught me about game design, player experience, collaboration, and letting go of the first idea."
+description: "A weekend at Xbox Game Camp Arizona taught me how quickly a game idea changes when the tool, the team, and the deadline all start talking back."
 publishedAt: "2026-06-11"
-updatedAt: "2026-06-11"
+updatedAt: "2026-06-17"
 author: "Deepkumar Chadamiya"
 topics:
   - "Game Design"
@@ -10,240 +10,184 @@ topics:
   - "Collaboration"
   - "Xbox Game Camp"
 draft: false
+heroImage: "/images/notes/three-days-one-castle-next-wave/01-mix-center-exterior.webp"
+heroImageAlt: "The ASU MIX Center exterior with Xbox Game Camp signage on the building."
+heroImageCaption: "Xbox Game Camp Arizona at ASU's MIX Center in Mesa."
 ---
 
-At some point on Friday evening, surrounded by unfamiliar faces and an equally unfamiliar game engine, I opened Discord and asked:
+At some point on Friday evening, surrounded by people I had only just met and a game engine I barely understood, I opened Discord and asked the kind of question that reveals exactly how new you are to a room:
 
 > Is there any way we can build this in 2D instead of 3D?
 
-The answer was technically yes—but not really.
+The answer was technically yes.
 
-Endstar was a 3D engine. We could restrict the camera and create something that felt two-dimensional, but the tool was designed for a different kind of experience.
+Also, not really.
 
-That small question became the theme of my weekend at Xbox Game Camp Arizona. I had arrived with a clean idea in my head. By Sunday, the useful version of the idea had been reshaped by the tool, the team, and the deadline.
+Endstar was a 3D engine. We could fake a flatter view, restrict a camera, and pretend the world had fewer dimensions than it wanted to have, but the tool was already making its argument. It was not neutral. It had gravity, volume, props, camera behavior, and its own assumptions about what a game could become.
+
+I arrived at Xbox Game Camp Arizona with a clean idea in my head. By Sunday afternoon, that clean idea had been bent by the engine, pulled apart by the team, trimmed by the deadline, and rebuilt into something stranger and more useful.
 
 That is the part I want to remember.
 
-You arrive with one idea. The tools push back. Your teammates see something different. The deadline starts moving faster. Somewhere between all of that, a better game begins to appear.
+Not the clean idea.
 
-The useful lesson was not simply that game jams require smaller scope. I already knew that in theory. What changed for me was seeing how fast a team can improve an idea when nobody treats the first version as sacred, including me.
+The moment it started changing.
 
-By the end of the weekend, I was paying attention to three things I want to carry into future work:
+## Friday: The Room Before The Team
 
-- the tool is not just a constraint; it is part of the design conversation
-- a team becomes stronger when people can let go of their favorite version
-- player experience is built from the whole environment, not only from screens and menus
+Xbox Game Camp Arizona took place from May 29-31, 2026, at Arizona State University's MIX Center in Mesa.
 
-<!-- IMAGE_SLOT: 01-mix-center-exterior -->
+The event brought together Xbox, ASU, Endless Games and Learning Lab, Endless Studios, GitHub, industry mentors, and people trying to make games from many different starting points. Some people came in with teammates. Some had already built things in game engines. Some were artists, designers, developers, producers, students, or people with a little bit of all of that tangled together.
 
-## Friday: Entering the Constraint
+I came in from the side of making interfaces and thinking about how people move through systems. I understood flows, feedback, hierarchy, and interaction patterns. I had opinions about clarity. I cared about whether a person understood what an experience was asking from them.
 
-Xbox Game Camp Arizona took place from May 29–31, 2026, at Arizona State University’s MIX Center in Mesa.
-
-The event brought together Xbox, ASU, Endless Games and Learning Lab, Endless Studios, GitHub, industry mentors, and aspiring game creators for a three-day development sprint.
-
-The challenge was to create something inspired by Knight Lore, the influential 1984 game known for its mysterious castle, isometric world, environmental puzzles, and Sabreman—the adventurer cursed to transform into a werewolf.
-
-I knew about game development, but I was entering from a slightly different direction.
-
-I came in through building software, designing screens, and thinking about how people move through a system. I understood flows, feedback, hierarchy, and interaction patterns. What I had not done was walk into a room, meet three people, learn a new engine, reinterpret a 42-year-old game, and produce something playable before Sunday afternoon.
+What I had not done was walk into a room, meet three people, learn a new engine, reinterpret a 42-year-old game, and produce something playable before Sunday afternoon.
 
 That was new.
 
-Friday began with the familiar mixture of excitement and low-level panic that shows up when a room full of people has to turn individual skills into teams.
+The challenge was to build something inspired by *Knight Lore*, the 1984 game known for its mysterious castle, isometric rooms, environmental puzzles, and Sabreman, the adventurer cursed to transform into a werewolf. The reference had a very specific mood: old, strange, constrained, spatial, and a little haunted by its own limitations.
 
-The room was full of individual skills searching for the right combination. Developers were discussing engines. Artists were comparing visual directions. Designers were already turning the theme into mechanics. Some people arrived with teammates. Others, including me, had to find them.
+The MIX Center had the opposite feeling. It was bright, modern, full of screens, full of motion. On Friday, before there was a team, the room felt like a bag of loose parts being shaken until something connected.
 
-I eventually connected with Warren Andrus, Chris Goodman, and Gabe Isko.
+Developers talked about engines. Artists compared visual directions. Designers turned the theme over in their hands, looking for mechanics hidden inside it. Every conversation had the same quiet pressure underneath it:
 
-Warren brought architectural thinking and game-design ideas. Chris focused on production and playtesting. Gabe brought development experience and a love for game engines. I contributed through visual direction, player-flow thinking, ideation, and the willingness to learn Endstar as quickly as possible.
+What can we actually make?
 
-Four people who had not planned to work together became a team. That changed the shape of the idea immediately, because each person noticed a different part of the problem.
+Eventually I connected with Warren Andrus, Chris Goodman, and Gabe Isko.
+
+Warren brought architectural thinking and game-design ideas. Chris focused on production and playtesting. Gabe brought development experience and a love for game engines. I contributed visual direction, player-flow thinking, ideation, and the willingness to learn Endstar as quickly as I could without pretending I already knew it.
+
+Four people who had not planned to work together became a team. Immediately, the idea was no longer mine or anyone else's alone. That sounds obvious, but it changes everything. A solo idea can stay elegant because nobody has to build it yet. A team idea has to survive other people's instincts.
 
 Then we needed a name.
 
 We became Next Wave Studios.
 
-It sounded forward-looking, slightly dramatic, and ambitious enough for a team whose concept would soon grow far beyond what could reasonably be completed in a weekend.
+It sounded forward-looking, a little dramatic, and ambitious enough for a concept that was about to become much too large for a weekend.
 
 So, naturally, it was perfect.
 
-<!-- IMAGE_SLOT: 02-next-wave-team-formation -->
+![Members of Next Wave Studios seated together with laptops during Xbox Game Camp Arizona.](/images/notes/three-days-one-castle-next-wave/02-next-wave-team-formation.webp)
 
-## The First Idea Was Too Big
+*Next Wave Studios, still early enough in the weekend that ambition had not been fully negotiated with time.*
 
-Our earliest concept was built around vampire hunters defending themselves against waves of supernatural enemies.
+## The Idea That Was Too Large To Keep
 
-There would be a planning phase, traps, fortifications, different enemy types, resources, upgrades, and eventually an action-heavy survival sequence.
+Our earliest concept was about vampire hunters defending themselves against waves of supernatural enemies.
+
+It had a planning phase. It had traps. It had fortifications, enemy types, resources, upgrades, and an action-heavy survival sequence waiting somewhere near the end.
 
 It had strategy.
 
 It had progression.
 
-It had enough systems to keep a full development team busy for several months.
+It had enough systems to keep a full team busy for months.
 
-We had approximately two days.
+We had about two days.
 
-This is where a game jam begins teaching you whether you are attached to solving the problem or merely attached to your first solution.
+This is where a game jam starts asking a question that is easy to answer in theory and much harder to answer when the idea is yours:
 
-As we continued discussing Knight Lore, we found a more interesting perspective.
+Are you trying to solve the problem, or are you protecting the first version?
 
-Instead of playing as hunters trying to survive a monster, what if we played as Sabreman preparing for the hunters?
+The more we talked about *Knight Lore*, the more interesting the opposite perspective became. Instead of playing as hunters trying to survive the monster, what if the player was Sabreman preparing for the hunters?
 
-He knows the next full moon is coming.
+He knows the full moon is coming.
 
 He knows another wave will enter the mansion.
 
 He cannot stop them from arriving, but he can decide what they encounter.
 
-The game shifted from straightforward survival into a defensive strategy concept. Players would expand the mansion, choose rooms, control pathways, place traps, weaken incoming hunters, and prepare Sabreman for a final confrontation with whoever survived.
+That small reversal changed the whole shape of the game. The mansion stopped being background. It became the weapon. The player would expand rooms, choose paths, place traps, weaken incoming hunters, and prepare Sabreman for a final confrontation with whoever survived.
 
-The castle was no longer just the setting.
+The fantasy became clearer because it became more specific: not "survive the castle," but "turn the castle into a decision system."
 
-The castle became the weapon.
+We imagined branching hallways, bedrooms, armories, courtyards, dungeons, prisons, spike floors, acid pools, dark rooms, oil traps, alchemy effects, and collapsing ceilings. Some of these ideas were useful. Some were wildly unreasonable. A few were both.
 
-Our design grew into a four-part loop:
+That is the strange value of overscoping early. The bloated version of the idea can still reveal the center of it. You just have to be willing to cut away the parts that are exciting but not load-bearing.
 
-- Prepare the mansion
-- Install traps
-- Survive the hunter wave
-- Use the rewards to renovate before the next attack
+By Friday night, the first idea had done its job. It gave us enough material to find the better one.
 
-We imagined branching hallways, bedrooms, armories, courtyards, dungeons, prisons, spike floors, acid pools, dark rooms, oil traps, alchemy effects, and collapsing ceilings.
+Then it had to get out of the way.
 
-Did all of it make it into the weekend build?
-
-Absolutely not.
-
-But that did not make the design work pointless. It helped us find the central fantasy of the game: turning a place associated with being trapped into a system the player could control.
-
-The strongest idea of the weekend was not our first idea. It was the smaller, stranger, more playable idea that survived contact with the team, the engine, and the deadline.
-
-<!-- IMAGE_SLOT: 03-concept-moodboard -->
-
-## Saturday: Learning in Public
+## Saturday: Learning In Public
 
 Saturday was when the MIX Center stopped feeling like an event venue and started feeling like a studio.
 
-Laptops occupied nearly every available surface. Conversations moved between story, code, level design, props, camera controls, audio, and the increasingly urgent question:
+Laptops took over nearly every available surface. Conversations moved between story, camera controls, level design, props, scripts, audio, and the increasingly practical question underneath all of it:
 
-Can we actually build this in Endstar?
+Can we build this in Endstar before the deadline catches us?
 
-The event Discord became a kind of living manual.
-
-Someone wanted to know how to rotate the camera in Create Mode.
-
-Someone else was trying to edit a prop but only had view access.
-
-People shared custom bookshelves, towers, shelves, orbs, and other assets as quickly as they could make them.
-
-There were questions about scripts, tiles, check-ins, team access, cameras, custom props, and whether a particular feature was intentional or simply a useful glitch.
+The event Discord became a living manual. Someone wanted to know how to rotate the camera in Create Mode. Someone else was trying to edit a prop but only had view access. People shared custom bookshelves, towers, shelves, orbs, and other assets as quickly as they could make them. There were questions about scripts, tiles, check-ins, team access, cameras, custom props, and whether a particular behavior was intentional or just a useful glitch.
 
 Then came the warning about the fog prop.
 
 It was experimental, difficult to control, and apparently even harder to remove.
 
-Every game-development weekend needs at least one feature that behaves like a supernatural entity. Ours happened to be fog.
+Every game-development weekend needs at least one feature that behaves like it has its own supernatural agenda. Ours happened to be fog.
 
-This atmosphere made the event feel approachable. People were not hiding their confusion. Everyone was learning in public.
+What I liked about that atmosphere was how public the learning became. Confusion was not hidden. It was shared, answered, repeated, corrected, and turned into common knowledge. A question that might normally feel embarrassing became useful because ten other people were probably about to run into the same thing.
 
-Questions that might normally feel embarrassing became useful information for the entire room.
+The organizers kept encouraging teams to visit the Mentor Corner instead of quietly losing hours to problems someone else could help us frame. Mentors from Xbox, Mojang Studios, GitHub, Endless, and the wider game-development community were available to talk through technical feasibility, production, design direction, careers, and the reality of making games professionally.
 
-The organizers repeatedly encouraged teams to visit the Mentor Corner rather than lose hours trying to solve every problem alone. Mentors from Xbox, Mojang Studios, GitHub, Endless, and the wider game-development community were available to discuss technical feasibility, design ideas, production, careers, and the realities of building games professionally.
-
-That access changed the rhythm of the weekend.
-
-Instead of sitting silently with a problem, we could bring it to someone who had already encountered fifty versions of it.
+That access changed the rhythm of the weekend. Instead of treating every obstacle like a private test of competence, we could bring the work to someone who had already seen fifty versions of the same trap.
 
 Sometimes the answer was a solution.
 
 Sometimes it was a workaround.
 
-Sometimes it was: “That is probably too much for this weekend.”
+Sometimes it was, "That is probably too much for this weekend."
 
-That last answer may have been the most valuable.
+That last answer may have been the most valuable one.
 
-<!-- IMAGE_SLOT: 04-endstar-build -->
+![A group discussion inside the MIX Center during Xbox Game Camp Arizona.](/images/notes/three-days-one-castle-next-wave/05-mentor-corner.webp)
 
-## Player Experience Is Bigger Than a Screen
+*The weekend worked because people kept bringing unfinished problems into shared space.*
+
+## The Player Is Not Only Reading The Screen
 
 Saturday also changed how I thought about player experience.
 
-In everyday product design, I usually try to reduce unnecessary friction. A person should understand what is happening, know what action to take, and receive clear feedback when that action succeeds or fails.
+In interface work, I usually think about reducing unnecessary friction. A person should know where they are, what action is available, what changed after they acted, and how to recover if something goes wrong.
 
-Games complicate that logic.
+Games do not cancel that logic, but they complicate it.
 
-In a game, friction can be the experience.
+In a game, friction can be the point.
 
-Confusion can create mystery.
-
-Waiting can create tension.
-
-Failure can create learning.
-
-Difficulty can create satisfaction.
-
-The goal is not to make everything easy. The goal is to make the experience intentional.
+Confusion can create mystery. Waiting can create tension. Failure can create learning. Difficulty can create satisfaction. The goal is not to make everything easy. The goal is to make every hard thing feel intentional.
 
 A trap can surprise the player, but it should not feel random.
 
-A path can be difficult to find, but the environment should still provide clues.
+A path can be difficult to find, but the environment should still leave a trail.
 
-A control can require practice, but the player needs enough feedback to understand what went wrong.
+A control can take practice, but the player needs enough feedback to understand what went wrong.
 
-A room can feel dangerous before anything attacks, simply through lighting, sound, scale, composition, or the placement of an object.
+A room can feel dangerous before anything attacks, simply through lighting, sound, scale, composition, or the placement of one object in the wrong place.
 
-That weekend helped me see player experience as something larger than menus, buttons, HUD elements, and inventory screens.
+That weekend helped me see player experience as larger than menus, buttons, HUD elements, and inventory screens. It exists in the distance between two platforms. It exists in the pause before a trap activates. It exists in the way lighting pulls the player toward one doorway instead of another. It exists in the moment a player understands a rule without reading a paragraph about it.
 
-It exists in the distance between two platforms.
+The player is always reading.
 
-It exists in the pause before a trap activates.
+Not just text.
 
-It exists in the way lighting pulls the player toward one doorway instead of another.
+They are reading space, timing, behavior, sound, surprise, and consequence.
 
-It exists in the moment a player understands a rule without reading a paragraph explaining it.
+Once I started thinking that way, every design decision looked different. The question was no longer only, "Does this work?" It became: what does this teach before it explains itself?
 
-It is the entire conversation between the game and the person playing it.
+That is a much harder question. It is also a better one.
 
-Once I began thinking that way, every design decision looked different.
+## The Photograph Outside
 
-Instead of asking only, “Does this work?” I started asking:
-
-Does the player understand it?
-
-Can they predict enough to make a decision?
-
-What does the environment communicate before the player acts?
-
-What happens when they make the wrong choice?
-
-And most importantly: does that failure make them curious enough to try again?
-
-<!-- IMAGE_SLOT: 05-mentor-corner -->
-
-## The Moment Everyone Stepped Away From Their Screens
-
-By Saturday evening, time had become difficult to measure.
+By Saturday evening, time had become hard to measure.
 
 Game-jam time does not move in hours. It moves in builds.
 
-One more test.
-
-One more room.
-
-One more asset.
-
-One more adjustment before showing it to someone.
+One more test. One more room. One more asset. One more small adjustment before showing it to someone. One more idea that seems tiny until it touches every other part of the prototype.
 
 At 8 p.m., everyone was asked to gather outside the MIX Center for a group photograph.
 
 For a few minutes, laptops closed.
 
-Teams emerged from different floors and rooms. Developers who had spent the day studying scripts stood beside artists, designers, organizers, mentors, students, producers, and people who had only met the night before.
-
-The lights outside the MIX Center made the building look almost like part of a game environment.
-
-It was one of the few moments when everyone stopped creating long enough to see the community that had formed around them.
+Teams emerged from different floors and rooms. Developers who had spent the day studying scripts stood beside artists, designers, organizers, mentors, students, producers, and people who had only met the night before. The event suddenly became visible as a whole instead of as separate tables of stress and concentration.
 
 Then the photograph ended.
 
@@ -251,137 +195,89 @@ People went back inside.
 
 The builds continued.
 
-<!-- IMAGE_SLOT: 06-group-photo -->
+![Xbox Game Camp Arizona group photo in front of a large event screen.](/images/notes/three-days-one-castle-next-wave/06-group-photo.webp)
 
-## Sunday: Every Feature Had to Defend Itself
+*A short pause before everyone went back to the builds.*
 
-Sunday arrived far too quickly.
+## Sunday: The Morning Of Necessary Cuts
 
-The submission deadline was 2 p.m., which meant the morning became an exercise in disciplined compromise.
+Sunday arrived too quickly.
 
-At this stage, every feature had to defend its existence. The question was no longer whether an idea was interesting. The question was whether it helped someone play and understand the build we could actually finish.
+The submission deadline was 2 p.m., which meant the morning was no longer about discovering what the game could be. It was about protecting what the game already was.
 
-Does this improve the playable experience?
+Every feature had to defend its existence.
 
-Can it be finished?
+Did it help someone understand the build?
 
-Can it be tested?
+Could it be finished?
 
-Will someone understand it without us explaining everything?
+Could it be tested?
 
-Or are we keeping it because we already spent time on it?
+Would a player understand it without us standing beside them, narrating every intention?
 
-That last question is painful, but necessary.
+Were we keeping it because it served the game, or because we had already spent time on it?
 
-The projects were considered across three categories:
+That last question is painful. It is also where the work gets honest.
 
-- Gameplay Innovation
-- Brand and Theme Authenticity
-- Team Spirit and Camaraderie
-
-I appreciated that teamwork was not treated as a side note.
-
-A prototype may appear as one experience on a screen, but it is assembled from hundreds of small human decisions.
-
-Who gets heard?
-
-Who changes direction?
+The projects were considered across three categories: Gameplay Innovation, Brand and Theme Authenticity, and Team Spirit and Camaraderie. I appreciated that teamwork was not treated like a decorative extra. A prototype may appear as one experience on a screen, but it is assembled from hundreds of human decisions before it ever reaches a player.
 
 Who notices that someone is stuck?
 
 Who asks for feedback?
 
+Who changes direction without making it a personal defeat?
+
 Who protects the team from adding one more impossible feature?
 
-Who keeps everyone moving when the project no longer resembles the original plan?
+Who keeps moving when the project no longer resembles the original plan?
 
-Our team had different levels of experience and different ways of approaching problems. That could have fragmented the project. Instead, it became one of its strengths.
+Our team had different experience levels and different ways of approaching problems. That could have fragmented the work. Instead, it became one of its strengths. We adapted. We divided responsibility. We learned from each other. We changed the concept when it needed to change.
 
-We adapted.
-
-We divided responsibilities.
-
-We learned from each other.
-
-We changed the concept when it needed to change.
-
-And when Sunday arrived, we had more than a design document.
+And by Sunday, we had more than a design document.
 
 We had built something together.
 
-<!-- IMAGE_SLOT: 07-final-build-presentation -->
+![A close view of the Xbox Game Camp Arizona sign at the ASU MIX Center.](/images/notes/three-days-one-castle-next-wave/07-game-camp-signage.webp)
 
-## What Stayed With Me
+*By Sunday, the event signage felt less like a backdrop and more like proof that the weekend had actually happened.*
 
-The most valuable part of Xbox Game Camp was not a single mechanic, presentation, award, or technical feature.
+## After The Deadline
+
+The most valuable part of Xbox Game Camp was not one mechanic, presentation, award, or technical feature.
 
 It was momentum.
 
-I entered the event with software experience, an interest in games, and limited time inside Endstar.
-
-I left with a better understanding of level design, game feedback, environmental communication, production constraints, rapid prototyping, and the way different disciplines overlap during development.
+I entered the weekend with an interest in games, some experience making digital things, and limited time inside Endstar. I left with a better understanding of level design, game feedback, environmental communication, production constraints, rapid prototyping, and the way different disciplines overlap during development.
 
 I also left with three teammates I had not known before Friday.
 
-After the event, our group chat did not immediately disappear.
-
-We shared photographs, Discord communities, game links, industry announcements, development resources, and thoughts about what the project could become.
-
-One teammate believed the idea had enough potential to become a real Steam game.
-
-Another reminded us to make sure the level was preserved.
+After the event, our group chat did not immediately disappear. We shared photographs, Discord communities, game links, industry announcements, development resources, and thoughts about what the project could become. One teammate believed the idea had enough potential to become a real Steam game. Another reminded us to make sure the level was preserved.
 
 I asked whether our work would disappear after the event. The Endless team later confirmed that the levels would remain and were planned for a future showcase.
 
-That mattered.
+That mattered more than I expected.
 
-It meant the weekend did not end with a deleted build and a folder nobody opened again.
+It meant the weekend did not end as a deleted build and a folder nobody opened again. The project became evidence that four people could meet, disagree, adjust, learn a new workflow, and turn a rough concept into a shared experience within three days.
 
-The project became evidence that four people could meet, disagree, adjust, learn a new workflow, and transform a rough concept into a shared experience within three days.
+The game was not perfect.
 
-<!-- IMAGE_SLOT: 08-next-wave-team-closing -->
+Of course it was not.
 
-## What I Want to Carry Forward
+But perfection was never the lesson.
 
-Xbox Game Camp Arizona reminded me that game development is not a clean journey from idea to execution.
+The lesson was that a game idea becomes better when it is allowed to be changed by reality: by the tool, by the people building it, by the limits of time, and eventually by the player who has to understand it without access to the story in your head.
 
-It is negotiation.
-
-Between ambition and time.
-
-Between design and technology.
-
-Between what the creator intends and what the player actually experiences.
-
-Between protecting an idea and allowing it to become better.
-
-Our first concept changed.
-
-Our scope changed.
-
-Our understanding of the engine changed.
-
-By Sunday, even the way I thought about player experience had changed.
-
-That is what made the weekend successful for me.
-
-Not that everything worked.
-
-Not that every system was completed.
-
-But that we kept learning quickly enough to continue moving.
-
-Three days earlier, I had entered the Discord asking whether we could avoid building in 3D.
+Three days earlier, I had entered Discord asking whether we could avoid building in 3D.
 
 By the end, I was thinking about castles as decision systems, hallways as choices, traps as feedback, and failure as part of the player experience.
 
-I did not leave Xbox Game Camp with a perfect game.
+I did not leave Xbox Game Camp with a finished story.
 
 I left with better instincts, new collaborators, and a much clearer idea of what I want to build next.
 
 Sometimes that is the best reward a game jam can give you.
 
-Not a finished story.
+Not a conclusion.
 
 A reason to press Continue.
 
@@ -389,6 +285,6 @@ A reason to press Continue.
 
 Thank you to Xbox Game Camp, Microsoft, Arizona State University, the ASU MIX Center, Endless Games and Learning Lab, Endless Studios, GitHub, and everyone who helped organize and support the weekend.
 
-Thank you to the mentors and speakers who shared their experience, tested unfinished ideas, answered technical questions, and reminded us when our scope was becoming more dangerous than Sabreman’s castle.
+Thank you to the mentors and speakers who shared their experience, tested unfinished ideas, answered technical questions, and helped teams find the useful version of what they were trying to make.
 
-And thank you to my teammates—Warren Andrus, Chris Goodman, and Gabe Isko—for turning a Friday-night conversation into Next Wave Studios.
+And thank you to Warren Andrus, Chris Goodman, and Gabe Isko for turning a Friday-night conversation into Next Wave Studios.

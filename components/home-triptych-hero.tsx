@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion, useReducedMotion } from "motion/react";
 
 const disciplines = [
   {
@@ -20,34 +23,54 @@ const disciplines = [
 
 export function HomeTriptychHero({ publishedCount }: { publishedCount: number }) {
   const count = String(publishedCount).padStart(2, "0");
+  const reducedMotion = useReducedMotion();
+  const transition = { duration: 0.54, ease: [0.2, 0.8, 0.2, 1] } as const;
 
   return (
     <section className="identity-hero" aria-labelledby="home-title">
-      <div className="identity-hero__meta">
+      <motion.div
+        className="identity-hero__meta"
+        initial={reducedMotion ? false : { opacity: 0, y: -8 }}
+        animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+        transition={{ ...transition, duration: 0.42 }}
+      >
         <span>[ PERSONAL FIELD NOTES ]</span>
         <span>PHOENIX / EST. 2026</span>
-      </div>
+      </motion.div>
 
       <div className="identity-hero__main">
         <div className="identity-hero__copy">
-          <div className="identity-hero__status">
+          <motion.div
+            className="identity-hero__status"
+            whileHover={reducedMotion ? undefined : { y: -1 }}
+            transition={transition}
+          >
             <i aria-hidden="true" />
             <span>Notebook active</span>
-          </div>
+          </motion.div>
 
-          <h1 id="home-title">
-            <span>I keep notes</span>
-            <span>while ideas <em>change.</em></span>
-          </h1>
+          <motion.h1
+            id="home-title"
+            initial={false}
+          >
+            <motion.span>I keep notes</motion.span>
+            <motion.span>while ideas <em>change.</em></motion.span>
+          </motion.h1>
 
-          <p className="identity-hero__intro">
+          <motion.p
+            className="identity-hero__intro"
+            initial={false}
+          >
             Loose Thread is where I slow down after making something and write
             down what actually happened: the useful mistake, the better question,
             the photograph that changed how I saw a scene, or the game idea that
             became clearer only after it pushed back.
-          </p>
+          </motion.p>
 
-          <div className="identity-hero__actions">
+          <motion.div
+            className="identity-hero__actions"
+            initial={false}
+          >
             <Link className="primary-button" href="/notes">
               <span>Read the writing</span>
               <span aria-hidden="true">→</span>
@@ -55,10 +78,16 @@ export function HomeTriptychHero({ publishedCount }: { publishedCount: number })
             <Link className="identity-hero__secondary" href="/about">
               About Deep
             </Link>
-          </div>
+          </motion.div>
         </div>
 
-        <aside className="identity-hero__visual" aria-label="Loose Thread visual journal">
+        <motion.aside
+          className="identity-hero__visual"
+          aria-label="Loose Thread visual journal"
+          initial={false}
+          whileHover={reducedMotion ? undefined : { y: -4 }}
+          transition={transition}
+        >
           <div className="identity-hero__image" role="img" aria-label="Loose Thread hero photograph" />
           <div className="identity-hero__visual-footer">
             <div>
@@ -67,18 +96,23 @@ export function HomeTriptychHero({ publishedCount }: { publishedCount: number })
             </div>
             <span className="identity-hero__version">LT / 01</span>
           </div>
-        </aside>
+        </motion.aside>
       </div>
 
       <div className="identity-hero__disciplines" aria-label="Topics covered on Loose Thread">
         {disciplines.map((discipline) => (
-          <article key={discipline.index}>
+          <motion.article
+            key={discipline.index}
+            initial={false}
+            whileHover={reducedMotion ? undefined : { y: -2 }}
+            transition={{ ...transition, duration: 0.32 }}
+          >
             <span>{discipline.index}</span>
             <div>
               <strong>{discipline.label}</strong>
               <p>{discipline.detail}</p>
             </div>
-          </article>
+          </motion.article>
         ))}
       </div>
     </section>
