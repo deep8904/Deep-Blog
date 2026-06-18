@@ -35,6 +35,10 @@ export function InstanceHeader({ writingCount }: InstanceHeaderProps) {
     <>
       <header className="site-header">
         <Link className="wordmark" href="/" aria-label={`${siteConfig.name} home`}>
+          <span className="wordmark-mark" aria-hidden="true">
+            <span>L</span><span>T</span>
+            <i />
+          </span>
           <span>LOOSE</span><b aria-hidden="true">/</b><span>THREAD</span>
         </Link>
 
