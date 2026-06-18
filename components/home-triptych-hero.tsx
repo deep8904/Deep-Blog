@@ -17,7 +17,7 @@ const disciplines = [
   {
     index: "03",
     label: "Looking",
-    detail: "Photography, notes, and the details that make a scene, interface, or moment easier to read.",
+    detail: "Images, notes, and the details that make a scene, interface, or moment easier to read.",
   },
 ] as const;
 
@@ -63,8 +63,8 @@ export function HomeTriptychHero({ publishedCount }: { publishedCount: number })
           >
             Loose Thread is where I slow down after making something and write
             down what actually happened: the useful mistake, the better question,
-            the photograph that changed how I saw a scene, or the game idea that
-            became clearer only after it pushed back.
+            the image that changed how I saw a scene, or the game idea that became
+            clearer only after it pushed back.
           </motion.p>
 
           <motion.div

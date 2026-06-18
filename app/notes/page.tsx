@@ -5,7 +5,7 @@ import { getAllNotes } from "@/lib/notes";
 
 export const metadata: Metadata = {
   title: "Writing",
-  description: "Published notes by Deep Chadamiya about projects, games, photography, and what he is learning.",
+  description: "Published notes by Deep Chadamiya about projects, games, and what he is learning.",
 };
 
 function formatDate(value: string) {
@@ -34,7 +34,7 @@ export default function NotesPage() {
         </div>
         <p className="page-intro">
           {notes.length
-            ? "A small set of notes that have been edited enough to share. Each one starts from something real: a project, a game, a photograph, a decision, or a question that kept returning."
+            ? "A small set of notes that have been edited enough to share. Each one starts from something real: a project, a game, a scene, a decision, or a question that kept returning."
             : "This page stays empty until a real note is ready. No samples, generated titles, or placeholder dates."}
         </p>
       </section>

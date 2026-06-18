@@ -3,7 +3,7 @@ import { getAllNotes } from "@/lib/notes";
 import { siteConfig } from "@/site.config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/notes", "/about", "/photography"].map((route) => ({
+  const staticRoutes = ["", "/notes", "/about"].map((route) => ({
     url: `${siteConfig.url}${route}`,
     lastModified: new Date(),
   }));
