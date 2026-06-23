@@ -22,7 +22,7 @@ Deep is interested in making things, studying games, photography, and the way id
 1. **Who is this?** Deep, a maker with overlapping interests in games, photographs, writing, and clearer thinking.
 2. **Why does he write?** To understand the work and preserve its lessons.
 3. **What will appear here?** Projects, games, photographs, decisions, and questions worth revisiting.
-4. **What is published now?** The first essay, “Three Days, One Castle, and a Team Called Next Wave,” is published.
+4. **What is published now?** Two real essays are published: “Why GTA RP's Best Screens Are a Design Masterclass Nobody's Talking About” and “Three Days, One Castle, and a Team Called Next Wave.”
 5. **Where should a reader go next?** Writing or About.
 
 ## Writing fallback copy
