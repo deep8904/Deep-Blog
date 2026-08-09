@@ -11,15 +11,14 @@ type InstanceHeaderProps = {
 
 export function InstanceHeader({ writingCount }: InstanceHeaderProps) {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const [openAtPath, setOpenAtPath] = useState<string | null>(null);
+  const open = openAtPath === pathname;
   const count = String(writingCount).padStart(2, "0");
-
-  useEffect(() => setOpen(false), [pathname]);
 
   useEffect(() => {
     document.body.classList.toggle("menu-open", open);
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") setOpenAtPath(null);
     };
     window.addEventListener("keydown", closeOnEscape);
     return () => {
@@ -58,7 +57,7 @@ export function InstanceHeader({ writingCount }: InstanceHeaderProps) {
           aria-label={open ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={open}
           aria-controls="mobile-menu"
-          onClick={() => setOpen((value) => !value)}
+          onClick={() => setOpenAtPath(open ? null : pathname)}
         >
           <span>{open ? "Close" : "Menu"}</span>
           <i aria-hidden="true" />
