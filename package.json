@@ -6,27 +6,31 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "eslint .",
+    "test": "vitest run",
     "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.9",
+    "gray-matter": "^4.0.3",
     "motion": "^12.40.0",
-    "next": "16.2.9",
+    "next": "16.3.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1"
   },
   "devDependencies": {
     "@types/node": "^22.15.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
-    "typescript": "^5.9.0"
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.1.10"
   },
   "engines": {
     "node": "20.x"
-  },
-  "overrides": {
-    "postcss": "8.5.10"
   }
 }
