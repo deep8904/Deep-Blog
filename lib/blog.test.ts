@@ -41,6 +41,8 @@ sourceDisclosure: "Sources are listed as numbered references."
 
 Standard **Markdown** with \`inline code\` and a citation. [^1]
 
+The same source can be cited again without creating a chain of backlinks. [^1]
+
 | Field | Value |
 | --- | --- |
 | Safe | Yes |
@@ -112,6 +114,9 @@ describe("blog article loading", () => {
     expect(article?.html).toContain("<strong>Markdown</strong>");
     expect(article?.html).not.toContain("<script");
     expect(article?.html).not.toContain("alert(");
+    expect(article?.html).toContain(">References</h2>");
+    expect(article?.html?.match(/data-footnote-backref=""/g)).toHaveLength(1);
+    expect(article?.html).not.toContain("↩<sup>2</sup>");
   });
 
   it("uses canonical frontmatter and exposes the final file hash fingerprint", async () => {

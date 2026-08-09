@@ -1,16 +1,16 @@
 import Link from "next/link";
 import { HomeTriptychHero } from "@/components/home-triptych-hero";
 import { Reveal } from "@/components/reveal";
-import { getAllNotes } from "@/lib/notes";
+import { getAllPublishedWriting } from "@/lib/writing";
 
 export default function HomePage() {
-  const notes = getAllNotes();
-  const latest = notes[0];
-  const count = String(notes.length).padStart(2, "0");
+  const writing = getAllPublishedWriting();
+  const latest = writing[0];
+  const count = String(writing.length).padStart(2, "0");
 
   return (
     <>
-      <HomeTriptychHero publishedCount={notes.length} />
+      <HomeTriptychHero publishedCount={writing.length} />
       <section className="premise-section" id="premise" aria-labelledby="premise-title">
         <Reveal>
           <div className="section-label"><span>01</span><p>WHY THIS EXISTS</p></div>
@@ -30,8 +30,8 @@ export default function HomePage() {
           <div className="writing-count" aria-hidden="true">{count}</div>
           <div className="writing-feature-copy">
             <div className="eyebrow"><span>[ WRITING ]</span><span>{latest ? "PUBLISHED" : "QUIET"}</span></div>
-            <h2 id="writing-feature-title">{latest ? "The newest note I can stand behind." : "Nothing published yet."}</h2>
-            {latest ? <><h3>{latest.title}</h3><p>{latest.description}</p><Link className="text-link" href={`/notes/${latest.slug}`}>Read the note <span aria-hidden="true">→</span></Link></> : <><p>This page stays quiet until a real note is ready. No sample posts, filler titles, or pretend schedule.</p><Link className="text-link" href="/notes">Open writing <span aria-hidden="true">→</span></Link></>}
+            <h2 id="writing-feature-title">{latest ? "The newest piece I can stand behind." : "Nothing published yet."}</h2>
+            {latest ? <><h3>{latest.title}</h3><p>{latest.description}</p><Link className="text-link" href={latest.href}>Read the piece <span aria-hidden="true">→</span></Link></> : <><p>This page stays quiet until a real piece is ready. No sample posts, filler titles, or pretend schedule.</p><Link className="text-link" href="/notes">Open writing <span aria-hidden="true">→</span></Link></>}
           </div>
         </Reveal>
       </section>

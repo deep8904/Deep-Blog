@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { InstanceHeader } from "@/components/instance-header";
 import { InstanceFooter } from "@/components/instance-footer";
 import { ScrollProgress } from "@/components/scroll-progress";
-import { getAllNotes } from "@/lib/notes";
+import { getAllPublishedWriting } from "@/lib/writing";
 import { siteConfig } from "@/site.config";
 import "@fontsource-variable/geist";
 import "./instance-live.css";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#FFFFFF" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const writingCount = getAllNotes().length;
+  const writingCount = getAllPublishedWriting().length;
 
   return (
     <html lang="en" className="js">
