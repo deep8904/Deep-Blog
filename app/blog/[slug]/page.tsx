@@ -82,7 +82,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
     >
       <header className="article-header">
         <div className="article-topline">
-          <Link href="/notes">← Back to writing</Link>
+          <Link href="/blog">← Back to blog</Link>
           <span><i className="status-dot" aria-hidden="true" /> Published article</span>
         </div>
         <div className="article-heading-grid">
@@ -117,7 +117,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
 
       <div className="article-prose" dangerouslySetInnerHTML={{ __html: article.html }} />
       <footer className="article-footer">
-        <Link className="secondary-button" href="/notes">All published writing</Link>
+        <Link className="secondary-button" href="/blog">All blog articles</Link>
         <Link className="primary-button" href="/about"><span>About the writer</span><span aria-hidden="true">→</span></Link>
       </footer>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd }} />
