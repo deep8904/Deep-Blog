@@ -82,12 +82,12 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
     >
       <header className="article-header">
         <div className="article-topline">
-          <Link href="/blog">← Back to blog</Link>
-          <span><i className="status-dot" aria-hidden="true" /> Published article</span>
+          <Link href="/notes">← Back to writing</Link>
+          <span><i className="status-dot" aria-hidden="true" /> Published writing</span>
         </div>
         <div className="article-heading-grid">
           <div>
-            <p className="article-kicker">[ BLOG / {article.category} ]</p>
+            <p className="article-kicker">[ ARTICLE / {article.category} ]</p>
             <h1>{article.title}</h1>
             <p className="article-dek">{article.description}</p>
           </div>
@@ -117,7 +117,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
 
       <div className="article-prose" dangerouslySetInnerHTML={{ __html: article.html }} />
       <footer className="article-footer">
-        <Link className="secondary-button" href="/blog">All blog articles</Link>
+        <Link className="secondary-button" href="/notes">All published writing</Link>
         <Link className="primary-button" href="/about"><span>About the writer</span><span aria-hidden="true">→</span></Link>
       </footer>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd }} />

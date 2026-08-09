@@ -1,5 +1,9 @@
+import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import BlogArticlePage, { buildBlogMetadata } from "@/app/blog/[slug]/page";
+import BlogArticlePage, {
+  buildBlogMetadata,
+  generateStaticParams,
+} from "@/app/blog/[slug]/page";
 import type { BlogArticle } from "@/lib/blog";
 
 describe("blog page metadata", () => {
@@ -39,5 +43,19 @@ describe("blog page metadata", () => {
     await expect(
       BlogArticlePage({ params: Promise.resolve({ slug: "missing-article" }) }),
     ).rejects.toThrow("NEXT_HTTP_ERROR_FALLBACK;404");
+  });
+
+  it("preserves pipeline article routes inside the Writing experience", async () => {
+    const slug = "github-copilot-usage-metrics-agent-app-activity";
+    const page = await BlogArticlePage({ params: Promise.resolve({ slug }) });
+    const html = renderToStaticMarkup(page);
+
+    expect(generateStaticParams()).toContainEqual({ slug });
+    expect(html).toContain("GitHub Copilot Usage Metrics Now Separate Agent App Activity");
+    expect(html).toContain('href="/notes"');
+    expect(html).toContain("All published writing");
+    expect(html).toContain(">References</h2>");
+    expect(html.match(/data-footnote-backref=""/g)).toHaveLength(3);
+    expect(html).not.toContain("↩<sup>2</sup>");
   });
 });

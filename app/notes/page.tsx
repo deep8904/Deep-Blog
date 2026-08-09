@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
-import { getAllNotes } from "@/lib/notes";
+import { getAllPublishedWriting } from "@/lib/writing";
 
 export const metadata: Metadata = {
   title: "Writing",
-  description: "Published notes by Deep Chadamiya about projects, games, and what he is learning.",
+  description:
+    "Published writing by Deep Chadamiya about projects, games, technology, and what he is learning.",
 };
 
 function formatDate(value: string) {
@@ -18,47 +19,47 @@ function formatDate(value: string) {
 }
 
 export default function NotesPage() {
-  const notes = getAllNotes();
-  const count = String(notes.length).padStart(2, "0");
+  const writing = getAllPublishedWriting();
+  const count = String(writing.length).padStart(2, "0");
 
   return (
     <div className="inner-page writing-page">
       <section className="page-hero writing-hero" aria-labelledby="writing-title">
-        <div className="section-label writing-label"><span>WR</span><p>PUBLISHED NOTES</p></div>
+        <div className="section-label writing-label"><span>WR</span><p>PUBLISHED WRITING</p></div>
         <div className="writing-title-row">
           <h1 id="writing-title">
-            <span className="line"><span>{notes.length ? "Notes with" : "No writing"}</span></span>
-            <span className="line"><span>{notes.length ? "a clear point." : "published yet."}</span></span>
+            <span className="line"><span>{writing.length ? "Writing with" : "No writing"}</span></span>
+            <span className="line"><span>{writing.length ? "a clear point." : "published yet."}</span></span>
           </h1>
           <div className="writing-total"><span>PUBLISHED</span><strong>{count}</strong></div>
         </div>
         <p className="page-intro">
-          {notes.length
-            ? "A small set of notes that have been edited enough to share. Each one starts from something real: a project, a game, a scene, a decision, or a question that kept returning."
-            : "This page stays empty until a real note is ready. No samples, generated titles, or placeholder dates."}
+          {writing.length
+            ? "A small set of pieces that have been edited enough to share. Each one starts from something real: a project, a game, a scene, a decision, or a question that kept returning."
+            : "This page stays empty until a real piece is ready. No samples, generated titles, or placeholder dates."}
         </p>
       </section>
 
-      {notes.length ? (
+      {writing.length ? (
         <section className="writing-list-section" aria-labelledby="entry-list-title">
           <Reveal>
             <div className="writing-list-heading">
-              <p id="entry-list-title">[ PUBLISHED NOTES ]</p>
+              <p id="entry-list-title">[ PUBLISHED WRITING ]</p>
               <span>{count} TOTAL</span>
             </div>
             <ol className="writing-list">
-              {notes.map((note, index) => (
-                <li key={note.slug}>
-                  <Link href={`/notes/${note.slug}`}>
+              {writing.map((item, index) => (
+                <li key={item.href}>
+                  <Link href={item.href}>
                     <span className="writing-entry-index">{String(index + 1).padStart(2, "0")}</span>
                     <span className="writing-entry-copy">
                       <span className="latest-meta">
-                        <time dateTime={note.publishedAt}>{formatDate(note.publishedAt)}</time>
-                        <span>{note.readingTime} min read</span>
-                        <span>{note.topics[0] ?? "Writing"}</span>
+                        <time dateTime={item.publishedAt}>{formatDate(item.publishedAt)}</time>
+                        <span>{item.readingTime} min read</span>
+                        <span>{item.topic}</span>
                       </span>
-                      <strong>{note.title}</strong>
-                      <p>{note.description}</p>
+                      <strong>{item.title}</strong>
+                      <p>{item.description}</p>
                     </span>
                     <span className="writing-entry-arrow" aria-hidden="true">→</span>
                   </Link>

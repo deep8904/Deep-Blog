@@ -46,6 +46,27 @@ function blogDirectory(options?: BlogOptions) {
   return options?.root ?? defaultBlogDirectory;
 }
 
+function cleanFootnoteBacklinks(renderedHtml: string) {
+  return renderedHtml.replace(
+    /<section data-footnotes[\s\S]*?<\/section>/g,
+    (footnotes) =>
+      footnotes
+        .replace(">Footnotes</h2>", ">References</h2>")
+        .replace(/<li\b[\s\S]*?<\/li>/g, (reference) => {
+          let keptBacklink = false;
+
+          return reference.replace(
+            /\s*<a\b[^>]*\bdata-footnote-backref=""[^>]*>[\s\S]*?<\/a>/g,
+            (backlink) => {
+              if (keptBacklink) return "";
+              keptBacklink = true;
+              return ` ${backlink.trim()}`;
+            },
+          );
+        }),
+  );
+}
+
 function articleFiles(root: string): string[] {
   if (!fs.existsSync(root)) return [];
 
@@ -206,5 +227,5 @@ export async function getBlogArticleBySlug(
     .use(html, { sanitize: true })
     .process(article.content);
 
-  return { ...article.meta, html: processed.toString() };
+  return { ...article.meta, html: cleanFootnoteBacklinks(processed.toString()) };
 }

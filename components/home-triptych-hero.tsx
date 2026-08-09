@@ -92,7 +92,7 @@ export function HomeTriptychHero({ publishedCount }: { publishedCount: number })
           <div className="identity-hero__visual-footer">
             <div>
               <span>PUBLISHED WRITING</span>
-              <strong>{count} published {publishedCount === 1 ? "note" : "notes"}</strong>
+              <strong>{count} published {publishedCount === 1 ? "piece" : "pieces"}</strong>
             </div>
             <span className="identity-hero__version">LT / 01</span>
           </div>
