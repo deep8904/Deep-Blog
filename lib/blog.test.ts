@@ -14,13 +14,17 @@ function createRoot() {
   return root;
 }
 
-function artifact(slug: string, canonicalUrl?: string) {
+function artifact(
+  slug: string,
+  canonicalUrl?: string,
+  publishedAt = "2026-08-09T19:32:19.822Z",
+) {
   return `---
 title: "A production article title"
 slug: "${slug}"
 description: "A complete generated article description for renderer coverage."
-publishedAt: "2026-08-09T19:32:19.822Z"
-updatedAt: "2026-08-09T19:32:19.822Z"
+publishedAt: "${publishedAt}"
+updatedAt: "${publishedAt}"
 status: "published"
 category: "Development"
 tags: ["AI agents","Developer tools"]
@@ -76,6 +80,25 @@ describe("blog article loading", () => {
       status: "published",
       canonicalUrl: "https://site.example/blog/older-article",
     });
+  });
+
+  it("sorts published articles newest first", () => {
+    const root = createRoot();
+    writeArticle(root, "2025", "older-article", artifact(
+      "older-article",
+      undefined,
+      "2025-04-10T12:00:00.000Z",
+    ));
+    writeArticle(root, "2026", "newer-article", artifact(
+      "newer-article",
+      undefined,
+      "2026-07-12T12:00:00.000Z",
+    ));
+
+    expect(getAllBlogArticles({ root }).map((article) => article.slug)).toEqual([
+      "newer-article",
+      "older-article",
+    ]);
   });
 
   it("renders footnotes and GFM while removing raw executable HTML", async () => {

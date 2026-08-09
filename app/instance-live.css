@@ -295,6 +295,8 @@ img { display: block; max-width: 100%; }
 .writing-entry-index { align-self: start; padding-top: 5px; color: var(--primary); font-family: var(--font-mono), monospace; font-size: 11px; font-weight: 600; }
 .writing-entry-copy { display: block; }
 .writing-entry-copy .latest-meta { color: rgba(25, 28, 33, .58); }
+.blog-entry-tags { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 7px; }
+.blog-entry-tags > span { padding: 5px 9px; border: 1px solid var(--line); border-radius: 9999px; color: rgba(25, 28, 33, .68); font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 600; line-height: 1; text-transform: uppercase; }
 .writing-entry-copy > strong { display: block; max-width: 880px; font-size: clamp(2rem, 4.4vw, 3.25rem); font-weight: 500; line-height: 1.1; letter-spacing: 0; }
 .writing-entry-copy > p { max-width: 740px; margin: 18px 0 0; color: rgba(25, 28, 33, .68); }
 .writing-entry-arrow { color: var(--primary); font-size: 28px; transition: transform .25s ease; }
