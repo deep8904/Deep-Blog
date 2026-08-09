@@ -1,0 +1,101 @@
+---
+title: "GitHub Copilot Usage Metrics Now Separate Agent App Activity"
+slug: "github-copilot-usage-metrics-agent-app-activity"
+description: "GitHub now reports Copilot agent app activity by individual agent, but teams should avoid assuming details that the supplied evidence does not define."
+publishedAt: "2026-08-09T19:32:19.822Z"
+updatedAt: "2026-08-09T19:32:19.822Z"
+status: "published"
+category: "Development"
+tags: ["GitHub Copilot","AI agents","Developer tools","Usage metrics","APIs"]
+author: "Deep"
+heroImage: null
+heroAlt: "Abstract editorial diagram showing several agent activity streams flowing into a grouped metrics report"
+canonicalUrl: "https://deep-blog-rhqvwjjmy-deepkumar-s-projects.vercel.app/blog/github-copilot-usage-metrics-agent-app-activity"
+sources: ["https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity","https://docs.github.com/en/copilot/reference/copilot-usage-metrics/copilot-usage-metrics","https://docs.github.com/en/enterprise-cloud@latest/copilot/reference/copilot-usage-metrics/example-schema"]
+draft: false
+articleType: "technical_explainer"
+readingTime: 8
+sourceDisclosure: "Sources are listed as numbered references."
+---
+
+GitHub has added a more specific view of agent app activity to its Copilot usage metrics API. The API now reports that activity and breaks it out by individual agent. [^1]
+
+That sounds like a small reporting change, but it addresses a real measurement problem. A combined activity total can show that agents are being used without showing which agent accounts for the activity. An individual-agent breakdown gives administrators a more useful starting point for reading adoption across a mixed tool environment. That is an interpretation of the announced granularity, not a claim that the metric proves productivity, quality, or business value.
+
+The boundary matters as much as the addition. The supplied evidence names a new optional `totals_by_3rd_party_agent` field, but it stops before defining the field's values or nested structure. [^1] Any implementation that assumes undocumented keys, counters, or relationships would be moving beyond what this research packet supports.
+
+## The measurement problem
+
+GitHub teams can run partner agent apps, with Claude and Codex named as examples, directly in GitHub. [^1] Once multiple agents participate in the same environment, an aggregate number is less informative on its own. It cannot, by itself, tell a metrics consumer how activity is distributed among the available agents.
+
+The new reporting granularity addresses that narrower question: the Copilot usage metrics API reports agent app activity, and the reported activity is broken out by individual agent. [^1] The evidence supports visibility by agent. It does not support a broader conclusion about why one agent has more activity than another, whether the activity was successful, or whether a particular agent improved a team's output.
+
+That distinction protects the metric from being asked to answer a question it was not shown to answer. Activity is evidence of recorded activity. It is not automatically evidence of adoption quality, developer satisfaction, code quality, time saved, or return on investment. Those outcomes would require other evidence that is not present in packet v7.
+
+## Background: one metrics system, several views
+
+GitHub makes Copilot usage metrics available through a dashboard and APIs, using a consistent set of fields to represent adoption, usage, and code-generation activity. [^2] The reference also covers interpreting values shown in dashboard visuals and in NDJSON or API exports. [^2]
+
+Consistency across those surfaces is useful because it gives readers a common vocabulary when moving between a visual overview and exported data. It does not mean every response has an identical shape. GitHub's example-schema documentation says returned data can vary according to the metrics tracked and the aggregation level. [^3]
+
+GitHub provides example schemas for user-level, enterprise-level, and repository-level Copilot usage metrics responses. [^3] Those examples establish that several aggregation contexts exist. They should not be treated as proof that every field appears in every context, especially when the newly named field is explicitly optional.
+
+The documented feature is available to enterprise owners, organization administrators, billing managers, and people holding an enterprise custom role with the `View Enterprise Copilot Metrics` permission. [^2] Packet v7 nevertheless retains an access-related unknown because its selected evidence does not fully describe endpoint-specific requirements, rollout constraints, or compatibility behavior for the new addition. A list of eligible roles is not a complete deployment or authorization guide.
+
+## How the agent breakdown fits into reports
+
+The supported mechanism can be described at a high level. GitHub records agent app activity in the Copilot usage metrics API and segments that reported activity by individual agent. [^1] The applicable reports cover enterprise, organization, enterprise-user, and organization-user scopes. [^1] They are available for 1-day and 28-day reporting windows. [^1]
+
+Together, scope and time window form the context in which an agent-level result is read. An enterprise report and an organization-user report answer questions at different aggregation levels. A 1-day window and a 28-day window summarize different periods. Because GitHub says response data can vary with the tracked metric and aggregation level, consumers should bind their interpretation to the exact report they requested. [^3]
+
+The changelog excerpt also names the optional field `totals_by_3rd_party_agent`. [^1] That is the full supported schema statement available here. The packet does not reveal the field's nested members, the meaning of its values, whether every agent receives an entry, how missing activity is represented, or how consumers should distinguish absence from a zero. Those questions must remain open.
+
+This creates a straightforward rule for developers: use the published response associated with the selected endpoint and aggregation as the authority for parsing. Do not construct an imagined object from the field name alone. Defensive handling is reasonable analysis when a field is optional, but this packet does not prescribe a particular parser or fallback because it contains no verified payload for the new field.
+
+## Example: reading the change without inventing a schema
+
+Consider a team that permits more than one partner agent in GitHub. Before using an individual-agent view, an administrator may see aggregate activity while still lacking a supported way, within that total, to attribute the reported activity to a named agent. The announced breakdown is relevant because it adds that individual-agent dimension. This example illustrates the practical meaning of granularity; it does not describe a verified response body or a tested dashboard workflow.
+
+A careful analysis would begin with three labels: report scope, time window, and agent identity. The consumer could then compare like with like, such as the same organization scope across equivalent windows. That comparison is an analytical method, not a documented guarantee that the data supports causal conclusions. Changes in activity might reflect availability, team composition, workflow choice, or other factors that packet v7 does not quantify.
+
+The same caution applies when moving between aggregate levels. A user-oriented view is not interchangeable with an enterprise-oriented view merely because both concern Copilot metrics. GitHub explicitly warns that response data varies with metrics and aggregation. [^3] A reliable internal report should therefore retain the originating scope and window beside any agent-level figure rather than presenting a number without its measurement context.
+
+No sample nested object should be inferred from this explanation. In particular, the supplied evidence does not show property names beneath `totals_by_3rd_party_agent`, define a unit for every value, or document how a third-party agent is identified inside that field. The useful example is about interpretation discipline, not syntax.
+
+## Practical impact for metric consumers
+
+The clearest benefit is administrative visibility. When activity is broken out by individual agent, a team can read the reported distribution with more specificity than an undifferentiated agent-app total allows. [^1] That can help frame better follow-up questions about which tools appear in recorded workflows and where more investigation is needed.
+
+For developers maintaining metric ingestion, the change creates a compatibility consideration even though the packet does not define the compatibility behavior. The field is described as optional. [^1] At the level of general analysis, optional data should not be treated as universally present. Beyond that principle, the evidence here is insufficient to specify an implementation, migration sequence, or version-detection rule.
+
+For administrators, agent-level activity can be a useful descriptive signal. It can identify where activity is recorded, but packet v7 provides no evidence that it measures output quality or performance. A high count should not be promoted into a success score without an independently defined relationship between the activity metric and the outcome being evaluated.
+
+The two reporting windows support different descriptive views: one is limited to a day, while the other covers 28 days. [^1] The evidence confirms those windows but does not tell teams which decision should use each one. A reasonable analytical approach is to choose a window that matches the question and to avoid comparing periods or scopes as if they were identical.
+
+There is also an evidence-quality constraint. All three sources in this packet are owned by GitHub. They are appropriate primary sources for what GitHub documents about its own API, but they do not provide independent corroboration of adoption, performance, or practical limitations. That makes the article a bounded explanation of published material, not an independent evaluation of real-world outcomes.
+
+## Limitations and open questions
+
+Four explicit unknowns remain in packet v7. First, the packet states that supported factual detail is still required. The confirmed claims are enough to establish the reporting addition and its high-level scope, but not enough to answer every implementation question.
+
+Second, the supplied evidence does not define the values or nested structure of `totals_by_3rd_party_agent`. The field name and its optional status are supported; a detailed model is not. This is the most important boundary for anyone writing an integration from the available material.
+
+Third, the supplied evidence does not state the full access requirements, permissions, rollout constraints, or backward-compatibility behavior for this change. The source names roles that can access the documented metrics feature, but that does not resolve all endpoint-level access or rollout questions. [^2]
+
+Fourth, the evidence does not quantify adoption, performance impact, or practical limitations. The existence of an agent-level activity breakdown should not be confused with proof that agent apps are broadly adopted or that they improve development performance.
+
+The packet also contains no conflict among its sources, but source agreement here has a limit: every included source is GitHub-owned. A changelog, a field reference, and an example-schema page can clarify the vendor's documented interface. They cannot independently validate operational outcomes that the selected excerpts never measure.
+
+These gaps do not make the confirmed change meaningless. They define the line between a useful technical explanation and speculation. Teams can recognize the new dimension, locate it within documented scopes and windows, and plan a closer inspection of their actual authorized responses. They cannot responsibly fill in the missing schema or outcome evidence from the field name.
+
+## Takeaway
+
+GitHub's Copilot usage metrics now include agent app activity broken out by individual agent across enterprise, organization, enterprise-user, and organization-user reports, with 1-day and 28-day windows. [^1] That gives administrators and metric consumers a more specific descriptive view of agent activity.
+
+The practical response is measured rather than dramatic. Treat agent identity, report scope, and time window as part of the metric's context. Keep dashboard and exported interpretations aligned with GitHub's documented field system. [^2] Expect response details to vary by metric and aggregation level. [^3]
+
+Most of all, stop at the evidence boundary. Packet v7 confirms the optional `totals_by_3rd_party_agent` name but does not expose its detailed nested semantics. [^1] Until those details are present in the evidence used for an implementation, the defensible conclusion is simple: the reporting dimension is real, while the exact data model and its operational consequences remain unresolved.
+
+[^1]: [Copilot usage metrics API adds agent app activity - GitHub Changelog](https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity) — GitHub Changelog, August 7, 2026 (primary source).
+[^2]: [Data available in Copilot usage metrics - GitHub Docs](https://docs.github.com/en/copilot/reference/copilot-usage-metrics/copilot-usage-metrics) — GitHub Docs (primary source).
+[^3]: [Example schema for Copilot usage metrics - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/copilot/reference/copilot-usage-metrics/example-schema) — GitHub Docs (primary source).
